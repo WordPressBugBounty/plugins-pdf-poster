@@ -2,7 +2,7 @@
 Contributors: abuhayat, shehabulislam, freemius,bplugins
 Tags: PDF Embedder, embed pdf, pdf viewer, pdf, pdf plugin
 Donate link: https://www.buymeacoffee.com/abuhayat/
-Requires at least: 5.1
+Requires at least: 5.0
 Tested up to: 6.6.2
 Stable tag: 2.1.24
 Requires PHP: 7.1
@@ -151,6 +151,7 @@ If you find a conflict between our plugin and a third-party plugin, please let u
 4. Full Screen preview 
 
 == Changelog ==
+
 
 = 2.1.24 - 29 June, 2024 =
 * Fixed: iPad/iPhone issue

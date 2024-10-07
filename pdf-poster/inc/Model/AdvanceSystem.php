@@ -48,7 +48,7 @@ class AdvanceSystem{
             'downloadButton' => self::i($block, 'downloadButton', '', false),
             'downloadButtonText' => self::i($block, 'downloadButtonText', '', 'Download File'),
             'fullscreenButton' => self::i($block, 'fullscreenButton', '', true),
-            'fullscreenButtonText' => self::i($block, 'fullscreenButtonText', '', 'Vew Fullscreen'),
+            'fullscreenButtonText' => self::i($block, 'fullscreenButtonText', '', 'View Fullscreen'),
             'newWindow' => self::i($block, 'newWindow', '', false),
             'protect' => self::i($block, 'protect', '', false),
             'lastVersion' => self::i($block, 'lastVersion', '', false),

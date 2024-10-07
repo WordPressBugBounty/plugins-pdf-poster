@@ -33,44 +33,4 @@ class Pipe{
         return true;
     }
 
-    public static function checkPipe(){
-        $remote = (array) wp_remote_post('https://api.gumroad.com/v2/licenses/verify', [
-            'method'      => 'POST',
-            'timeout'     => 45,
-            'body'        => array(
-                'product_permalink' => 'pdfposter',
-                'license_key' => self::getPipeKey()
-            ),
-        ]);
-        if(!$remote){
-            return false;
-        }
-
-        if($remote['body']){
-            $response = json_decode($remote['body']);
-            if(isset($response->success) && $response->success){
-                return $response->success;
-            }else {
-                $remote = (array) wp_remote_post('https://api.gumroad.com/v2/licenses/verify', [
-                    'method'      => 'POST',
-                    'timeout'     => 45,
-                    'body'        => array(
-                        'product_permalink' => 'uoGmX',
-                        'license_key' => self::getPipeKey()
-                    ),
-                ]);
-        
-                if($remote['body']){
-                    $response = json_decode($remote['body']);
-                    if(isset($response->success)){
-                        return $response->success;
-                    }
-                }
-                return true;
-            }
-        }
-
-        return true;
-    }
-
 }

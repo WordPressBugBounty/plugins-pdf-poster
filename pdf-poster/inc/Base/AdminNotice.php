@@ -16,8 +16,6 @@ class AdminNotice{
 
             add_action('admin_notices', [$this, 'updateNotice']);
             add_action('init', [$this, 'init']);
-
-            add_action('admin_init', [$this, 'checkPipe']);
         }
     }
  
@@ -39,13 +37,4 @@ class AdminNotice{
         }
     }
 
-    public function checkPipe(){
-        global $pagenow;
-        if('edit.php' === $pagenow && isset($_GET['post_type']) && $_GET['post_type'] === 'pdfposter' && !Pipe::checkPipe()){
-            update_option('flcbplsc', array(
-                'key' => '',
-                'active' => false
-            ));
-        }
-    }
 }
