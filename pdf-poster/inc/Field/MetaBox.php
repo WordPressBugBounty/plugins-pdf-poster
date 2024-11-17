@@ -81,11 +81,26 @@ class MetaBox{
 					'desc' => 'Check if you want to show the file name in the top of the viewer.'
 				),
 				array(
+					'id' => 'view_fullscreen_btn',
+					'title' => 'Show view fullscreen button on top',
+					'class' => 'bplugins-meta-readonly',
+					'type' => 'switcher',
+					'default' => $this->pdfp_preset('preset_view_fullscreen_btn', true),
+					'desc' => 'Check if you want to show "View Full Screen" Button in the top of the viewer.'
+				),
+				array(
 					'id' => 'fullscreen_btn_text',
 					'title' => 'Fullscreen Button Text',
 					'type' => 'text',
 					'default' => $this->pdfp_preset('preset_fullscreen_btn_text', 'View Fullscreen'),
 					'dependency' => array('view_fullscreen_btn', '==', '1')
+				),
+				array(
+					'id' => 'show_download_btn',
+					'title' => 'Show download button on top',
+					'type' => 'switcher',
+					'default' => $this->pdfp_preset('preset_show_download_btn', true),
+					'desc' => 'Check if you want to show "Download" Button in the top of the viewer.'
 				),
 				array(
 						'id' => 'only_pdf',
@@ -103,22 +118,6 @@ class MetaBox{
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_default_browser'),
 					'desc' => '<span style="color:red">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Downlaod button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>'
-				),
-				
-				array(
-					'id' => 'show_download_btn',
-					'title' => 'Show download button on top',
-					'type' => 'switcher',
-					'default' => $this->pdfp_preset('preset_show_download_btn', true),
-					'desc' => 'Check if you want to show "Download" Button in the top of the viewer.'
-				),
-				array(
-					'id' => 'view_fullscreen_btn',
-					'title' => 'Show view fullscreen button on top',
-					'class' => 'bplugins-meta-readonly',
-					'type' => 'switcher',
-					'default' => $this->pdfp_preset('preset_view_fullscreen_btn', true),
-					'desc' => 'Check if you want to show "View Full Screen" Button in the top of the viewer.'
 				),
 				
 				array(
@@ -193,6 +192,14 @@ class MetaBox{
 					'desc' => esc_html__('Enter the zoom level. leave empty to set auto', 'pdfp'),
 					'default' => '',
 					'unit' => '%'
+				),
+				array(
+					'id'      => 'readonly',
+					'title'   => esc_html__( 'Enable Popup', 'pdfp'),
+					'type'    => 'switcher',
+					'class' => 'bplugins-meta-readonly',
+					'desc'    => esc_html__( 'Enable or disable the popup functionality.', 'pdfp'),
+					'default' => false,
 				),
 			)
 		  ) );

@@ -11,6 +11,14 @@ class EnqueueAssets{
         // Media button
         add_action('wp_enqueue_media', [$this, 'pdfp_media_button_js_file']);
         add_action('script_loader_tag', [$this, 'script_loader_tag'], 10, 3);
+        add_action('init', [$this, 'init']);
+    }
+
+    /** 
+     * inti action
+     */
+    public function init(){
+        // wp_register_style('pdfp-editor', PDFPRO_PLUGIN_DIR.'build/editor.css', [], PDFPRO_VER);
     }
 
     /**
@@ -20,13 +28,16 @@ class EnqueueAssets{
         // wp_enqueue_script('jquery');
         wp_enqueue_style( 'pdfp-public',  PDFPRO_PLUGIN_DIR. 'dist/public.css', array(), PDFPRO_VER );
         wp_register_script('adobe-viewer', 'https://documentcloud.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
-        wp_register_script( 'pdfp-public', PDFPRO_PLUGIN_DIR. 'dist/public.js', array(),PDFPRO_VER);
+        wp_register_script( 'pdfp-public', PDFPRO_PLUGIN_DIR. 'dist/public.js', array(), PDFPRO_VER);
         wp_register_script('dropbox-picker', 'https://www.dropbox.com/static/api/2/dropins.js');
 
         $option = get_option('fpdf_option', []);
 
         wp_localize_script('pdfp-public', 'pdfp', [
-            'adobeClientKey' => Utils::scramble('encode', Utils::isset($option, 'adobe_client_key', ''))
+            'dir' => PDFPRO_PLUGIN_DIR,
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'adobeClientKey' => Utils::scramble('encode', Utils::isset($option, 'adobe_client_key', '')),
+            'isPipe' => pdfp_fs()->can_use_premium_code()
         ]);
     }
 
@@ -44,7 +55,7 @@ class EnqueueAssets{
 		$option = get_option('fpdf_option');
         $postType = get_post_type();
         if(in_array($hook, ['admin_page_pdf-poster-pricing-manual', 'pdfposter_page_fpdf-support', 'pdfposter_page_fpdf-settings', 'post.php', 'post-new.php']) || $postType === 'pdfposter'){
-            wp_enqueue_script('adobe-viewer', 'https://documentcloud.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
+            wp_enqueue_script('adobe-viewer', 'https://documentcloud.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER); 
         }
         
         wp_enqueue_script('pdfp-admin', PDFPRO_PLUGIN_DIR.'dist/admin.js', array( 'jquery', 'wp-element' ), PDFPRO_VER, false);

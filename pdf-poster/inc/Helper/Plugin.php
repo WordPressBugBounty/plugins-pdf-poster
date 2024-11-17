@@ -18,18 +18,5 @@ class Plugin{
         return self::$version;
     }
 
-    public static function getLatestVersion(){
-        $checked = get_option('flcbplsccheck', 0);
-        if($checked < current_time('d')){
-            update_option('flcbplsccheck', current_time('d'));
-            $version = wp_remote_get('https://bplugins.com/wp-json/version/v1/product/46958');
-
-            if(!is_array($version) || !array_key_exists('body', $version)) return false;
-            $version = json_decode($version['body']);
-            if(!isset($version->version)) return false;
-            update_option('flcbplscver', $version->version);
-        }
-
-        return get_option('flcbplscver', self::version());
-    }
+   
 }

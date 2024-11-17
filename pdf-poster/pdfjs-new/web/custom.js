@@ -17,18 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
       n = decodeURIComponent(nv[0]);
       v = decodeURIComponent(nv[1]);
 
+      // eslint-disable-next-line no-prototype-builtins
       if (!parms.hasOwnProperty(n)) parms[n] = [];
       parms[n] = nv.length === 2 ? v : null;
     }
     return parms;
   }
 
-  const pdfjsHistory = JSON.parse(
-    window.localStorage.getItem("pdfjs.history")
-  )?.files.find(
-    (item) =>
-      item.fingerprint === PDFViewerApplication?.store?.file?.fingerprint
-  );
+  // const pdfjsHistory = JSON.parse(window.localStorage.getItem("pdfjs.history"))?.files.find((item) => item.fingerprint === window.PDFViewerApplication?.store?.file?.fingerprint);
 
   const parseURL = parseURLParams(location.href);
   const openFile = document.getElementById("openFile");
@@ -38,16 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const secondaryOpenFile = document.getElementById("secondaryOpenFile");
   const secondaryPrint = document.getElementById("secondaryPrint");
   const secondaryDownload = document.getElementById("secondaryDownload");
-  const viewerContainer = document.getElementById("viewerContainer");
-  const outerContainer = document.getElementById("outerContainer");
-  const toolbar = document.querySelector(".toolbar");
+  // const viewerContainer = document.getElementById("viewerContainer");
+  // const outerContainer = document.getElementById("outerContainer");
+  // const toolbar = document.querySelector(".toolbar");
   const presentationMode = document.querySelectorAll(".presentationMode");
-  const pdfViewer = document.querySelector(".pdfViewer");
-  const scrollHorizontalButton = document.getElementById("scrollHorizontal");
-  const scrollVerticalButton = document.getElementById("scrollVertical");
-  const documentProperties = document.getElementById(
-    "documentPropertiesDialog"
-  );
+  // const pdfViewer = document.querySelector(".pdfViewer");
+  // const scrollHorizontalButton = document.getElementById("scrollHorizontal");
+  // const scrollVerticalButton = document.getElementById("scrollVertical");
+  const documentProperties = document.getElementById("documentPropertiesDialog");
 
   let css = "";
   if (parseURL?.raw) {
@@ -70,7 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 3000);
 
   if (sidebarToggle) {
-    // pdfjsHistory.files[0].sidebarView = parseURL?.sidebarOpen === "true" ? 1 : 0;
+    const shouldOpen = parseURL.open === "true";
+    const interval = setInterval(() => {
+      if (window.PDFViewerApplication.pdfSidebar.isInitialEventDispatched) {
+        if (shouldOpen) {
+          window.PDFViewerApplication.pdfSidebar.open();
+        } else {
+          window.PDFViewerApplication.pdfSidebar.close();
+        }
+        clearInterval(interval);
+      }
+    }, 300);
   }
 
   if (openFile && parseURL?.open) {
@@ -122,34 +126,27 @@ document.addEventListener("DOMContentLoaded", function () {
   //raw css
 
   const interval = setInterval(() => {
-    if (PDFViewerApplication.store?.fingerprint) {
+    if (window.PDFViewerApplication.store?.fingerprint) {
       // PDF loaded - clear interval
       clearInterval(interval);
 
       // change scroll behavior
       setTimeout(() => {
         if (parseURL?.hrscroll === "vera") {
-          PDFViewerApplication.appConfig.secondaryToolbar.scrollHorizontalButton.click();
+          window.PDFViewerApplication.appConfig.secondaryToolbar.scrollHorizontalButton.click();
         } else {
-          PDFViewerApplication.appConfig.secondaryToolbar.scrollVerticalButton.click();
+          window.PDFViewerApplication.appConfig.secondaryToolbar.scrollVerticalButton.click();
         }
 
         // update zoom level
         if (parseURL.z) {
-          console.log(
-            "currentscale",
-            PDFViewerApplication.pdfViewer.currentScaleValue
-          );
-          PDFViewerApplication.pdfViewer.currentScaleValue = parseURL.z
-            ? parseURL.z
-            : "auto";
+          window.PDFViewerApplication.pdfViewer.currentScaleValue = parseURL.z ? parseURL.z : "auto";
         }
       }, 100);
     }
   }, 100);
 
   const disableKey = (e) => {
-    console.log("disabled");
     if (e.ctrlKey || e.shiftKey || e.altKey || e.key === "F12") {
       e.preventDefault();
       e.stopPropagation();

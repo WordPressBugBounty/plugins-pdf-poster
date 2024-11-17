@@ -1,11 +1,11 @@
 <?php
 namespace PDFPro\Rest;
 
-use PDFPro\Model\Block;
-use PDFPro\Model\AdvanceSystem;
+use PDFPro\Helper\Functions as Utils;
 
 class GetMeta{
     public $route = '';
+
     function __construct(){
         $this->route = '/single(?:/(?P<id>\d+))?';
         add_action('rest_api_init', [$this, 'single_doc']);
@@ -28,42 +28,30 @@ class GetMeta{
         $id = $params['id'] ?? null;
 
         if(!$id){
-            return new \WP_REST_Response(null);
+            return new \WP_REST_Response([]);
         }
 
-        $data = $this->get_data($id);
-        // $video = ['data' => 'no data available'];
+        $post_type = get_post_type($id);
+        $post = get_post($id);
+        
+        if($post_type !== 'pdfposter'){
+          return new \WP_REST_Response([]);
+        }
+    
+        $isGutenberg = get_post_meta($id, 'isGutenberg', true);
+    
+        if($isGutenberg){
+         $content = $post->post_content ?? false;
+         if($content){
+            $blocks = parse_blocks($content);
+            $data = wp_parse_args( $blocks[0]['attrs'], Utils::generate_pdf_poster_block(null)['attrs'] );
+          }
+        }else {
+          $block = Utils::generate_pdf_poster_block($id);
+          $data = $block['attrs'];
+        }
        
-
         return new \WP_REST_Response($data);
     }
-
-
-    public function get_data( $id = 2038){
-
-        $blocks =  Block::getBlock($id);
-        if(isset($blocks[0])){
-            $data = AdvanceSystem::getData($blocks[0]);
-            if(isset($data['template'])){
-                return $data['template'];
-            }
-        }
-        return false;
-
-    }
-
-    public static function meta($id, $key, $default = null){
-        if (metadata_exists('post', $id, $key)) {
-            $value = get_post_meta($id, $key, true);
-            if ($value != '') {
-                return $value;
-            } else {
-                return $default;
-            }
-        } else {
-            return $default;
-        }
-    }
-
  
 }

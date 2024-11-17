@@ -1,8 +1,6 @@
 <?php
 namespace PDFPro\Services;
-use PDFPro\Helper\DefaultArgs;
 use PDFPro\Helper\Functions;
-use PDFPro\Services\AnalogSystem;
 
 class PDFEmbedTemplate{
     public static $uniqid = null;

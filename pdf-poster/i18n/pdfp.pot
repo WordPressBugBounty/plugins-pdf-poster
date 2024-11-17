@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-07T07:22:21+02:00\n"
+"POT-Creation-Date: 2024-11-17T06:49:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: pdfp\n"
@@ -19,6 +19,7 @@ msgstr ""
 #: inc/PostType/PDFPoster.php:107
 #: zip/pdf-poster-pro/inc/PostType/PDFPoster.php:50
 #: zip/pdf-poster-pro/inc/PostType/PDFPoster.php:107
+#: build/blocks/selector/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2654
@@ -111,28 +112,78 @@ msgstr ""
 msgid "If you like <strong>Pdf Poster</strong> please leave us a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. Your Review is very important to us as it helps us to grow more. "
 msgstr ""
 
-#: inc/Field/MetaBox.php:178
-#: inc/Field/MetaBoxPro.php:181
+#: inc/Field/MetaBox.php:177
+#: inc/Field/MetaBoxPro.php:182
 #: zip/pdf-poster-pro/inc/Field/Settings.php:182
 msgid "Set Horizontal scrollbar as default"
 msgstr ""
 
-#: inc/Field/MetaBox.php:185
-#: inc/Field/MetaBoxPro.php:187
+#: inc/Field/MetaBox.php:184
+#: inc/Field/MetaBoxPro.php:188
 #: zip/pdf-poster-pro/inc/Field/Settings.php:188
 msgid "Enter the page number that will be shown in the viewer"
 msgstr ""
 
-#: inc/Field/MetaBox.php:190
-#: inc/Field/MetaBoxPro.php:192
+#: inc/Field/MetaBox.php:189
+#: inc/Field/MetaBoxPro.php:193
 #: zip/pdf-poster-pro/inc/Field/Settings.php:193
 msgid "Zoom Level"
 msgstr ""
 
-#: inc/Field/MetaBox.php:193
-#: inc/Field/MetaBoxPro.php:194
+#: inc/Field/MetaBox.php:192
+#: inc/Field/MetaBoxPro.php:195
 #: zip/pdf-poster-pro/inc/Field/Settings.php:195
 msgid "Enter the zoom level. leave empty to set auto"
+msgstr ""
+
+#: inc/Field/MetaBox.php:198
+#: inc/Field/MetaBoxPro.php:201
+msgid "Enable Popup"
+msgstr ""
+
+#: inc/Field/MetaBox.php:201
+#: inc/Field/MetaBoxPro.php:203
+msgid "Enable or disable the popup functionality."
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:208
+msgid "Popup Button Text"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:210
+msgid "Text on the button you want to show."
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:216
+msgid "Popup Button Background Color"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:218
+msgid "Choose a background color for the button."
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:224
+msgid "Popup Button Text Color"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:226
+msgid "Choose a text color for the button."
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:232
+msgid "Popup Button Font Size"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:234
+msgid "Specify the font size for the button (in px)."
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:241
+msgid "Popup Button Padding"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:243
+msgid "Specify the padding for the button (e.g., 10px 20px)."
 msgstr ""
 
 #: inc/Model/Metabox.php:34
@@ -154,6 +205,7 @@ msgstr ""
 
 #: inc/PostType/PDFPoster.php:54
 #: zip/pdf-poster-pro/inc/PostType/PDFPoster.php:54
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1961
@@ -228,6 +280,26 @@ msgstr ""
 msgid "Deactive License"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
+#: build/blocks/pdf-poster/view.js:1
+#: build/blocks/selector/index.js:1
+#: dist/editor.js:1
+#: zip/pdf-poster-pro/dist/editor.js:1
+#: dist/editor.js:1500
+#: dist/editor.js:1932
+msgid "Title"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: build/blocks/pdf-poster/view.js:1
+#: build/blocks/selector/index.js:1
+#: dist/editor.js:1
+#: zip/pdf-poster-pro/dist/editor.js:1
+#: dist/editor.js:1507
+msgid "Preview is not available for dropbox"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1028
@@ -235,6 +307,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1031
@@ -242,6 +315,7 @@ msgstr ""
 msgid "use adobe PDF embedder"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1040
@@ -249,6 +323,7 @@ msgstr ""
 msgid "Embed Mode"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1056
@@ -256,6 +331,7 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1063
@@ -263,6 +339,7 @@ msgstr ""
 msgid "Show Print Button"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1075
@@ -270,6 +347,7 @@ msgstr ""
 msgid "Show Download Button"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1087
@@ -277,6 +355,7 @@ msgstr ""
 msgid "Show Fullscreen Button"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1100
@@ -284,6 +363,7 @@ msgstr ""
 msgid "Show Annotation Tools"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1132
@@ -291,6 +371,7 @@ msgstr ""
 msgid "Protect my content"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1139
@@ -298,6 +379,7 @@ msgstr ""
 msgid "Enable Alert"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1147
@@ -306,6 +388,7 @@ msgstr ""
 msgid "Allow print"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1154
@@ -314,6 +397,7 @@ msgstr ""
 msgid "Show title on top"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1160
@@ -321,6 +405,7 @@ msgstr ""
 msgid "Raw PDF"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1169
@@ -328,6 +413,7 @@ msgstr ""
 msgid "Use browser pdf viewer"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1175
@@ -335,6 +421,7 @@ msgstr ""
 msgid "Show download button"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1186
@@ -342,12 +429,14 @@ msgstr ""
 msgid "Show fullscreen button"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1195
 msgid "Open in new window"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1206
@@ -355,12 +444,14 @@ msgstr ""
 msgid "Enable thumbnails toggle menu"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: dist/editor.js:1212
 #: dist/editor.js:2196
 msgid "Show Thumb by Default"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1218
@@ -368,6 +459,7 @@ msgstr ""
 msgid "Load the last version of the PDF"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1224
@@ -375,6 +467,7 @@ msgstr ""
 msgid "Horizontal Scrollbar"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1229
@@ -382,6 +475,7 @@ msgstr ""
 msgid "Initail page"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1233
@@ -389,6 +483,7 @@ msgstr ""
 msgid "Zoom Level (%)"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1235
@@ -396,6 +491,7 @@ msgstr ""
 msgid "leave empty to set auto"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1245
@@ -403,6 +499,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1248
@@ -410,6 +507,7 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1263
@@ -417,6 +515,7 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1278
@@ -424,6 +523,7 @@ msgstr ""
 msgid "Title Font Size"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1293
@@ -431,6 +531,7 @@ msgstr ""
 msgid "Adobe Lightbox Button Style"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1302
@@ -438,186 +539,222 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1472
 msgid "Adobe Client Key Required to use Adobe Embedder"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1480
 msgid "Generate Client key"
 msgstr ""
 
-#: dist/editor.js:1
-#: zip/pdf-poster-pro/dist/editor.js:1
-#: dist/editor.js:1500
-#: dist/editor.js:1932
-msgid "Title"
-msgstr ""
-
-#: dist/editor.js:1
-#: zip/pdf-poster-pro/dist/editor.js:1
-#: dist/editor.js:1507
-msgid "Preview is not available for dropbox"
-msgstr ""
-
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1638
 msgid "Preset"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1657
 msgid "Update"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1657
 msgid "Create"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:1910
-msgid "Copy To Clipboard"
+#: build/blocks/pdf-poster/index.js:1
+msgid "Enable Google Doc Viewer"
 msgstr ""
 
-#: dist/editor.js:1
-#: zip/pdf-poster-pro/dist/editor.js:1
-#: dist/editor.js:1927
-msgid "Upload PDF"
-msgstr ""
-
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: dist/editor.js:1939
 #: dist/editor.js:2166
 msgid "Fullscreen Button Text"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:1
+#: dist/editor.js:2171
+msgid "Open fullscreen in new window"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:1
+#: dist/editor.js:1910
+msgid "Copy To Clipboard"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+msgid "General"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:1
+#: zip/pdf-poster-pro/dist/editor.js:1
+#: dist/editor.js:1927
+msgid "Upload PDF"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1945
 msgid "Presets"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1970
 msgid "Delete"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1977
 msgid "Unknown Name"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:1990
 msgid "Add New Preset"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:2171
-msgid "Open fullscreen in new window"
-msgstr ""
-
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2311
 msgid "Additional"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2320
 msgid "Class"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2327
 msgid "CSS"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2336
 msgid "Do you want to delete?"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2348
 msgid "Yes"
 msgstr ""
 
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2440
+msgid "Upload a PDF or paste/write PDF URL."
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2441
+msgid "Upload a PDF "
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2449
+msgid "Upload"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2458
+msgid "URL"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2459
+msgid "Paste or type a PDF URL"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2465
+#: dist/editor.js:2466
+msgid "Apply"
+msgstr ""
+
+#: build/blocks/pdf-poster/index.js:1
+#: dist/editor.js:2469
+msgid "URL is not valid"
+msgstr ""
+
+#: build/blocks/selector/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2651
 msgid "PDF Poster Selector"
 msgstr ""
 
+#: build/blocks/selector/index.js:1
 #: dist/editor.js:1
 #: zip/pdf-poster-pro/dist/editor.js:1
 #: dist/editor.js:2654
 msgid "PDF Viewer"
 msgstr ""
 
-#: dist/editor.js:2440
-msgid "Upload a PDF or paste/write PDF URL."
-msgstr ""
-
-#: dist/editor.js:2441
-msgid "Upload a PDF "
-msgstr ""
-
-#: dist/editor.js:2449
-msgid "Upload"
-msgstr ""
-
-#: dist/editor.js:2458
-msgid "URL"
-msgstr ""
-
-#: dist/editor.js:2459
-msgid "Paste or type a PDF URL"
-msgstr ""
-
-#: dist/editor.js:2465
-#: dist/editor.js:2466
-msgid "Apply"
-msgstr ""
-
-#: dist/editor.js:2469
-msgid "URL is not valid"
-msgstr ""
-
 #: blocks/pdfposter/block.json
+#: build/blocks/pdf-poster/block.json
 #: zip/pdf-poster-pro/blocks/pdfposter/block.json
 msgctxt "block title"
 msgid "PDF Poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
+#: build/blocks/pdf-poster/block.json
 #: zip/pdf-poster-pro/blocks/pdfposter/block.json
 msgctxt "block keyword"
 msgid "PDF poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
+#: build/blocks/pdf-poster/block.json
 #: zip/pdf-poster-pro/blocks/pdfposter/block.json
 msgctxt "block keyword"
 msgid "Document poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
+#: build/blocks/pdf-poster/block.json
 #: zip/pdf-poster-pro/blocks/pdfposter/block.json
 msgctxt "block keyword"
 msgid "PDF Embedder"
+msgstr ""
+
+#: build/blocks/selector/block.json
+msgctxt "block title"
+msgid "PDF Poster Selector"
+msgstr ""
+
+#: build/blocks/selector/block.json
+msgctxt "block keyword"
+msgid "PDF poster Selector"
 msgstr ""

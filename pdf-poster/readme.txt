@@ -4,7 +4,7 @@ Tags: PDF Embedder, embed pdf, pdf viewer, pdf, pdf plugin
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.6.2
-Stable tag: 2.1.24
+Stable tag: 2.2.0
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,46 @@ https://www.youtube.com/watch?v=PcYaAw7gX7w
 - Set Jump to the page number to show a specific page of the pdf file.
 - Improved performance. 
 Get The PRO -> :  [BUY The PDF Poster PRO ](https://gum.co/zUvK "BUY NOW")  
+
+== Shortcode Usage ==
+
+### Shortcode
+
+[pdf_embed url="https://example.com/document.pdf" width="100%" height="842px" print="true" title="My PDF Document" download_btn="true" fullscreen_btn_text="View in Fullscreen"]
+
+
+### Attributes
+
+* **url** (required): The URL of the PDF file.
+  * Default: `null`
+  * Example: `url="https://example.com/document.pdf"`
+
+* **width** (optional): Width of the PDF viewer.
+  * Default: `"100%"`
+  * Example: `width="80%"`
+
+* **height** (optional): Height of the PDF viewer.
+  * Default: `"842px"`
+  * Example: `height="600px"`
+
+* **print** (optional): Display a print button.
+  * Accepted values: `"true"`, `"false"`
+  * Default: `"false"`
+  * Example: `print="true"`
+
+* **title** (optional): Title displayed above the PDF viewer.
+  * Default: `null`
+  * Example: `title="Document Title"`
+
+* **download_btn** (optional): Display a download button.
+  * Accepted values: `"true"`, `"false"`
+  * Default: `"false"`
+  * Example: `download_btn="true"`
+
+* **fullscreen_btn_text** (optional): Text for the fullscreen button.
+  * Default: `"View Fullscreen"`
+  * Example: `fullscreen_btn_text="Open Fullscreen"`
+  
 
 
 ### How to use PDF Poster- step-by-step guide
@@ -152,6 +192,11 @@ If you find a conflict between our plugin and a third-party plugin, please let u
 
 == Changelog ==
 
+= 2.2.0 - 06 Oct, 2024 =
+* Fixed: Overlapping content
+
+= 2.1.25 - 24 July, 2024 =
+* Fixed: 404 Not Found - PDFPro\Helper\Pipe::checkPipe() 
 
 = 2.1.24 - 29 June, 2024 =
 * Fixed: iPad/iPhone issue
