@@ -113,6 +113,7 @@ class Functions{
           "attrs" => [
             'uniqueId' => wp_unique_id( 'pdfp' ),
             'file' => self::isset($post_meta, 'source', ''),
+            'title' => get_the_title( $id ),
              'height' => $height['height'].$height['unit'],
              'width' => $width['width'].$width['unit'],
              'print' => self::isset($post_meta,  'print', false) === '1',
@@ -132,6 +133,12 @@ class Functions{
              'hrScroll' => self::isset($post_meta,  'hr_scroll', 0) === '1',
              'zoomLevel' => self::isset($post_meta,  'zoomLevel', null),
              'alert' => self::isset($post_meta,  'disable_alert', true) !== '1',
+             'btnStyles' => [
+                "background" =>   self::isset($post_meta,  'popup_btn_bg', '#1e73be'),
+                "color" =>   self::isset($post_meta,  'popup_btn_color', '#fff'),
+                "fontSize" =>   self::isset($post_meta,  'popup_btn_font_size', null).'rem',
+                "padding" =>  $popupBtnPadding
+             ],
              "popupOptions" => [
                 "enabled" =>  self::isset($post_meta,  'popup', 0) === '1',
                 "text" =>  self::isset($post_meta,  'popup_btn_text', 'Open PDF'),
@@ -144,5 +151,33 @@ class Functions{
             ],
           ]
         ];
-      }
+    }
+
+    static function isUnsupportedDevice() {
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    
+        // Detect iPad
+        $isIPad = stripos($userAgent, 'iPad') !== false;
+    
+        // Detect iPhone 6
+        $isIPhone6 = stripos($userAgent, 'iPhone') !== false && 
+                     isset($_SERVER['HTTP_USER_AGENT']) && 
+                     preg_match('/iPhone OS [0-10]\/', $userAgent) && // Adjust for iOS versions
+                     stripos($userAgent, '375x667') !== false;
+    
+        if ($isIPad) {
+            return true;
+        } elseif ($isIPhone6) {
+            return true;
+        } else {
+            return false;
+        }
+
+        try {
+            //code...
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+    
 }

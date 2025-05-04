@@ -3,8 +3,8 @@ Contributors: abuhayat, shehabulislam, freemius,bplugins
 Tags: PDF Embedder, embed pdf, pdf viewer, pdf, pdf plugin
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
-Tested up to: 6.7.1
-Stable tag: 2.2.1
+Tested up to: 6.8
+Stable tag: 2.2.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -192,8 +192,16 @@ If you find a conflict between our plugin and a third-party plugin, please let u
 
 == Changelog ==
 
+= 2.2.2 - 12 Feb, 2025 =
+* Update: Visible scrollbar when selected 'show only PDF/Raw PDF'
+* Fixed: _load_textdomain_just_in_time() was called incorrectly.
+
 = 2.2.1 - 28 Jan, 2025 =
-* Update: Freemius WordPress SDK
+* Fixed: your site doesn’t include support for the "pdfp/pdfposter" block. 
+* Update: WordPress SDK
+
+= 2.2.0 - 06 Oct, 2024 =
+* Fixed: Overlapping content
 
 = 2.2.0 - 06 Oct, 2024 =
 * Fixed: Overlapping content

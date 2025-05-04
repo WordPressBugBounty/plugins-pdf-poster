@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let css = "";
   if (parseURL?.raw) {
-    css = `:root { --scrollbar-bg-color: transparent;--scrollbar-color: transparent; } body {background:transparent} .toolbar {display: none} .bottombar {display: none} .pdfViewer .page {border-image: url()} #viewerContainer{top:0} `;
+    css = `:root{--scrollbar-bg-color:transparent;} body {background:transparent} .toolbar {display: none} .bottombar {display: none} .pdfViewer .page {border-image: url()} #viewerContainer{top:0} `;
     // pdfjsHistory.files[0].sidebarView = 0;
   }
   if (parseURL?.hrscroll) {
@@ -147,9 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 100);
 
   const disableKey = (e) => {
-    if (e.ctrlKey || e.shiftKey || e.altKey || e.key === "F12") {
+    if (((e.ctrlKey || e.metaKey) && e.key === "s") || e.key === "F12") {
       e.preventDefault();
       e.stopPropagation();
+      alert("Saving is disabled on this page");
       return false;
     } else {
       return true;

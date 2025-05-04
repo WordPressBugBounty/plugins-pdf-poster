@@ -1,16 +1,24 @@
 <?php
+
 namespace PDFPro\Field;
 
-use PDFPro\Helper\Pipe;
 use PDFPro\Api\DropboxApi;
 use PDFPro\Api\GoogleDriveApi;
 use PDFPro\Helper\Functions as Utils;
 
-class MetaBox{
+class MetaBox
+{
+
 	private $metabox_prefix = '_fpdf';
-	private $option_prefix = 'fpdf_option';
 	private $option = null;
-	public function register(){
+
+	public function register()
+	{
+		add_action('init', array($this, 'register_metabox'), 0);
+	}
+
+	public function register_metabox()
+	{
 		global $pdfp_bs;
 		if (class_exists('\CSF')) {
 			\CSF::createMetabox($this->metabox_prefix, array(
@@ -19,19 +27,19 @@ class MetaBox{
 			));
 
 			$this->configure();
-			
 		}
 	}
 
-	public function configure(){
-		if(!$this->option){
+	public function configure()
+	{
+		if (!$this->option) {
 			$this->option = get_option('fpdf_option');
 		}
 		new DropboxApi(Utils::isset($this->option, 'dropbox_app_key'));
 
 		new GoogleDriveApi(Utils::isset($this->option, 'google_apikey'), Utils::isset($this->option, 'google_client_id'), Utils::isset($this->option, 'google_project_number'));
-		
-		\CSF::createSection( $this->metabox_prefix, array(
+
+		\CSF::createSection($this->metabox_prefix, array(
 			'title'  => '',
 			'fields' => array(
 				array(
@@ -103,14 +111,14 @@ class MetaBox{
 					'desc' => 'Check if you want to show "Download" Button in the top of the viewer.'
 				),
 				array(
-						'id' => 'only_pdf',
-						'title' => 'Show Only PDF',
-						'class' => 'bplugins-meta-readonly',
-						'type' => 'switcher',
-						'default' => $this->pdfp_preset('preset_only_pdf'),
-						'desc' => 'Enable if you want to hide black background and PDF menu'
+					'id' => 'only_pdf',
+					'title' => 'Show Only PDF',
+					'class' => 'bplugins-meta-readonly',
+					'type' => 'switcher',
+					'default' => $this->pdfp_preset('preset_only_pdf'),
+					'desc' => 'Enable if you want to hide black background and PDF menu'
 				),
-				
+
 				array(
 					'id' => 'default_browser',
 					'title' => 'Enable Google Doc Viewer',
@@ -119,7 +127,7 @@ class MetaBox{
 					'default' => $this->pdfp_preset('preset_default_browser'),
 					'desc' => '<span style="color:red">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Downlaod button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>'
 				),
-				
+
 				array(
 					'id' => 'view_fullscreen_btn_target_blank',
 					'title' => 'Open in new window',
@@ -186,7 +194,7 @@ class MetaBox{
 				),
 				array(
 					'id' => 'zoomLevel',
-					'title' => esc_html__( 'Zoom Level', 'pdfp'),
+					'title' => esc_html__('Zoom Level', 'pdfp'),
 					'type' => 'number',
 					'class' => 'bplugins-meta-readonly',
 					'desc' => esc_html__('Enter the zoom level. leave empty to set auto', 'pdfp'),
@@ -195,18 +203,19 @@ class MetaBox{
 				),
 				array(
 					'id'      => 'readonly',
-					'title'   => esc_html__( 'Enable Popup', 'pdfp'),
+					'title'   => esc_html__('Enable Popup', 'pdfp'),
 					'type'    => 'switcher',
 					'class' => 'bplugins-meta-readonly',
-					'desc'    => esc_html__( 'Enable or disable the popup functionality.', 'pdfp'),
+					'desc'    => esc_html__('Enable or disable the popup functionality.', 'pdfp'),
 					'default' => false,
 				),
 			)
-		  ) );
+		));
 	}
 
 
-	public function pipeError($prefix){
+	public function pipeError($prefix)
+	{
 		\CSF::createSection($prefix, array(
 			'title' => '',
 			'fields' => array(
@@ -219,9 +228,9 @@ class MetaBox{
 		));
 	}
 
-	function pdfp_preset($key, $default = false){
+	function pdfp_preset($key, $default = false)
+	{
 		$settings = get_option('fpdf_option');
 		return $settings[$key] ?? $default;
 	}
 }
-

@@ -33,6 +33,7 @@
     "hrScroll": { "type": "boolean", "default": false },
     "additional": { "type": "object", "default": { "ID": "", "Class": "", "CSS": "" } },
     "adobeEmbedder": { "type": "boolean", "default": false },
+    "btnStyles": { "type": "object" },
     "adobeOptions": {
       "type": "object",
       "default": { "showDownloadPDF": true, "showPrintPDF": true, "showAnnotationTools": true, "showFullScreen": false, "embedMode": "SIZED_CONTAINER" }

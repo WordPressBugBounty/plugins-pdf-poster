@@ -1,6 +1,6 @@
 {
-  "apiVersion": "1",
-  "version": "2.2.0",
+  "apiVersion": 2,
+  "version": "2.2.2",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
   "description": "",
@@ -19,7 +19,7 @@
   "editorStyle": [
     "file:./index.css"
   ],
-  "style": "file:./style-view.css",
+  "style": "file:./view.css",
   "render": "file:./render.php",
   "viewScript": [
     "file:./view.js",
@@ -122,6 +122,9 @@
     "hrScroll": {
       "type": "boolean",
       "default": false
+    },
+    "btnStyles": {
+      "type": "object"
     },
     "additional": {
       "type": "object",
