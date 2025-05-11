@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // const scrollHorizontalButton = document.getElementById("scrollHorizontal");
   // const scrollVerticalButton = document.getElementById("scrollVertical");
   const documentProperties = document.getElementById("documentPropertiesDialog");
+  const editorModeButtons = document.getElementById("editorModeButtons");
 
   let css = "";
   if (parseURL?.raw) {
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     openFile.style.display = "none";
   }
 
+  // rmove print button
   if (parseURL?.stdono != "vera") {
     window.print = () => {
       console.warn("Print disabled!");
@@ -88,6 +90,14 @@ document.addEventListener("DOMContentLoaded", function () {
     print?.parentNode.removeChild(print);
     secondaryPrint?.parentNode.removeChild(secondaryPrint);
   }
+
+  // remove right sidebar toolbar
+  if (parseURL?.isHideRightToolbar === "true" && editorModeButtons) {
+
+    editorModeButtons.parentNode.removeChild(editorModeButtons);
+    console.log("right sidebar toolbar removed");
+  }
+
 
   if (download && parseURL?.nobaki != "vera") {
     window.addEventListener("selectstart", function (e) {

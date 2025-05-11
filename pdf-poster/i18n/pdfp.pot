@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: PDF Poster 2.2.2\n"
+"Project-Id-Version: PDF Poster 2.2.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pdf-poster-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-04T06:33:38+00:00\n"
+"POT-Creation-Date: 2025-05-11T11:31:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: pdfp\n"
@@ -18,7 +18,10 @@ msgstr ""
 #: pdf-poster.php
 #: inc/PostType/PDFPoster.php:55
 #: inc/PostType/PDFPoster.php:114
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:55
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:114
 #: build/blocks/selector/index.js:1
+#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Poster"
 msgstr ""
 
@@ -43,226 +46,289 @@ msgid "https://profiles.wordpress.org/abuhayat"
 msgstr ""
 
 #: admin/global/help-usages.php:21
+#: zip/pdf-poster/admin/global/help-usages.php:21
 msgid "Help & Usages"
 msgstr ""
 
 #: admin/global/help-usages.php:33
+#: zip/pdf-poster/admin/global/help-usages.php:33
 msgid "Need any Assistance?"
 msgstr ""
 
 #: admin/global/help-usages.php:34
+#: zip/pdf-poster/admin/global/help-usages.php:34
 msgid "Our Expert Support Team is always ready to help you out promptly."
 msgstr ""
 
 #: admin/global/help-usages.php:36
+#: zip/pdf-poster/admin/global/help-usages.php:36
 msgid "Contact Support"
 msgstr ""
 
 #: admin/global/help-usages.php:42
+#: zip/pdf-poster/admin/global/help-usages.php:42
 msgid "Looking for Documentation?"
 msgstr ""
 
 #: admin/global/help-usages.php:43
+#: zip/pdf-poster/admin/global/help-usages.php:43
 msgid "We have detailed documentation on every aspects of PDF Poster."
 msgstr ""
 
 #: admin/global/help-usages.php:44
+#: zip/pdf-poster/admin/global/help-usages.php:44
 msgid "Documentation"
 msgstr ""
 
 #: admin/global/help-usages.php:50
+#: zip/pdf-poster/admin/global/help-usages.php:50
 msgid "Like This Plugin?"
 msgstr ""
 
 #: admin/global/help-usages.php:51
+#: zip/pdf-poster/admin/global/help-usages.php:51
 msgid "If you like PDF Poster, please leave us a 5 &#11088; rating."
 msgstr ""
 
 #: admin/global/help-usages.php:53
+#: zip/pdf-poster/admin/global/help-usages.php:53
 msgid "Rate the Plugin"
 msgstr ""
 
 #: admin/global/help-usages.php:64
+#: zip/pdf-poster/admin/global/help-usages.php:64
 msgid "Looking For Demo?"
 msgstr ""
 
 #: admin/global/help-usages.php:64
+#: zip/pdf-poster/admin/global/help-usages.php:64
 msgid "Click Here"
 msgstr ""
 
 #: admin/global/help-usages.php:75
+#: zip/pdf-poster/admin/global/help-usages.php:75
 msgid "Video Tutorials"
 msgstr ""
 
 #: inc/Base/GlobalChanges.php:27
+#: zip/pdf-poster/inc/Base/GlobalChanges.php:27
 msgid "If you like <strong>Pdf Poster</strong> please leave us a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. Your Review is very important to us as it helps us to grow more. "
 msgstr ""
 
 #: inc/Field/MetaBox.php:185
 #: inc/Field/MetaBoxPro.php:190
+#: zip/pdf-poster/inc/Field/MetaBox.php:185
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:190
 msgid "Set Horizontal scrollbar as default"
 msgstr ""
 
 #: inc/Field/MetaBox.php:192
 #: inc/Field/MetaBoxPro.php:196
+#: zip/pdf-poster/inc/Field/MetaBox.php:192
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:196
 msgid "Enter the page number that will be shown in the viewer"
 msgstr ""
 
 #: inc/Field/MetaBox.php:197
 #: inc/Field/MetaBoxPro.php:201
+#: zip/pdf-poster/inc/Field/MetaBox.php:197
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:201
 msgid "Zoom Level"
 msgstr ""
 
 #: inc/Field/MetaBox.php:200
 #: inc/Field/MetaBoxPro.php:203
+#: zip/pdf-poster/inc/Field/MetaBox.php:200
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:203
 msgid "Enter the zoom level. leave empty to set auto"
 msgstr ""
 
 #: inc/Field/MetaBox.php:206
 #: inc/Field/MetaBoxPro.php:209
+#: zip/pdf-poster/inc/Field/MetaBox.php:206
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:209
 msgid "Enable Popup"
 msgstr ""
 
 #: inc/Field/MetaBox.php:209
 #: inc/Field/MetaBoxPro.php:211
+#: zip/pdf-poster/inc/Field/MetaBox.php:209
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:211
 msgid "Enable or disable the popup functionality."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:216
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:216
 msgid "Popup Button Text"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:218
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:218
 msgid "Text on the button you want to show."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:224
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:224
 msgid "Button Background Color"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:226
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:226
 msgid "Choose a background color for the button."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:232
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:232
 msgid "Button Text Color"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:234
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:234
 msgid "Choose a text color for the button."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:240
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:240
 msgid "Button Font Size"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:242
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:242
 msgid "Specify the font size for the button (in px)."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:249
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:249
 msgid "Button Padding"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:251
+#: zip/pdf-poster/inc/Field/MetaBoxPro.php:251
 msgid "Specify the padding for the button (e.g., 10px 20px)."
 msgstr ""
 
 #: inc/Model/Metabox.php:34
+#: zip/pdf-poster/inc/Model/Metabox.php:34
 msgid "New Feature ! Quick Embed"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:56
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:56
 msgid "Pdf Poster"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:57
 #: inc/PostType/PDFPoster.php:58
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:57
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:58
 msgid "Add New Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:59
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:59
 msgid "Edit"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:60
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:60
 msgid "New Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:61
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:61
 msgid "View Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:62
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:62
 msgid "Search Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:63
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:63
 msgid "Sorry, we couldn't find the Pdf file you are looking for."
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:115
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:115
 msgid "Supports"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:118
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:118
 msgid "Shortcode"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:119
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:119
 msgid "Copy and paste this shortcode into your posts, pages and widget:"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:123
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:123
 msgid "Template Include"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:124
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:124
 msgid "Copy and paste the PHP code into your template file:"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:138
+#: zip/pdf-poster/inc/PostType/PDFPoster.php:138
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
 #: build/blocks/selector/index.js:1
+#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Poster Selector"
 msgstr ""
 
 #: build/blocks/selector/index.js:1
+#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Viewer"
 msgstr ""
 
 #: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
+#: zip/pdf-poster/blocks/pdfposter/block.json
+#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block title"
 msgid "PDF Poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
+#: zip/pdf-poster/blocks/pdfposter/block.json
+#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "PDF poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
+#: zip/pdf-poster/blocks/pdfposter/block.json
+#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "Document poster"
 msgstr ""
 
 #: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
+#: zip/pdf-poster/blocks/pdfposter/block.json
+#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "PDF Embedder"
 msgstr ""
 
 #: build/blocks/selector/block.json
+#: zip/pdf-poster/build/blocks/selector/block.json
 msgctxt "block title"
 msgid "PDF Poster Selector"
 msgstr ""
 
 #: build/blocks/selector/block.json
+#: zip/pdf-poster/build/blocks/selector/block.json
 msgctxt "block keyword"
 msgid "PDF poster Selector"
 msgstr ""

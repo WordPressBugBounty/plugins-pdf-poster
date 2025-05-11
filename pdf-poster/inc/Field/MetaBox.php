@@ -125,7 +125,7 @@ class MetaBox
 					'class' => 'bplugins-meta-readonly',
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_default_browser'),
-					'desc' => '<span style="color:red">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Downlaod button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>'
+					'desc' => '<span style="color:red">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Download button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>'
 				),
 
 				array(

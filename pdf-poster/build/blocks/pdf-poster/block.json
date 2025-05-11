@@ -1,6 +1,6 @@
 {
   "apiVersion": 2,
-  "version": "2.2.2",
+  "version": "2.2.3",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
   "description": "",
@@ -49,12 +49,26 @@
       "default": "16px"
     },
     "height": {
-      "type": "string",
-      "default": "1122px"
+      "type": [
+        "string",
+        "object"
+      ],
+      "default": {
+        "desktop": "840px",
+        "tablet": "700px",
+        "mobile": "400px"
+      }
     },
     "width": {
-      "type": "string",
-      "default": "100%"
+      "type": [
+        "object",
+        "string"
+      ],
+      "default": {
+        "desktop": "100%",
+        "tablet": "100%",
+        "mobile": "100%"
+      }
     },
     "showName": {
       "type": "boolean",
@@ -120,6 +134,10 @@
       "default": false
     },
     "hrScroll": {
+      "type": "boolean",
+      "default": false
+    },
+    "isHideRightToolbar": {
       "type": "boolean",
       "default": false
     },

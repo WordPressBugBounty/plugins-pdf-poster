@@ -1,10 +1,15 @@
 <?php
+
 namespace PDFPro\Model;
+
 use PDFPro\Helper\Pipe;
 use PDFPro\Helper\Functions;
-class Import{
 
-    public static function meta(){
+class Import
+{
+
+    public static function meta()
+    {
         $query = new \WP_Query(array(
             'post_type' => 'pdfposter',
             'post_status' => 'any',
@@ -12,9 +17,9 @@ class Import{
         ));
 
         $output = [];
-        while($query->have_posts()): $query->the_post();
+        while ($query->have_posts()): $query->the_post();
             $id = \get_the_ID();
-            
+
             $meta = [
                 'source' => get_post_meta($id, 'meta-image', true),
                 'height' => [
@@ -35,27 +40,29 @@ class Import{
         endwhile;
     }
 
-    public static function block(){
+    public static function block()
+    {
 
-        if(Pipe::wasPipe()){
+        if (Pipe::wasPipe()) {
             $podcasts = self::createBlockFromCodestar();
-        }else {
+        } else {
             $podcasts = self::createBlock();
         }
         $result = [];
-        foreach($podcasts as $podcast){
+        foreach ($podcasts as $podcast) {
             $content_post = get_post($podcast['ID']);
             $content = $content_post->post_content;
-            if($content == ''){
+            if ($content == '') {
                 $result[$podcast['ID']] = wp_update_post($podcast);
-            }else {
+            } else {
                 $result[$podcast['ID']] = 'already imported before';
             }
         }
         return $result;
     }
 
-    public static function createBlock(){
+    public static function createBlock()
+    {
         $query = new \WP_Query(array(
             'post_type' => 'pdfposter',
             'post_status' => 'any',
@@ -63,25 +70,26 @@ class Import{
         ));
 
         $output = [];
-        while($query->have_posts()): $query->the_post();
+        while ($query->have_posts()): $query->the_post();
             $id = \get_the_ID();
             $output[] = [
                 'ID' => $id,
-                'post_content' => '<!-- wp:pdfp/pdfposter '.json_encode([
+                'post_content' => '<!-- wp:pdfp/pdfposter ' . json_encode([
                     'file' => get_post_meta($id, 'meta-image', true),
                     'title' => \basename(get_post_meta($id, 'meta-image', true)),
-                    'height' => get_post_meta($id, 'pdfp_onei_pp_height', true) == '' ? '1122px' : get_post_meta($id, 'pdfp_onei_pp_height', true).'px',
-                    'width' => get_post_meta($id, 'pdfp_onei_pp_width', true) == '' ? '100%' : get_post_meta($id, 'pdfp_onei_pp_width', true).'px',
+                    'height' => get_post_meta($id, 'pdfp_onei_pp_height', true) == '' ? '1122px' : get_post_meta($id, 'pdfp_onei_pp_height', true) . 'px',
+                    'width' => get_post_meta($id, 'pdfp_onei_pp_width', true) == '' ? '100%' : get_post_meta($id, 'pdfp_onei_pp_width', true) . 'px',
                     'print' => get_post_meta($id, 'pdfp_onei_pp_print', true) == 'on' ? true : false,
                     'show_filename' => get_post_meta($id, 'pdfp_onei_pp_pgname', true) == 'on' ? true : false
-                ]).' /-->'
+                ]) . ' /-->'
             ];
         endwhile;
 
         return $output;
     }
 
-    public static function createBlockFromCodestar(){
+    public static function createBlockFromCodestar()
+    {
         $query = new \WP_Query(array(
             'post_type' => 'pdfposter',
             'post_status' => 'any',
@@ -89,18 +97,18 @@ class Import{
         ));
 
         $output = [];
-        while($query->have_posts()): $query->the_post();
+        while ($query->have_posts()): $query->the_post();
             $id = \get_the_ID();
             $width = Functions::meta($id, 'width', ['width' => '100', 'unit' => '%']);
             $height = Functions::meta($id, 'height', ['height' => '1122', 'unit' => 'px']);
 
             $output[] = [
                 'ID' => $id,
-                'post_content' => '<!-- wp:pdfp/pdfposter '.json_encode([
+                'post_content' => '<!-- wp:pdfp/pdfposter ' . json_encode([
                     'file' => Functions::meta($id, 'source', true),
                     'title' => \basename(Functions::meta($id, 'source', true)),
-                    'height' => $height['height'].$height['unit'],
-                    'width' => $width['width'].$width['unit'],
+                    'height' => $height['height'] . $height['unit'],
+                    'width' => $width['width'] . $width['unit'],
                     'print' => Functions::meta($id, 'print', 0) == '1' ? true : false,
                     'showName' => Functions::meta($id, 'show_filename', 0) == '1' ? true : false,
                     'onlyPDF' => Functions::meta($id, 'only_pdf', 0) == '1' ? true : false,
@@ -114,7 +122,7 @@ class Import{
                     'thumbMenu' => Functions::meta($id, 'thumbnail_toggle_menu', 0) == '1' ? true : false,
                     'alert' => Functions::meta($id, 'disable_alert', '0') == '1' ? false : true,
                     'initialPage' => Functions::meta($id, 'jump_to', 0),
-                ]).' /-->'
+                ]) . ' /-->'
             ];
         endwhile;
 
@@ -123,10 +131,11 @@ class Import{
 
 
     // eov_import_meta();
-    public static function settings(){
+    public static function settings()
+    {
         $old = get_option('pdfp_settings', false);
-        if(!$old){
-           return false;
+        if (!$old) {
+            return false;
         }
 
         $custom_css = get_option('pdfp_css');
@@ -135,7 +144,7 @@ class Import{
         $protect = get_p_option($old, 'protection', 'false') == 'true' ? '1' : '0';
         $disable_alert = get_p_option($old, 'disable_alert', 'true') == 'true' ? '1' : '0';
         $view_fullscreen_btn = get_p_option($old, 'view_full', 'false') == 'true' ? '1' : '0';
-        $fullscreen_btn_text = get_p_option($old, 'view_full_text','View Full Screen');
+        $fullscreen_btn_text = get_p_option($old, 'view_full_text', 'View Full Screen');
         $show_download_btn = get_p_option($old, 'download_top', 'false') == 'true' ? '1' : '0';
         $download_btn_text = get_p_option($old, 'download_text', 'Download File');
         $show_filename = get_p_option($old, 'file_name', 'false') == 'true' ? '1' : '0';
@@ -146,8 +155,8 @@ class Import{
         $height = get_p_option($old, 'height', 1122);
         $jump_to = get_p_option($old, 'onei_pp_jump_to_page', 1);
 
-        
-        if($width == '0' || $width == ''){
+
+        if ($width == '0' || $width == '') {
             $unit = '%';
             $width = 100;
         }
@@ -176,14 +185,15 @@ class Import{
             'custom_css' => get_p_option($custom_css, 'custom_css', '')
         );
 
-        if(get_option('fpdf_option', false) === false){		
+        if (get_option('fpdf_option', false) === false) {
             return update_option('fpdf_option', $newData);
         }
         return false;
     }
 
-    public static function createBlockFromOld(){
-        
+    public static function createBlockFromOld()
+    {
+
         $docs = new \WP_Query([
             'post_type' => 'pdfposter',
             'post_status' => 'any',
@@ -193,42 +203,42 @@ class Import{
         while ($docs->have_posts()): $docs->the_post();
             $id = get_the_ID();
             $fpdf = get_post_meta($id, '_fpdfe', true);
-            if($fpdf){
+            if ($fpdf) {
                 return false;
             }
-            
+
             $view_fullscreen_btn = fpdf_get_old_meta($id, 'view_full', [
-                'pdfp_vfs_button_target' => 'on', 
-                'pdfp_view_full_text' => 'View Fullscreen', 
+                'pdfp_vfs_button_target' => 'on',
+                'pdfp_view_full_text' => 'View Fullscreen',
                 'enabled' => 'on'
             ]);
 
-            $show_download_btn = fpdf_get_old_meta($id, 'download_button_text_con', ['pdfp_download_text' => 'Downlaod File', 'enabled' => 'on']);
+            $show_download_btn = fpdf_get_old_meta($id, 'download_button_text_con', ['pdfp_download_text' => 'Download File', 'enabled' => 'on']);
             $width = get_post_meta($id, 'pdfp_onei_pp_width', true);
 
-            if(!isset($view_fullscreen_btn['pdfp_vfs_button_target'])){
+            if (!isset($view_fullscreen_btn['pdfp_vfs_button_target'])) {
                 $view_fullscreen_btn['pdfp_vfs_button_target'] = 'off';
             }
-            if(!isset($view_fullscreen_btn['enabled'])){
+            if (!isset($view_fullscreen_btn['enabled'])) {
                 $view_fullscreen_btn['enabled'] = 'off';
             }
-            if(!isset($show_download_btn['enabled'])){
+            if (!isset($show_download_btn['enabled'])) {
                 $show_download_btn['enabled'] = 'off';
             }
 
             $unit = 'px';
-            if($width == '0' || $width == ''){
+            if ($width == '0' || $width == '') {
                 $unit = '%';
                 $width = 100;
             }
 
             $output[] = [
                 'ID' => $id,
-                'post_content' => '<!-- wp:pdfp/pdfposter '.json_encode([
+                'post_content' => '<!-- wp:pdfp/pdfposter ' . json_encode([
                     'file' => get_post_meta($id, 'meta-image', true),
                     'title' => \basename(get_post_meta($id, 'meta-image', true)),
-                    'height' => get_post_meta($id, 'pdfp_onei_pp_height', true) == '' ? '1122px' : get_post_meta($id, 'pdfp_onei_pp_height', true).'px',
-                    'width' => get_post_meta($id, 'pdfp_onei_pp_width', true) == '' ? '100%' : get_post_meta($id, 'pdfp_onei_pp_width', true).'px',
+                    'height' => get_post_meta($id, 'pdfp_onei_pp_height', true) == '' ? '1122px' : get_post_meta($id, 'pdfp_onei_pp_height', true) . 'px',
+                    'width' => get_post_meta($id, 'pdfp_onei_pp_width', true) == '' ? '100%' : get_post_meta($id, 'pdfp_onei_pp_width', true) . 'px',
                     'print' => get_post_meta($id, 'pdfp_onei_pp_print', true) === 'on' ? true : false,
                     'showName' => get_post_meta($id, 'pdfp_onei_pp_pgname', true) === 'on' ? true : false,
                     'onlyPDF' => false,
@@ -242,29 +252,29 @@ class Import{
                     'thumbMenu' => get_post_meta($id, 'pdfp_onei_pp_side', true) === 'on' ? true : false,
                     'alert' => get_post_meta($id, 'pdfp_onei_pp_disable_alert', true) === 'on' ? false : true,
                     'initialPage' =>  get_post_meta($id, 'pdfp_onei_pp_jump_to_page', true)
-                ]).' /-->'
+                ]) . ' /-->'
             ];
-        
+
         endwhile;
 
         return $output;
     }
 }
 
-function fpdf_get_old_meta($id, $key, $default = null, $true = false){
-	$meta = get_post_meta($id, $key, true);
-    if($meta != ''){
-        if($true === true){
-            if($meta === '1'){
+function fpdf_get_old_meta($id, $key, $default = null, $true = false)
+{
+    $meta = get_post_meta($id, $key, true);
+    if ($meta != '') {
+        if ($true === true) {
+            if ($meta === '1') {
                 return true;
-            }else if($meta === '0'){
+            } else if ($meta === '0') {
                 return false;
             }
-        }else {
+        } else {
             return $meta;
         }
-        
-    }else {
+    } else {
         return $default;
     }
 }
