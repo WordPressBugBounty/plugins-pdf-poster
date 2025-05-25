@@ -51,7 +51,7 @@ class MetaBox
 				array(
 					'id'    => 'source',
 					'type'  => 'upload',
-					'title' => 'add PDF source',
+					'title' => __('add PDF source', 'pdfp'),
 					'attributes' => array('id' => 'picker_field')
 				),
 				array(
@@ -76,52 +76,52 @@ class MetaBox
 				),
 				array(
 					'id' => 'print',
-					'title' => 'Allow Print',
+					'title' => __('Allow Print', 'pdfp'),
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_print'),
-					'desc' => 'Check if you allow visitor to print the pdf file .'
+					'desc' => __('Check if you allow visitor to print the pdf file .', 'pdfp')
 				),
 				array(
 					'id' => 'show_filename',
-					'title' => 'Show file name on top',
+					'title' => __('Show file name on top', 'pdfp'),
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_show_filename', true),
-					'desc' => 'Check if you want to show the file name in the top of the viewer.'
+					'desc' => __('Check if you want to show the file name in the top of the viewer.', 'pdfp')
 				),
 				array(
 					'id' => 'view_fullscreen_btn',
-					'title' => 'Show view fullscreen button on top',
+					'title' => __('Show view fullscreen button on top', 'pdfp'),
 					'class' => 'bplugins-meta-readonly',
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_view_fullscreen_btn', true),
-					'desc' => 'Check if you want to show "View Full Screen" Button in the top of the viewer.'
+					'desc' => __('Check if you want to show "View Full Screen" Button in the top of the viewer.', 'pdfp')
 				),
 				array(
 					'id' => 'fullscreen_btn_text',
-					'title' => 'Fullscreen Button Text',
+					'title' => __('Fullscreen Button Text', 'pdfp'),
 					'type' => 'text',
 					'default' => $this->pdfp_preset('preset_fullscreen_btn_text', 'View Fullscreen'),
 					'dependency' => array('view_fullscreen_btn', '==', '1')
 				),
 				array(
 					'id' => 'show_download_btn',
-					'title' => 'Show download button on top',
+					'title' => __('Show download button on top', 'pdfp'),
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_show_download_btn', true),
-					'desc' => 'Check if you want to show "Download" Button in the top of the viewer.'
+					'desc' => __('Check if you want to show "Download" Button in the top of the viewer.', 'pdfp')
 				),
 				array(
 					'id' => 'only_pdf',
-					'title' => 'Show Only PDF',
+					'title' => __('Show Only PDF', 'pdfp'),
 					'class' => 'bplugins-meta-readonly',
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_only_pdf'),
-					'desc' => 'Enable if you want to hide black background and PDF menu'
+					'desc' => __('Enable if you want to hide black background and PDF menu', 'pdfp')
 				),
 
 				array(
 					'id' => 'default_browser',
-					'title' => 'Enable Google Doc Viewer',
+					'title' => __('Enable Google Doc Viewer', 'pdfp'),
 					'class' => 'bplugins-meta-readonly',
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_default_browser'),
@@ -137,76 +137,76 @@ class MetaBox
 				),
 				array(
 					'id' => 'protect',
-					'title' => 'Protect my content',
+					'title' => __('Protect my content', 'pdfp'),
 					'class' => 'bplugins-meta-readonly',
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_protect', 0),
-					'desc' => 'Check to disable Mouse clicks to protect your content.'
+					'desc' => __('Check to disable Mouse clicks to protect your content.', 'pdfp'),
 				),
 				array(
 					'id' => 'disable_alert',
-					'title' => 'Disable Alert Message',
+					'title' => __('Disable Alert Message', 'pdfp'),
 					'type' => 'switcher',
 					'class' => 'bplugins-meta-readonly',
 					'default' => $this->pdfp_preset('preset_disable_alert', true),
-					'desc' => 'Check to disable alert message.',
+					'desc' => __('Check to disable alert message.', 'pdfp'),
 					'dependency' => array('protect', '==', '1')
 				),
 				array(
 					'id' => 'thumbnail_toggle_menu',
-					'title' => 'Thumbnails toggle menu',
+					'title' => __('Thumbnails toggle menu', 'pdfp'),
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_thumbnail_toggle_menu', false),
 					'class' => 'bplugins-meta-readonly',
-					'desc' => 'Enable to enable Thumbnails Toogle Menu in the viewer'
+					'desc' => __('Enable to enable Thumbnails Toogle Menu in the viewer', 'pdfp'),
 				),
 				array(
 					'id' => 'sidebar_open',
-					'title' => 'Thumbnails open by default',
+					'title' => __('Thumbnails open by default', 'pdfp'),
 					'type' => 'switcher',
 					'default' => $this->pdfp_preset('preset_sidebar_open', false),
 					'class' => 'bplugins-meta-readonly',
-					'desc' => 'Enable to enable Thumbnails Toogle Menu in the viewer'
+					'desc' => __('Enable to enable Thumbnails Toogle Menu in the viewer', 'pdfp'),
 				),
 				array(
 					'id' => 'ppv_load_last_version',
-					'title' => 'Load the last version of the pdf',
+					'title' => __('Load the last version of the pdf', 'pdfp'),
 					'type' => 'switcher',
 					'class' => 'bplugins-meta-readonly',
 					'default' => $this->pdfp_preset('preset_ppv_load_last_version', false),
-					'desc' => 'Enable to Load the last version of the pdf'
+					'desc' => __('Enable to Load the last version of the pdf', 'pdfp')
 				),
 				array(
 					'id' => 'hr_scroll',
-					'title' => 'Horizontal Scrollbar',
+					'title' => __('Horizontal Scrollbar', 'pdfp'),
 					'type' => 'switcher',
 					'class' => 'bplugins-meta-readonly',
 					'default' => $this->pdfp_preset('preset_hr_scroll', false),
-					'desc' => esc_html__('Set Horizontal scrollbar as default', 'pdfp')
+					'desc' => __('Set Horizontal scrollbar as default', 'pdfp')
 				),
 				array(
 					'id' => 'jump_to',
-					'title' => 'Jump To Page',
+					'title' => __('Jump To Page', 'pdfp'),
 					'type' => 'number',
 					'class' => 'bplugins-meta-readonly',
-					'desc' => esc_html__('Enter the page number that will be shown in the viewer', 'pdfp'),
+					'desc' => __('Enter the page number that will be shown in the viewer', 'pdfp'),
 					'default' => 1
 				),
 				array(
 					'id' => 'zoomLevel',
-					'title' => esc_html__('Zoom Level', 'pdfp'),
+					'title' => __('Zoom Level', 'pdfp'),
 					'type' => 'number',
 					'class' => 'bplugins-meta-readonly',
-					'desc' => esc_html__('Enter the zoom level. leave empty to set auto', 'pdfp'),
+					'desc' => __('Enter the zoom level. leave empty to set auto', 'pdfp'),
 					'default' => '',
 					'unit' => '%'
 				),
 				array(
 					'id'      => 'readonly',
-					'title'   => esc_html__('Enable Popup', 'pdfp'),
+					'title'   => __('Enable Popup', 'pdfp'),
 					'type'    => 'switcher',
 					'class' => 'bplugins-meta-readonly',
-					'desc'    => esc_html__('Enable or disable the popup functionality.', 'pdfp'),
+					'desc'    => __('Enable or disable the popup functionality.', 'pdfp'),
 					'default' => false,
 				),
 			)

@@ -52,30 +52,3 @@ class Presets
 
 $obj = new Presets(new Table());
 $obj->install();
-
-
-
-// titleFontSize VARCHAR(256) NULL DEFAULT '16px',
-//             height VARCHAR(100) NULL DEFAULT '1122px',
-//             width VARCHAR(100) NULL DEFAULT '100%',
-//             showName VARCHAR(100) NULL DEFAULT 1,
-//             print VARCHAR(100) NULL DEFAULT 0,
-//             onlyPDF VARCHAR(100) NULL DEFAULT 0,
-//             defaultBrowser VARCHAR(100) NULL DEFAULT 0,
-//             downloadButton VARCHAR(100) NULL DEFAULT 0,
-//             downloadButtonText VARCHAR(256) NULL DEFAULT 'Download File',
-//             fullscreenButton VARCHAR(100) NULL DEFAULT 0,
-//             fullscreenButtonText VARCHAR(256) NULL DEFAULT 'View Fullscreen',
-//             newWindow VARCHAR(100) NULL DEFAULT 0,
-//             protect VARCHAR(100) NULL DEFAULT 0,
-//             thumbMenu VARCHAR(100) NULL DEFAULT 0,
-//             initialPage VARCHAR(100) NULL DEFAULT 0,
-//             zoomLevel VARCHAR(100) NULL DEFAULT 'auto',
-//             alert VARCHAR(100) NULL DEFAULT 0,
-//             lastVersion VARCHAR(100) NULL DEFAULT 0,
-//             hrScroll VARCHAR(100) NULL DEFAULT 0,
-//             additional VARCHAR(256) NULL,
-//             adobeEmbedder VARCHAR(100) NULL DEFAULT 0,
-//             adobeOptions VARCHAR(256) NULL DEFAULT '',
-//             popupBtnStyle VARCHAR(256) NULL DEFAULT '',
-//             popupBtnText VARCHAR(256) NULL DEFAULT '',

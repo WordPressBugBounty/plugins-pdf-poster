@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-11T11:31:21+00:00\n"
+"POT-Creation-Date: 2025-05-12T09:03:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: pdfp\n"
@@ -18,10 +18,7 @@ msgstr ""
 #: pdf-poster.php
 #: inc/PostType/PDFPoster.php:55
 #: inc/PostType/PDFPoster.php:114
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:55
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:114
 #: build/blocks/selector/index.js:1
-#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Poster"
 msgstr ""
 
@@ -46,289 +43,478 @@ msgid "https://profiles.wordpress.org/abuhayat"
 msgstr ""
 
 #: admin/global/help-usages.php:21
-#: zip/pdf-poster/admin/global/help-usages.php:21
 msgid "Help & Usages"
 msgstr ""
 
 #: admin/global/help-usages.php:33
-#: zip/pdf-poster/admin/global/help-usages.php:33
 msgid "Need any Assistance?"
 msgstr ""
 
 #: admin/global/help-usages.php:34
-#: zip/pdf-poster/admin/global/help-usages.php:34
 msgid "Our Expert Support Team is always ready to help you out promptly."
 msgstr ""
 
 #: admin/global/help-usages.php:36
-#: zip/pdf-poster/admin/global/help-usages.php:36
 msgid "Contact Support"
 msgstr ""
 
 #: admin/global/help-usages.php:42
-#: zip/pdf-poster/admin/global/help-usages.php:42
 msgid "Looking for Documentation?"
 msgstr ""
 
 #: admin/global/help-usages.php:43
-#: zip/pdf-poster/admin/global/help-usages.php:43
 msgid "We have detailed documentation on every aspects of PDF Poster."
 msgstr ""
 
 #: admin/global/help-usages.php:44
-#: zip/pdf-poster/admin/global/help-usages.php:44
 msgid "Documentation"
 msgstr ""
 
 #: admin/global/help-usages.php:50
-#: zip/pdf-poster/admin/global/help-usages.php:50
 msgid "Like This Plugin?"
 msgstr ""
 
 #: admin/global/help-usages.php:51
-#: zip/pdf-poster/admin/global/help-usages.php:51
 msgid "If you like PDF Poster, please leave us a 5 &#11088; rating."
 msgstr ""
 
 #: admin/global/help-usages.php:53
-#: zip/pdf-poster/admin/global/help-usages.php:53
 msgid "Rate the Plugin"
 msgstr ""
 
 #: admin/global/help-usages.php:64
-#: zip/pdf-poster/admin/global/help-usages.php:64
 msgid "Looking For Demo?"
 msgstr ""
 
 #: admin/global/help-usages.php:64
-#: zip/pdf-poster/admin/global/help-usages.php:64
 msgid "Click Here"
 msgstr ""
 
 #: admin/global/help-usages.php:75
-#: zip/pdf-poster/admin/global/help-usages.php:75
 msgid "Video Tutorials"
 msgstr ""
 
 #: inc/Base/GlobalChanges.php:27
-#: zip/pdf-poster/inc/Base/GlobalChanges.php:27
 msgid "If you like <strong>Pdf Poster</strong> please leave us a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. Your Review is very important to us as it helps us to grow more. "
+msgstr ""
+
+#: inc/Field/MetaBox.php:54
+#: inc/Field/MetaBoxPro.php:61
+msgid "add PDF source"
+msgstr ""
+
+#: inc/Field/MetaBox.php:79
+#: inc/Field/MetaBoxPro.php:95
+#: inc/Field/SettingsPro.php:78
+#: inc/Field/SettingsPro.php:200
+msgid "Allow Print"
+msgstr ""
+
+#: inc/Field/MetaBox.php:82
+#: inc/Field/MetaBoxPro.php:98
+#: inc/Field/SettingsPro.php:81
+#: inc/Field/SettingsPro.php:203
+msgid "Check if you allow visitor to print the pdf file ."
+msgstr ""
+
+#: inc/Field/MetaBox.php:86
+#: inc/Field/MetaBoxPro.php:110
+#: inc/Field/SettingsPro.php:92
+#: inc/Field/SettingsPro.php:207
+msgid "Show file name on top"
+msgstr ""
+
+#: inc/Field/MetaBox.php:89
+#: inc/Field/MetaBoxPro.php:113
+#: inc/Field/SettingsPro.php:94
+#: inc/Field/SettingsPro.php:210
+msgid "Check if you want to show the file name in the top of the viewer."
+msgstr ""
+
+#: inc/Field/MetaBox.php:93
+#: inc/Field/MetaBoxPro.php:131
+#: inc/Field/SettingsPro.php:111
+#: inc/Field/SettingsPro.php:228
+msgid "Show view fullscreen button on top"
+msgstr ""
+
+#: inc/Field/MetaBox.php:97
+#: inc/Field/MetaBoxPro.php:134
+#: inc/Field/SettingsPro.php:113
+#: inc/Field/SettingsPro.php:231
+msgid "Check if you want to show \"View Full Screen\" Button in the top of the viewer."
+msgstr ""
+
+#: inc/Field/MetaBox.php:101
+msgid "Fullscreen Button Text"
+msgstr ""
+
+#: inc/Field/MetaBox.php:108
+#: inc/Field/MetaBoxPro.php:117
+#: inc/Field/SettingsPro.php:98
+#: inc/Field/SettingsPro.php:214
+msgid "Show download button on top"
+msgstr ""
+
+#: inc/Field/MetaBox.php:111
+#: inc/Field/MetaBoxPro.php:120
+#: inc/Field/SettingsPro.php:100
+#: inc/Field/SettingsPro.php:217
+msgid "Check if you want to show \"Download\" Button in the top of the viewer."
+msgstr ""
+
+#: inc/Field/MetaBox.php:115
+#: inc/Field/MetaBoxPro.php:88
+#: inc/Field/SettingsPro.php:193
+msgid "Show Only PDF"
+msgstr ""
+
+#: inc/Field/MetaBox.php:119
+#: inc/Field/MetaBoxPro.php:91
+#: inc/Field/SettingsPro.php:196
+msgid "Enable if you want to hide black background and PDF menu"
+msgstr ""
+
+#: inc/Field/MetaBox.php:124
+#: inc/Field/MetaBoxPro.php:102
+msgid "Enable Google Doc Viewer"
+msgstr ""
+
+#: inc/Field/MetaBox.php:140
+#: inc/Field/MetaBoxPro.php:151
+#: inc/Field/SettingsPro.php:130
+#: inc/Field/SettingsPro.php:248
+msgid "Protect my content"
+msgstr ""
+
+#: inc/Field/MetaBox.php:144
+#: inc/Field/MetaBoxPro.php:154
+#: inc/Field/SettingsPro.php:132
+#: inc/Field/SettingsPro.php:251
+msgid "Check to disable Mouse clicks to protect your content."
+msgstr ""
+
+#: inc/Field/MetaBox.php:148
+#: inc/Field/MetaBoxPro.php:158
+#: inc/Field/SettingsPro.php:136
+#: inc/Field/SettingsPro.php:255
+msgid "Disable Alert Message"
+msgstr ""
+
+#: inc/Field/MetaBox.php:152
+#: inc/Field/MetaBoxPro.php:161
+#: inc/Field/SettingsPro.php:138
+#: inc/Field/SettingsPro.php:258
+msgid "Check to disable alert message."
+msgstr ""
+
+#: inc/Field/MetaBox.php:157
+#: inc/Field/MetaBoxPro.php:166
+#: inc/Field/SettingsPro.php:142
+#: inc/Field/SettingsPro.php:263
+msgid "Thumbnails toggle menu"
+msgstr ""
+
+#: inc/Field/MetaBox.php:161
+#: inc/Field/MetaBox.php:169
+#: inc/Field/MetaBoxPro.php:169
+#: inc/Field/MetaBoxPro.php:176
+msgid "Enable to enable Thumbnails Toogle Menu in the viewer"
+msgstr ""
+
+#: inc/Field/MetaBox.php:165
+#: inc/Field/MetaBoxPro.php:173
+msgid "Thumbnails open by default"
+msgstr ""
+
+#: inc/Field/MetaBox.php:173
+#: inc/Field/MetaBoxPro.php:180
+msgid "Load the last version of the pdf"
+msgstr ""
+
+#: inc/Field/MetaBox.php:177
+#: inc/Field/MetaBoxPro.php:183
+msgid "Enable to Load the last version of the pdf"
+msgstr ""
+
+#: inc/Field/MetaBox.php:181
+#: inc/Field/MetaBoxPro.php:187
+msgid "Horizontal Scrollbar"
 msgstr ""
 
 #: inc/Field/MetaBox.php:185
 #: inc/Field/MetaBoxPro.php:190
-#: zip/pdf-poster/inc/Field/MetaBox.php:185
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:190
 msgid "Set Horizontal scrollbar as default"
+msgstr ""
+
+#: inc/Field/MetaBox.php:189
+#: inc/Field/MetaBoxPro.php:194
+msgid "Jump To Page"
 msgstr ""
 
 #: inc/Field/MetaBox.php:192
 #: inc/Field/MetaBoxPro.php:196
-#: zip/pdf-poster/inc/Field/MetaBox.php:192
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:196
 msgid "Enter the page number that will be shown in the viewer"
 msgstr ""
 
 #: inc/Field/MetaBox.php:197
 #: inc/Field/MetaBoxPro.php:201
-#: zip/pdf-poster/inc/Field/MetaBox.php:197
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:201
 msgid "Zoom Level"
 msgstr ""
 
 #: inc/Field/MetaBox.php:200
 #: inc/Field/MetaBoxPro.php:203
-#: zip/pdf-poster/inc/Field/MetaBox.php:200
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:203
 msgid "Enter the zoom level. leave empty to set auto"
 msgstr ""
 
 #: inc/Field/MetaBox.php:206
 #: inc/Field/MetaBoxPro.php:209
-#: zip/pdf-poster/inc/Field/MetaBox.php:206
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:209
 msgid "Enable Popup"
 msgstr ""
 
 #: inc/Field/MetaBox.php:209
 #: inc/Field/MetaBoxPro.php:211
-#: zip/pdf-poster/inc/Field/MetaBox.php:209
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:211
 msgid "Enable or disable the popup functionality."
 msgstr ""
 
+#: inc/Field/MetaBoxPro.php:22
+msgid "PDF Poster Configuration"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:66
+#: inc/Field/SettingsPro.php:58
+#: inc/Field/SettingsPro.php:173
+msgid "Height"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:77
+#: inc/Field/SettingsPro.php:68
+#: inc/Field/SettingsPro.php:183
+msgid "Width"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:106
+msgid "<span style=\"color:red\">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Download button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:124
+#: inc/Field/MetaBoxPro.php:138
+#: inc/Field/SettingsPro.php:104
+#: inc/Field/SettingsPro.php:117
+#: inc/Field/SettingsPro.php:221
+#: inc/Field/SettingsPro.php:235
+msgid "Button Text"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:145
+#: inc/Field/SettingsPro.php:242
+msgid "Open in new window"
+msgstr ""
+
 #: inc/Field/MetaBoxPro.php:216
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:216
 msgid "Popup Button Text"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:218
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:218
 msgid "Text on the button you want to show."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:224
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:224
 msgid "Button Background Color"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:226
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:226
 msgid "Choose a background color for the button."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:232
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:232
 msgid "Button Text Color"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:234
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:234
 msgid "Choose a text color for the button."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:240
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:240
 msgid "Button Font Size"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:242
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:242
 msgid "Specify the font size for the button (in px)."
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:249
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:249
 msgid "Button Padding"
 msgstr ""
 
 #: inc/Field/MetaBoxPro.php:251
-#: zip/pdf-poster/inc/Field/MetaBoxPro.php:251
 msgid "Specify the padding for the button (e.g., 10px 20px)."
 msgstr ""
 
+#: inc/Field/Settings.php:18
+#: inc/Field/SettingsPro.php:22
+msgid "PDF Poster Settings"
+msgstr ""
+
+#: inc/Field/Settings.php:19
+#: inc/Field/SettingsPro.php:23
+msgid "Settings"
+msgstr ""
+
+#: inc/Field/Settings.php:40
+#: inc/Field/SettingsPro.php:280
+msgid "Enable Gutenberg shortcode generator"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:49
+msgid "Quick Embedder"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:85
+msgid "Enable default browser"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:88
+msgid "Sometimes Microsoft Edge block pdf due to security reason. Check if you want to use Microsoft Edge default PDF Viewer to solve the problem. Note: protection will not work if you check this option"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:119
+msgid "View Full Screen"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:124
+msgid "Full Screen Open in new window"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:144
+#: inc/Field/SettingsPro.php:266
+msgid "Check to enable Thumbnails Toogle Menu in the viewer"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:154
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:275
+#: inc/PostType/PDFPoster.php:118
+msgid "Shortcode"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:290
+msgid "Cloud API"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:300
+msgid "Dropbox App Key"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:301
+msgid "<a href=\"https://www.dropbox.com/developers/apps?_tk=pilot_lp&_ad=topbar4&_camp=myapps\" target=\"_blank\">Create Here</a> to create api key"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:311
+msgid "Google API key"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:317
+msgid "Google Client ID"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:322
+msgid "Google Project Number"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:332
+msgid "Adobe Client Key"
+msgstr ""
+
 #: inc/Model/Metabox.php:34
-#: zip/pdf-poster/inc/Model/Metabox.php:34
 msgid "New Feature ! Quick Embed"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:56
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:56
 msgid "Pdf Poster"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:57
 #: inc/PostType/PDFPoster.php:58
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:57
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:58
 msgid "Add New Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:59
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:59
 msgid "Edit"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:60
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:60
 msgid "New Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:61
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:61
 msgid "View Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:62
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:62
 msgid "Search Pdf"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:63
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:63
 msgid "Sorry, we couldn't find the Pdf file you are looking for."
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:115
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:115
 msgid "Supports"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:118
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:118
-msgid "Shortcode"
-msgstr ""
-
 #: inc/PostType/PDFPoster.php:119
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:119
 msgid "Copy and paste this shortcode into your posts, pages and widget:"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:123
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:123
 msgid "Template Include"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:124
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:124
 msgid "Copy and paste the PHP code into your template file:"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:138
-#: zip/pdf-poster/inc/PostType/PDFPoster.php:138
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
 #: build/blocks/selector/index.js:1
-#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Poster Selector"
 msgstr ""
 
 #: build/blocks/selector/index.js:1
-#: zip/pdf-poster/build/blocks/selector/index.js:1
 msgid "PDF Viewer"
 msgstr ""
 
-#: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
-#: zip/pdf-poster/blocks/pdfposter/block.json
-#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block title"
 msgid "PDF Poster"
 msgstr ""
 
-#: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
-#: zip/pdf-poster/blocks/pdfposter/block.json
-#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "PDF poster"
 msgstr ""
 
-#: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
-#: zip/pdf-poster/blocks/pdfposter/block.json
-#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "Document poster"
 msgstr ""
 
-#: blocks/pdfposter/block.json
 #: build/blocks/pdf-poster/block.json
-#: zip/pdf-poster/blocks/pdfposter/block.json
-#: zip/pdf-poster/build/blocks/pdf-poster/block.json
 msgctxt "block keyword"
 msgid "PDF Embedder"
 msgstr ""
 
 #: build/blocks/selector/block.json
-#: zip/pdf-poster/build/blocks/selector/block.json
 msgctxt "block title"
 msgid "PDF Poster Selector"
 msgstr ""
 
 #: build/blocks/selector/block.json
-#: zip/pdf-poster/build/blocks/selector/block.json
 msgctxt "block keyword"
 msgid "PDF poster Selector"
 msgstr ""

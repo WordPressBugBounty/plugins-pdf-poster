@@ -1,29 +1,34 @@
 <?php
+
 namespace PDFPro\Database;
 
 use PDFPro\Database\Table;
 
-class Init{
-   
-    public static function get_tables(){
+class Init
+{
+
+    public static function get_tables()
+    {
         return [
             Presets::class,
         ];
     }
 
-    public function register(){
-        foreach(self::get_tables() as $class){
+    public function register()
+    {
+        foreach (self::get_tables() as $class) {
             $table = self::instantiate($class);
-            if(method_exists($table, 'install')){
+            if (method_exists($table, 'install')) {
                 $table->install();
             }
         }
     }
 
-    public static function drop(){
-        foreach(self::get_tables() as $class){
+    public static function drop()
+    {
+        foreach (self::get_tables() as $class) {
             $table = self::instantiate($class);
-            if(method_exists($table, 'uninstall')){
+            if (method_exists($table, 'uninstall')) {
                 $table->uninstall();
             }
         }
@@ -31,11 +36,8 @@ class Init{
     }
 
 
-    private static function instantiate($class){
+    private static function instantiate($class)
+    {
         return new $class(new Table);
     }
 }
-
-
-
-
