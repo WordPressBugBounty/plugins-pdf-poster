@@ -19,7 +19,7 @@ class Settings
 				'menu_title'  => __('Settings', 'pdfp'),
 				'menu_slug'   => 'fpdf-settings',
 				'menu_type'   => 'submenu',
-				'menu_parent' => 'edit.php?post_type=pdfposter',
+				'menu_parent' => 'pdf-poster',
 				'theme' => 'light',
 				'show_bar_menu' => false,
 				'footer_text' => 'Thank you for using PDF Poster',

@@ -3,7 +3,7 @@
         'name' => 'raju/pdf-poster-pro',
         'pretty_version' => 'dev-dev',
         'version' => 'dev-dev',
-        'reference' => '36788ef42c71bb4924617ca0d11ef79b4cef19d0',
+        'reference' => '4c6daec8823f03c77f0fdf5912cc5f542581cbb4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'freemius/wordpress-sdk' => array(
-            'pretty_version' => '2.12.0',
-            'version' => '2.12.0.0',
-            'reference' => 'db6f35a2b3d318a53330409dbeab49156ee76dd8',
+            'pretty_version' => '2.12.1',
+            'version' => '2.12.1.0',
+            'reference' => 'fedeba08eb3e62af5f84bd6d602f98636467cffc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../freemius/wordpress-sdk',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'raju/pdf-poster-pro' => array(
             'pretty_version' => 'dev-dev',
             'version' => 'dev-dev',
-            'reference' => '36788ef42c71bb4924617ca0d11ef79b4cef19d0',
+            'reference' => '4c6daec8823f03c77f0fdf5912cc5f542581cbb4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -78,6 +78,7 @@ class Shortcodes
     $attrs = shortcode_atts($this->pdf_embed_attrs(), $atts);
 
     $block = $this->pdf_embed_to_block($attrs);
+
     return render_block($block);
   }
 

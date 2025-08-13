@@ -1,69 +1,135 @@
-=== PDF Poster - PDF Embedder Plugin ===
-Contributors: abuhayat, shehabulislam, freemius,bplugins
-Tags: PDF Embedder, embed pdf, pdf viewer, pdf, pdf plugin
+=== PDF Poster – Display PDF Files with Custom Viewer ===
+Contributors: bplugins, abuhayat, shehabulislam, freemius
+Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.2.4
+Stable tag: 2.3.0
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily embed PDFs in WordPress with our PDF Poster plugin. Lightweight, user-friendly, with Gutenberg PDF Viewer Block.
+PDF Poster lets you embed PDF files in WordPress using a responsive viewer and block support, including full-screen, download, and print options.
 
 == Description ==
-
-This WordPress PDF Embedder plugin makes it simple to customize your PDFs. You can adjust the width and height, making it fit your layout perfectly. It lets users print PDFs easily and shows the filename clearly at the top. Plus, there's a handy full-screen button for better viewing.
-
-With the download button placed conveniently at the top, users can get the PDF with just one click. If you use the Gutenberg block editor, you'll find integrating PDFs a breeze with this WordPress PDF plugin. There are also extra blocks available for added flexibility.
-
-The pro version offers even more features. You can embed PDFs without any distracting frames, protect your content from copying, and save time with preset viewer settings. There's also a shortcode for easy PDF embedding and tools for quick embedding in the classic editor.
-
-Users can navigate PDFs more smoothly with a sidebar menu, and they have control over download and full-screen buttons, including translation options. You can even set a specific page number to jump to in the PDF.
-
-Overall, this plugin for PDFs is perfect for anyone who wants to showcase documents, protect their content, or improve engagement with PDFs on their WordPress site.
-
-**[See Live Demo](https://bplugins.com/products/pdf-poster/#demos "Demo")** 
-**[Buy The Pro](https://bplugins.com/products/pdf-poster/#pricing "Buy Pro version")** 
+**The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users**
 
 
-### How to Use PDF Poster?
+[**PDF Poster**](https://bplugins.com/products/pdf-poster/) | [**Documentation**](https://bplugins.com/docs/pdf-poster/) | [**Pricing**](https://bplugins.com/products/pdf-poster/#pricing) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/pdf-poster/#demos)
 
-See how easy PDF Poster plugin is to use! 
+[**PDF Poster**](https://bplugins.com/products/pdf-poster/) is a flexible plugin that allows you to embed PDF documents directly into WordPress posts, pages, widgets, or templates. Whether you're sharing brochures, eBooks, business files, or portfolios, the plugin provides a responsive and accessible layout that works across all devices.
 
-https://www.youtube.com/watch?v=PcYaAw7gX7w
+The plugin supports the Gutenberg block editor. It includes content protection, customization options for layout dimensions, full-screen mode, download and print buttons, and file display settings.
 
-### PDF Poster Features
-- Add width and height to customize the layout of the PDF.
-- Enable printing of the PDF file for the user.
-- Show the filename at the top of the file.
-- Include a full-screen button with dynamic text.
-- Place the download button at the top for easy access to download the PDF.
- - Gutenberg block to integrate with the block editor.
 
-### PDF Poster Pro version features
-- Raw PDF viewer allows you to embed PDF files without the black viewer frame. (Only pdf)
-- Protect your content by preventing copies and downloads.
-- Save your time by presetting your viewer preferences. (Settings page )
-- [pdf_embed] shortcode allows you to embed pdf without listing. 
-- Additional Gutenberg blocks (2 blocks)
-- Quick Embed And ShortCode generator In classic editor.
-- Sidebar toggle menu in viewer
-- Control over the download button.
-- Control Over View full-screen Button.
-- Translate Download and View Full-Screen buttons 
-- Set Jump to the page number to show a specific page of the pdf file.
-- Improved performance. 
-Get The PRO -> :  [BUY The PDF Poster PRO ](https://gum.co/zUvK "BUY NOW")  
+### Key Features – Free Version
+- **Custom Width & Height**: Adjust PDF dimensions to perfectly fit your layout.
 
-== Shortcode Usage ==
+- **Print Support**: Let users print PDFs directly from the viewer.
+
+- **Filename Display**: Show the PDF file name clearly at the top.
+
+- **Full-Screen Button**: Enhance readability with a dynamic full-screen toggle.
+
+- **Download Button**: One-click download is placed conveniently at the top.
+
+- **Gutenberg Block Integration**: Easily add PDFs using the block editor.
+
+- **User-Friendly Viewer**: Smooth scrolling and reading experience across all devices.
+
+
+### PDF Poster Pro – Unlock Advanced Features
+[**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/#pricing) adds features for advanced layout, control, and document protection.
+
+**Pro Features Include:**
+
+- **Raw PDF Viewer**: Embed clean PDFs without black frames or toolbars.
+
+- **Content Protection**: Disable right-clicks and copying to safeguard your documents.
+
+- **Preset Viewer Settings**: Save time by setting default viewer preferences globally.
+
+- **Shortcode Embedding**: Use **`[pdf_embed]`** to place PDFs anywhere — no clutter.
+
+- **Classic Editor Tools**: Includes a quick embed tool and shortcode generator.
+
+- **Additional Gutenberg Blocks**: Includes 2 extra blocks for more flexibility.
+
+- **Sidebar Toggle Menu**: Allow viewers to navigate easily using a collapsible sidebar.
+
+- **Full Control Over Buttons**: Show/hide download and full-screen buttons.
+
+- **Translate Buttons**: Customize labels like “**Download**” and “**Full-Screen**” for localization.
+
+- **Jump to Page**: Set a specific page number to open by default.
+
+- **Zoom Level**: Predefine a zoom percentage or leave it on auto.
+
+- **Open in New Window**: Choose to open PDFs in a separate tab.
+
+- **Google Doc Viewer**: Use this option to bypass PDF block issues in some browsers.
+
+- **Horizontal Scrollbar**: Enable horizontal scrolling as the default for wide PDFs.
+
+- **Thumbnails Toggle**: Show/hide thumbnail navigation panel.
+
+- **Thumbnails Open by Default**: Improve navigation with thumbnails visible on load.
+
+- **Always Load the Latest Version**: Ensure viewers always see the updated PDF file.
+
+- **Enable Popup Viewer**: Display PDFs in a modal popup window.
+
+- **Show Only PDF**: Hide the background and PDF menu for a distraction-free layout.
+
+[**Try the PDF Poster PRO**](https://bplugins.com/products/pdf-poster/#pricing) – Unlock all premium features now!
+
+
+### How to Use PDF Poster – Step-by-Step Guide
+
+https://youtube.com/watch?v=PcYaAw7gX7w
+
+Getting started with PDF Poster is quick and easy!
+
+#### Step-by-Step Instructions
+
+- After installing, go to the “PDF Poster” menu in your WordPress dashboard
+
+- Upload one or more PDF documents
+
+- Copy the Shortcode shown in the editor or PDF list
+
+- Paste the shortcode into any post, page, or widget area
+
+- Hit the Publish button.
+
+Enjoy your beautifully embedded PDF!
+
+**Gutenberg Block Integration**
+
+Using the block editor? Here’s how to embed PDFs in just a few clicks:
+Open a post or page in the WordPress editor
+
+- Click the + icon or use the slash command (/pdf)
+
+- Find PDF Poster under the Layout Elements category
+
+- Click the icon to insert the block
+
+- Choose your PDF from the media library
+
+- Hit Publish and enjoy!
+
+[**Live Demo**](https://bplugins.com/products/pdf-poster/#demos) | [**Get PDF Poster PRO**](https://bplugins.com/products/pdf-poster/#pricing)
+
+
+### **Shortcode Usage**
 
 ### Shortcode
 
 [pdf_embed url="https://example.com/document.pdf" width="100%" height="842px" print="true" title="My PDF Document" download_btn="true" fullscreen_btn_text="View in Fullscreen"]
 
 
-### Attributes
+#### Attributes
 
 * **url** (required): The URL of the PDF file.
   * Default: `null`
@@ -94,27 +160,6 @@ Get The PRO -> :  [BUY The PDF Poster PRO ](https://gum.co/zUvK "BUY NOW")
 * **fullscreen_btn_text** (optional): Text for the fullscreen button.
   * Default: `"View Fullscreen"`
   * Example: `fullscreen_btn_text="Open Fullscreen"`
-  
-
-
-### How to use PDF Poster- step-by-step guide
-- After installation, you can see a sidebar menu in the WordPress dashboard called "PDF Poster"
-- Add one or more Documents from there. 
-- You will get a Shortcode for every PDF In The Editor Screen and PDF Lists.
-- Copy Shortcode 
-- Past the shortcode in post, page, and widget areas To publish them. if you want to publish a player in a template file use <?php echo do_shortcode('PLAYER_SHORTCODE') ?>
-- Enjoy!
-
-
-### Gutenberg Block to manage PDF files 
-- This plugin adds a Gutenberg Block Called PDF Poster Layout Elements Category 
-- Go to your WordPress Admin interface and open a post or page editor.
-- Click the plus button in the top left corner or in the body of the post/page.
-- Search or See in Layout Elements Category and select PDF Poster.
-- Click the Icon to add it.
-- Select A PDF document  
-- Publish and Enjoy! 
-
 
 
 ### User Feedback
@@ -135,16 +180,18 @@ Get The PRO -> :  [BUY The PDF Poster PRO ](https://gum.co/zUvK "BUY NOW")
 
 #### - Did you like this plugin? Dislike it? Have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
 
-= ⭐ Check out our other WordPress Plugins = 
 
-🔥 **[Html5 Audio Player](https://audioplayerwp.com/)** – Best audio player plugin for WordPress.
+### Check out our other WordPress Plugins-
 
-🔥 **[Html5 Video Player](https://wpvideoplayer.com/)** – Best video player plugin for WordPress.
+[**Html5 Video Player**](https://bplugins.com/products/html5-video-player/) – Display videos as single and playlist in multiple skins.
 
-🔥 **[StreamCast](https://wordpress.org/plugins/streamcast)** – A fully-featured Radio Player Plugin for WordPresss.
+[**Html5 Audio Player**](https://bplugins.com/products/html5-audio-player/) – Listen audios with awesome visuals.
 
-🔥 **[3D Viewer](https://3d-viewer.bplugins.com/)** – Display interactive 3D models on the webs.
+[**StreamCast**](https://bplugins.com/products/streamcast-radio-player/) – Customizable radio player with different skins.
 
+[**3D Viewer**](https://bplugins.com/products/3d-viewer/) – Embed 3D models and 3D products with interaction.
+
+[**Advanced Post Block**](https://bplugins.com/products/advanced-post-block/) – Show posts and custom posts in different layouts.
 
 
 == Installation ==
@@ -188,12 +235,20 @@ If you find a conflict between our plugin and a third-party plugin, please let u
 1. Sidebar menu
 2. Adding a pdf file in dashboard area.
 3. Output / Frontend preview
-4. Full Screen preview 
+4. Full Screen preview
+
 
 == Changelog ==
 
-= 2.2.4 - 25 May, 2025 =
+= 2.3.0 - 13 Aug, 2025 =
++ New Page: Dashboard
+* Fixed: Fixed Preset Preview issue
+* Fixed: Adobe Embedder issue
+* Improved: Code
+
+= 2.2.4 - 14 July, 2025 =
 * Fixed: ACF Pro - wysiwig editor - "Add PDF" button does not work
+* Fixed: quick embed options does not work
 
 = 2.2.3 - 11 May, 2025 =
 * Fixed: file upload issue

@@ -33,9 +33,9 @@ class EnqueueAssets
     {
         // wp_enqueue_script('jquery');
         wp_enqueue_style('pdfp-public',  PDFPRO_PLUGIN_DIR . 'build/public.css', array(), PDFPRO_VER);
-        wp_register_script('adobe-viewer', 'https://documentcloud.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
-        wp_register_script('pdfp-public', PDFPRO_PLUGIN_DIR . 'build/public.js', array(), PDFPRO_VER);
-        wp_register_script('dropbox-picker', 'https://www.dropbox.com/static/api/2/dropins.js');
+        wp_register_script('adobe-viewer', 'https://acrobatservices.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER, true);
+        wp_register_script('pdfp-public', PDFPRO_PLUGIN_DIR . 'build/public.js', array(), PDFPRO_VER, true);
+        wp_register_script('dropbox-picker', 'https://www.dropbox.com/static/api/2/dropins.js', [], '1.0', true);
 
         $option = get_option('fpdf_option', []);
 
@@ -54,7 +54,7 @@ class EnqueueAssets
     public function script_loader_tag($tag, $handle, $src)
     {
         if ($handle === 'adobe-viewer') {
-            return "<script src='https://documentcloud.adobe.com/view-sdk/viewer.js'></script>";
+            return "<script src='https://acrobatservices.adobe.com/view-sdk/viewer.js'></script>";
         }
         return $tag;
     }
@@ -67,9 +67,8 @@ class EnqueueAssets
         $option = get_option('fpdf_option');
         $postType = get_post_type();
         if (in_array($hook, ['admin_page_pdf-poster-pricing-manual', 'pdfposter_page_fpdf-support', 'pdfposter_page_fpdf-settings', 'post.php', 'post-new.php']) || $postType === 'pdfposter') {
-            wp_enqueue_script('adobe-viewer', 'https://documentcloud.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
+            wp_enqueue_script('adobe-viewer', 'https://acrobatservices.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
         }
-
         wp_enqueue_script('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.js', array('jquery', 'wp-element'), PDFPRO_VER, false);
         wp_enqueue_style('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.css', array(), PDFPRO_VER);
 

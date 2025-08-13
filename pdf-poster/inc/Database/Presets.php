@@ -1,8 +1,6 @@
 <?php
 
 namespace PDFPro\Database;
-// require_once(__DIR__.'/Table.php');
-// use PDFPro\Database\Table;
 
 class Presets
 {

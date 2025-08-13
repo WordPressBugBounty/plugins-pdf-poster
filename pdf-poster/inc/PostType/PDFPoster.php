@@ -66,6 +66,7 @@ class PDFPoster
                 'show_ui' => true,
                 // 'publicly_queryable' => true,
                 // 'exclude_from_search' => true,
+                'show_in_menu' => 'pdf-poster',
                 'show_in_rest' => true,
                 'menu_position' => 14,
                 'menu_icon' => PDFPRO_PLUGIN_DIR . '/img/icn.png',
@@ -111,17 +112,17 @@ class PDFPoster
 ?>
             <div class="pdfp_playlist_shortcode">
                 <div class="shortcode-heading">
-                    <div class="icon"><span class="dashicons dashicons-pdf"></span> <?php _e("PDF Poster", "pdfp") ?></div>
-                    <div class="text"> <a href="https://bplugins.com/support/" target="_blank"><?php _e("Supports", "pdfp") ?></a></div>
+                    <div class="icon"><span class="dashicons dashicons-pdf"></span> <?php esc_html_e("PDF Poster", "pdfp") ?></div>
+                    <div class="text"> <a href="https://bplugins.com/support/" target="_blank"><?php esc_html_e("Supports", "pdfp") ?></a></div>
                 </div>
                 <div class="shortcode-left">
-                    <h3><?php _e("Shortcode", "pdfp") ?></h3>
-                    <p><?php _e("Copy and paste this shortcode into your posts, pages and widget:", "pdfp") ?></p>
+                    <h3><?php esc_html_e("Shortcode", "pdfp") ?></h3>
+                    <p><?php esc_html_e("Copy and paste this shortcode into your posts, pages and widget:", "pdfp") ?></p>
                     <div class="shortcode" selectable>[pdf id='<?php echo esc_attr($post->ID); ?>']</div>
                 </div>
                 <div class="shortcode-right">
-                    <h3><?php _e("Template Include", "pdfp") ?></h3>
-                    <p><?php _e("Copy and paste the PHP code into your template file:", "pdfp"); ?></p>
+                    <h3><?php esc_html_e("Template Include", "pdfp") ?></h3>
+                    <p><?php esc_html_e("Copy and paste the PHP code into your template file:", "pdfp"); ?></p>
                     <div class="shortcode">&lt;?php echo do_shortcode('[pdf id="<?php echo esc_html($post->ID); ?>"]');
                         ?&gt;</div>
                 </div>
@@ -153,7 +154,7 @@ class PDFPoster
 
     function pdfp_updated_messages($messages)
     {
-        $messages[$this->post_type][1] = __('Player updated ');
+        $messages[$this->post_type][1] = __('Player updated ', 'pdfp');
         return $messages;
     }
 
@@ -237,7 +238,7 @@ class PDFPoster
     {
         add_meta_box(
             'Shortcode',
-            __('New Feature ! Quick Embed', 'ytp'),
+            __('New Feature ! Quick Embed', 'pdfp'),
             [$this, 'pdfp_pro_shortcode_wid'],
             'pdfposter',
             'side',
