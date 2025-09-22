@@ -51,7 +51,7 @@ class MetaBox
 				array(
 					'id'    => 'source',
 					'type'  => 'upload',
-					'title' => __('add PDF source', 'pdfp'),
+					'title' => __('Add PDF source', 'pdfp'),
 					'attributes' => array('id' => 'picker_field')
 				),
 				array(

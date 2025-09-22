@@ -26,7 +26,7 @@ if (!class_exists('PDFPAdmin')) {
 			add_menu_page(
 				__('PDF Poster', 'pdfp'),
 				__('PDF Poster', 'pdfp'),
-				'manage_options',
+				'edit_others_posts',
 				'pdf-poster',
 				[$this, 'dashboardPage'],
 				PDFPRO_PLUGIN_DIR . '/img/icn.png',
@@ -35,9 +35,19 @@ if (!class_exists('PDFPAdmin')) {
 
 			add_submenu_page(
 				'pdf-poster',
-				__('Dashboard', 'pdfp'),
-				__('Dashboard', 'pdfp'),
+				__('Add New', 'pdfp'),
+				__(' &#8627; Add New', 'pdfp'),
 				'manage_options',
+				'pdf-poster-add-new',
+				[$this, 'redirectToAddNew'],
+				2
+			);
+
+			add_submenu_page(
+				'pdf-poster',
+				__('Dashboard', 'pdfp'),
+				__('Dashboard', 'pdfp'),
+				'edit_others_posts',
 				'pdf-poster',
 				[$this, 'dashboardPage'],
 				0
@@ -46,15 +56,37 @@ if (!class_exists('PDFPAdmin')) {
 
 		function dashboardPage()
 		{ ?>
-			<div id='pdfpAdminDashboard' data-info=<?php echo esc_attr(wp_json_encode([
-														'version' => PDFPRO_VER
-													])); ?>></div>
+			<div id='pdfpAdminDashboard' data-info='<?php echo esc_attr(wp_json_encode([
+														'version' => PDFPRO_VER,
+														'isPremium' => pdfp_fs()->can_use_premium_code(),
+														'hasPro' => true
+													])); ?>'></div>
 		<?php }
 
 		function upgradePage()
 		{ ?>
-			<div id='pdfpAdminUpgrade'>Coming soon...</div>
-<?php }
+			<div id='pdfpAdminUpgrade' data-info='<?php echo esc_attr(wp_json_encode([
+														'version' => PDFPRO_VER,
+														'isPremium' => pdfp_fs()->can_use_premium_code(),
+														'hasPro' => true
+													])); ?>'>Coming soon...</div>
+			<?php }
+
+		/**	
+		 * Redirect to add new Model Viewer
+		 * */
+		function redirectToAddNew()
+		{
+			if (function_exists('headers_sent') && headers_sent()) {
+			?>
+				<script>
+					window.location.href = "<?php echo esc_url(admin_url('post-new.php?post_type=pdfposter')); ?>";
+				</script>
+<?php
+			} else {
+				wp_redirect(admin_url('post-new.php?post_type=pdfposter'));
+			}
+		}
 	}
 	new PDFPAdmin;
 }

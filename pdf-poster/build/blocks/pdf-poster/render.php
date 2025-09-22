@@ -23,7 +23,7 @@ $isPopupEnabled = isset($popupOptions['enabled']) ? $popupOptions['enabled'] : f
     style="text-align: <?php echo esc_attr($alignment) ?>">
     <?php if (!$protect && !$isPopupEnabled) { ?>
 
-        <iframe style="border:0;" width="100%" height="800px" class="pdfp_unsupported_frame" src="//docs.google.com/gview?embedded=true&url=<?php echo esc_url($file) ?>"></iframe>
+        <iframe title="<?php echo esc_attr($attributes['title']); ?>" style="border:0;" width="100%" height="800px" class="pdfp_unsupported_frame" src="//docs.google.com/gview?embedded=true&url=<?php echo esc_url($file) ?>"></iframe>
 
     <?php } ?>
 </div>

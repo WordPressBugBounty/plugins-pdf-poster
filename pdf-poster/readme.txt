@@ -4,7 +4,7 @@ Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ PDF Poster lets you embed PDF files in WordPress using a responsive viewer and b
 **The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users**
 
 
-[**PDF Poster**](https://bplugins.com/products/pdf-poster/) | [**Documentation**](https://bplugins.com/docs/pdf-poster/) | [**Pricing**](https://bplugins.com/products/pdf-poster/#pricing) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/pdf-poster/#demos)
+[**PDF Poster**](https://bplugins.com/products/pdf-poster/) | [**Documentation**](https://bplugins.com/docs/pdf-poster/) | [**Pricing**](https://bplugins.com/products/pdf-poster/pricing) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/pdf-poster/#demos)
 
 [**PDF Poster**](https://bplugins.com/products/pdf-poster/) is a flexible plugin that allows you to embed PDF documents directly into WordPress posts, pages, widgets, or templates. Whether you're sharing brochures, eBooks, business files, or portfolios, the plugin provides a responsive and accessible layout that works across all devices.
 
@@ -39,7 +39,7 @@ The plugin supports the Gutenberg block editor. It includes content protection, 
 
 
 ### PDF Poster Pro – Unlock Advanced Features
-[**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/#pricing) adds features for advanced layout, control, and document protection.
+[**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/pricing) adds features for advanced layout, control, and document protection.
 
 **Pro Features Include:**
 
@@ -81,12 +81,12 @@ The plugin supports the Gutenberg block editor. It includes content protection, 
 
 - **Show Only PDF**: Hide the background and PDF menu for a distraction-free layout.
 
-[**Try the PDF Poster PRO**](https://bplugins.com/products/pdf-poster/#pricing) – Unlock all premium features now!
+[**Try the PDF Poster PRO**](https://bplugins.com/products/pdf-poster/pricing) – Unlock all premium features now!
 
 
 ### How to Use PDF Poster – Step-by-Step Guide
 
-https://youtube.com/watch?v=PcYaAw7gX7w
+https://youtube.com/watch?v=419cCdIRf3g
 
 Getting started with PDF Poster is quick and easy!
 
@@ -119,7 +119,7 @@ Open a post or page in the WordPress editor
 
 - Hit Publish and enjoy!
 
-[**Live Demo**](https://bplugins.com/products/pdf-poster/#demos) | [**Get PDF Poster PRO**](https://bplugins.com/products/pdf-poster/#pricing)
+[**Live Demo**](https://bplugins.com/products/pdf-poster/#demos) | [**Get PDF Poster PRO**](https://bplugins.com/products/pdf-poster/pricing)
 
 
 ### **Shortcode Usage**
@@ -228,6 +228,8 @@ This plugin is compatible with most plugins. But, unfortunately, we cannot check
 
 If you find a conflict between our plugin and a third-party plugin, please let us know and we will definitely release an update of our plugin to fix the problem.
 
+= Where do I report security bugs found in this plugin? =
+Please report security bugs found in the source code of the PDF Poster plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fbc24-d506-44cf-b163-a113692136c7). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 
 == Screenshots ==
@@ -240,8 +242,12 @@ If you find a conflict between our plugin and a third-party plugin, please let u
 
 == Changelog ==
 
+= 2.3.1 - 22 Sep, 2025 =
+* Fixed: Fullscreen issue
+* Fixed: Divi Builder Image Upload issue
+
 = 2.3.0 - 13 Aug, 2025 =
-+ New Page: Dashboard
+* New Page: Dashboard
 * Fixed: Fixed Preset Preview issue
 * Fixed: Adobe Embedder issue
 * Improved: Code

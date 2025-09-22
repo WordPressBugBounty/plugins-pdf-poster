@@ -69,7 +69,7 @@ class EnqueueAssets
         if (in_array($hook, ['admin_page_pdf-poster-pricing-manual', 'pdfposter_page_fpdf-support', 'pdfposter_page_fpdf-settings', 'post.php', 'post-new.php']) || $postType === 'pdfposter') {
             wp_enqueue_script('adobe-viewer', 'https://acrobatservices.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER);
         }
-        wp_enqueue_script('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.js', array('jquery', 'wp-element'), PDFPRO_VER, false);
+        wp_enqueue_script('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.js', array('jquery'), PDFPRO_VER, false);
         wp_enqueue_style('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.css', array(), PDFPRO_VER);
 
 
