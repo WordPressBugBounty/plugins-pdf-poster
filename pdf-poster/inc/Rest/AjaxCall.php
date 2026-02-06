@@ -2,6 +2,8 @@
 
 namespace PDFPro\Rest;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class AjaxCall
 {
     protected static $_instance = null;

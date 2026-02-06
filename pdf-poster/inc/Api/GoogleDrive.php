@@ -3,6 +3,8 @@ namespace PDFPro\Api;
 
 use PDFPro\Api\GoogleDriveApi;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class GoogleDrive{
 
     private $fieldId = null;

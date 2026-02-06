@@ -2,6 +2,8 @@
 
 namespace PDFPro\Database;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Table
 {
     /**

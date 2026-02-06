@@ -2,6 +2,8 @@
 
 namespace PDFPro;
 
+if (!defined('ABSPATH')) exit;
+
 use stdClass;
 
 class Init

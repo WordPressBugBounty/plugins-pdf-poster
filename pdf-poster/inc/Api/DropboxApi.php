@@ -2,6 +2,8 @@
 
 namespace PDFPro\Api;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class DropboxApi
 {
 
@@ -16,6 +18,7 @@ class DropboxApi
         }
         $this->appKey = $appKey;
 
+        add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueScripts']);
         add_filter('script_loader_tag', [$this, 'modifyDropboxScript'], 10, 3);
         add_action('admin_footer', [$this, 'initializePicker']);
@@ -51,7 +54,7 @@ class DropboxApi
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 if (Dropbox) {
-                    options = {
+                    let options = {
                         success: function(file) {
                             const field = document.getElementById('<?php echo esc_html($this->fieldId) ?>');
                             if (field) field.value = file?.[0]?.link
@@ -60,6 +63,7 @@ class DropboxApi
                         linkType: "preview", // or "direct", "preview"
                         multiselect: false, // or true
                         folderselect: false, // or true
+                        extensions: [".pdf"],
                     };
 
                     var button = Dropbox.createChooseButton(options);

@@ -4,6 +4,8 @@ namespace PDFPro\Database;
 
 use PDFPro\Database\Table;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Init
 {
 

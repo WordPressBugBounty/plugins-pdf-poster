@@ -2,6 +2,8 @@
 
 namespace PDFPro\Base;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class GlobalChanges
 {
     protected static $_instance = null;

@@ -5,6 +5,8 @@ namespace PDFPro\Model;
 use PDFPro\Helper\Pipe;
 use PDFPro\Helper\Functions;
 
+if (!defined('ABSPATH')) exit;
+
 class Import
 {
 

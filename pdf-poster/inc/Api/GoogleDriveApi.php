@@ -2,6 +2,8 @@
 
 namespace PDFPro\Api;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class GoogleDriveApi
 {
 
@@ -33,7 +35,9 @@ class GoogleDriveApi
 
     public function enqueueScripts()
     {
-        wp_enqueue_script('google-drive-api', 'https://apis.google.com/js/api.js?onload=onApiLoad', [], '1.0', true);
+        // wp_enqueue_script('google-drive-api', 'https://apis.google.com/js/api.js?onload=onApiLoad', [], '1.0', true);
+        wp_enqueue_script('google-picker-api', 'https://apis.google.com/js/api.js', [], '1.0', true);
+        wp_enqueue_script('google-picker-client', 'https://accounts.google.com/gsi/client?onLoad=gisLoaded', [], '1.0', true);
     }
 
     public function initializePicker()

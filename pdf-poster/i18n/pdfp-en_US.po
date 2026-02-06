@@ -1,25 +1,25 @@
-# Copyright (C) 2025 bPlugins
+# Copyright (C) 2026 bPlugins
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: PDF Poster 2.3.1\n"
+"Project-Id-Version: PDF Poster 2.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pdf-poster-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-22T10:54:39+00:00\n"
+"POT-Creation-Date: 2026-01-17T10:30:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: pdfp\n"
 
 #. Plugin Name of the plugin
 #: pdf-poster.php
-#: inc/admin.php:27
-#: inc/admin.php:28
-#: inc/PostType/PDFPoster.php:55
-#: inc/PostType/PDFPoster.php:115
+#: inc/admin.php:29
+#: inc/admin.php:30
+#: inc/PostType/PDFPoster.php:59
+#: inc/PostType/PDFPoster.php:60
 #: build/blocks/selector/index.js:1
 msgid "PDF Poster"
 msgstr ""
@@ -44,405 +44,519 @@ msgstr ""
 msgid "https://profiles.wordpress.org/abuhayat"
 msgstr ""
 
-#: inc/admin.php:38
+#: inc/admin.php:40
 msgid "Add New"
 msgstr ""
 
-#: inc/admin.php:39
+#: inc/admin.php:41
 msgid " &#8627; Add New"
 msgstr ""
 
-#: inc/admin.php:48
-#: inc/admin.php:49
+#: inc/admin.php:50
+#: inc/admin.php:51
 msgid "Dashboard"
 msgstr ""
 
-#: inc/Field/MetaBox.php:54
-#: inc/Field/MetaBoxPro.php:61
+#: inc/Field/MetaBox.php:60
+#: inc/Field/MetaBoxPro.php:75
 msgid "Add PDF source"
 msgstr ""
 
-#: inc/Field/MetaBox.php:79
-#: inc/Field/MetaBoxPro.php:95
-#: inc/Field/SettingsPro.php:73
-#: inc/Field/SettingsPro.php:195
+#: inc/Field/MetaBox.php:85
+#: inc/Field/MetaBox.php:173
+#: inc/Field/MetaBoxPro.php:194
+#: inc/Field/SettingsPro.php:75
+#: inc/Field/SettingsPro.php:201
 msgid "Allow Print"
 msgstr ""
 
-#: inc/Field/MetaBox.php:82
-#: inc/Field/MetaBoxPro.php:98
-#: inc/Field/SettingsPro.php:76
-#: inc/Field/SettingsPro.php:198
+#: inc/Field/MetaBox.php:88
+#: inc/Field/MetaBox.php:176
+#: inc/Field/MetaBoxPro.php:197
+#: inc/Field/SettingsPro.php:78
+#: inc/Field/SettingsPro.php:204
 msgid "Check if you allow visitor to print the pdf file ."
 msgstr ""
 
-#: inc/Field/MetaBox.php:86
-#: inc/Field/MetaBoxPro.php:110
-#: inc/Field/SettingsPro.php:87
-#: inc/Field/SettingsPro.php:202
+#: inc/Field/MetaBox.php:92
+#: inc/Field/MetaBoxPro.php:128
+#: inc/Field/Settings.php:72
+#: inc/Field/SettingsPro.php:89
+#: inc/Field/SettingsPro.php:208
 msgid "Show file name on top"
 msgstr ""
 
-#: inc/Field/MetaBox.php:89
-#: inc/Field/MetaBoxPro.php:113
-#: inc/Field/SettingsPro.php:89
-#: inc/Field/SettingsPro.php:205
+#: inc/Field/MetaBox.php:95
+#: inc/Field/MetaBoxPro.php:131
+#: inc/Field/Settings.php:74
+#: inc/Field/SettingsPro.php:91
+#: inc/Field/SettingsPro.php:211
 msgid "Check if you want to show the file name in the top of the viewer."
 msgstr ""
 
-#: inc/Field/MetaBox.php:93
-#: inc/Field/MetaBoxPro.php:131
-#: inc/Field/SettingsPro.php:106
-#: inc/Field/SettingsPro.php:223
-msgid "Show view fullscreen button on top"
-msgstr ""
-
-#: inc/Field/MetaBox.php:97
-#: inc/Field/MetaBoxPro.php:134
-#: inc/Field/SettingsPro.php:108
-#: inc/Field/SettingsPro.php:226
-msgid "Check if you want to show \"View Full Screen\" Button in the top of the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:101
-msgid "Fullscreen Button Text"
-msgstr ""
-
-#: inc/Field/MetaBox.php:108
-#: inc/Field/MetaBoxPro.php:117
-#: inc/Field/SettingsPro.php:93
-#: inc/Field/SettingsPro.php:209
-msgid "Show download button on top"
-msgstr ""
-
-#: inc/Field/MetaBox.php:111
-#: inc/Field/MetaBoxPro.php:120
-#: inc/Field/SettingsPro.php:95
-#: inc/Field/SettingsPro.php:212
-msgid "Check if you want to show \"Download\" Button in the top of the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:115
-#: inc/Field/MetaBoxPro.php:88
-#: inc/Field/SettingsPro.php:188
+#: inc/Field/MetaBox.php:109
+#: inc/Field/MetaBoxPro.php:135
+#: inc/Field/SettingsPro.php:194
 msgid "Show Only PDF"
 msgstr ""
 
-#: inc/Field/MetaBox.php:119
-#: inc/Field/MetaBoxPro.php:91
-#: inc/Field/SettingsPro.php:191
+#: inc/Field/MetaBox.php:112
+#: inc/Field/MetaBoxPro.php:138
+#: inc/Field/SettingsPro.php:197
 msgid "Enable if you want to hide black background and PDF menu"
 msgstr ""
 
-#: inc/Field/MetaBox.php:124
-#: inc/Field/MetaBoxPro.php:102
-msgid "Enable Google Doc Viewer"
-msgstr ""
-
-#: inc/Field/MetaBox.php:140
-#: inc/Field/MetaBoxPro.php:151
-#: inc/Field/SettingsPro.php:125
-#: inc/Field/SettingsPro.php:243
-msgid "Protect my content"
-msgstr ""
-
-#: inc/Field/MetaBox.php:144
-#: inc/Field/MetaBoxPro.php:154
-#: inc/Field/SettingsPro.php:127
-#: inc/Field/SettingsPro.php:246
-msgid "Check to disable Mouse clicks to protect your content."
-msgstr ""
-
-#: inc/Field/MetaBox.php:148
-#: inc/Field/MetaBoxPro.php:158
-#: inc/Field/SettingsPro.php:131
-#: inc/Field/SettingsPro.php:250
-msgid "Disable Alert Message"
-msgstr ""
-
-#: inc/Field/MetaBox.php:152
-#: inc/Field/MetaBoxPro.php:161
-#: inc/Field/SettingsPro.php:133
-#: inc/Field/SettingsPro.php:253
-msgid "Check to disable alert message."
-msgstr ""
-
-#: inc/Field/MetaBox.php:157
-#: inc/Field/MetaBoxPro.php:166
-#: inc/Field/SettingsPro.php:137
-#: inc/Field/SettingsPro.php:258
+#: inc/Field/MetaBox.php:117
+#: inc/Field/MetaBoxPro.php:142
+#: inc/Field/SettingsPro.php:139
+#: inc/Field/SettingsPro.php:264
 msgid "Thumbnails toggle menu"
 msgstr ""
 
-#: inc/Field/MetaBox.php:161
-#: inc/Field/MetaBox.php:169
-#: inc/Field/MetaBoxPro.php:169
-#: inc/Field/MetaBoxPro.php:176
+#: inc/Field/MetaBox.php:120
+#: inc/Field/MetaBox.php:128
+#: inc/Field/MetaBoxPro.php:145
+#: inc/Field/MetaBoxPro.php:152
 msgid "Enable to enable Thumbnails Toogle Menu in the viewer"
 msgstr ""
 
-#: inc/Field/MetaBox.php:165
-#: inc/Field/MetaBoxPro.php:173
+#: inc/Field/MetaBox.php:125
+#: inc/Field/MetaBoxPro.php:149
 msgid "Thumbnails open by default"
 msgstr ""
 
-#: inc/Field/MetaBox.php:173
-#: inc/Field/MetaBoxPro.php:180
+#: inc/Field/MetaBox.php:133
+#: inc/Field/MetaBoxPro.php:156
 msgid "Load the last version of the pdf"
 msgstr ""
 
-#: inc/Field/MetaBox.php:177
-#: inc/Field/MetaBoxPro.php:183
+#: inc/Field/MetaBox.php:136
+#: inc/Field/MetaBoxPro.php:159
 msgid "Enable to Load the last version of the pdf"
 msgstr ""
 
-#: inc/Field/MetaBox.php:181
-#: inc/Field/MetaBoxPro.php:187
+#: inc/Field/MetaBox.php:141
+#: inc/Field/MetaBoxPro.php:163
 msgid "Horizontal Scrollbar"
 msgstr ""
 
-#: inc/Field/MetaBox.php:185
-#: inc/Field/MetaBoxPro.php:190
+#: inc/Field/MetaBox.php:144
+#: inc/Field/MetaBoxPro.php:166
 msgid "Set Horizontal scrollbar as default"
 msgstr ""
 
-#: inc/Field/MetaBox.php:189
-#: inc/Field/MetaBoxPro.php:194
+#: inc/Field/MetaBox.php:149
+#: inc/Field/MetaBoxPro.php:170
 msgid "Jump To Page"
 msgstr ""
 
-#: inc/Field/MetaBox.php:192
-#: inc/Field/MetaBoxPro.php:196
+#: inc/Field/MetaBox.php:151
+#: inc/Field/MetaBoxPro.php:172
 msgid "Enter the page number that will be shown in the viewer"
 msgstr ""
 
-#: inc/Field/MetaBox.php:197
-#: inc/Field/MetaBoxPro.php:201
+#: inc/Field/MetaBox.php:157
+#: inc/Field/MetaBoxPro.php:177
 msgid "Zoom Level"
 msgstr ""
 
-#: inc/Field/MetaBox.php:200
-#: inc/Field/MetaBoxPro.php:203
+#: inc/Field/MetaBox.php:159
+#: inc/Field/MetaBoxPro.php:179
 msgid "Enter the zoom level. leave empty to set auto"
 msgstr ""
 
-#: inc/Field/MetaBox.php:206
-#: inc/Field/MetaBoxPro.php:209
-msgid "Enable Popup"
+#: inc/Field/MetaBox.php:180
+#: inc/Field/MetaBoxPro.php:201
+#: inc/Field/Settings.php:78
+#: inc/Field/SettingsPro.php:95
+#: inc/Field/SettingsPro.php:215
+msgid "Show download button on top"
 msgstr ""
 
-#: inc/Field/MetaBox.php:209
-#: inc/Field/MetaBoxPro.php:211
-msgid "Enable or disable the popup functionality."
+#: inc/Field/MetaBox.php:183
+#: inc/Field/MetaBoxPro.php:204
+#: inc/Field/Settings.php:80
+#: inc/Field/SettingsPro.php:97
+#: inc/Field/SettingsPro.php:218
+msgid "Check if you want to show \"Download\" Button in the top of the viewer."
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:22
-msgid "PDF Poster Configuration"
-msgstr ""
-
-#: inc/Field/MetaBoxPro.php:66
-#: inc/Field/SettingsPro.php:53
-#: inc/Field/SettingsPro.php:168
-msgid "Height"
-msgstr ""
-
-#: inc/Field/MetaBoxPro.php:77
-#: inc/Field/SettingsPro.php:63
-#: inc/Field/SettingsPro.php:178
-msgid "Width"
-msgstr ""
-
-#: inc/Field/MetaBoxPro.php:106
-msgid "<span style=\"color:red\">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Download button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>"
-msgstr ""
-
-#: inc/Field/MetaBoxPro.php:124
-#: inc/Field/MetaBoxPro.php:138
-#: inc/Field/SettingsPro.php:99
-#: inc/Field/SettingsPro.php:112
-#: inc/Field/SettingsPro.php:216
-#: inc/Field/SettingsPro.php:230
+#: inc/Field/MetaBox.php:188
+#: inc/Field/MetaBox.php:204
+#: inc/Field/MetaBox.php:237
+#: inc/Field/MetaBoxPro.php:208
+#: inc/Field/MetaBoxPro.php:222
+#: inc/Field/MetaBoxPro.php:252
+#: inc/Field/Settings.php:84
+#: inc/Field/SettingsPro.php:101
+#: inc/Field/SettingsPro.php:114
+#: inc/Field/SettingsPro.php:222
+#: inc/Field/SettingsPro.php:236
 msgid "Button Text"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:145
-#: inc/Field/SettingsPro.php:237
+#: inc/Field/MetaBox.php:196
+#: inc/Field/MetaBoxPro.php:215
+#: inc/Field/SettingsPro.php:108
+#: inc/Field/SettingsPro.php:229
+msgid "Show view fullscreen button on top"
+msgstr ""
+
+#: inc/Field/MetaBox.php:200
+#: inc/Field/MetaBoxPro.php:218
+#: inc/Field/SettingsPro.php:110
+#: inc/Field/SettingsPro.php:232
+msgid "Check if you want to show \"View Full Screen\" Button in the top of the viewer."
+msgstr ""
+
+#: inc/Field/MetaBox.php:211
+#: inc/Field/MetaBoxPro.php:229
+#: inc/Field/SettingsPro.php:243
 msgid "Open in new window"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:216
-msgid "Popup Button Text"
+#: inc/Field/MetaBox.php:229
+#: inc/Field/MetaBoxPro.php:245
+msgid "Enable"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:218
+#: inc/Field/MetaBox.php:231
+#: inc/Field/MetaBoxPro.php:247
+msgid "Enable or disable the popup functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:239
+#: inc/Field/MetaBoxPro.php:254
 msgid "Text on the button you want to show."
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:224
+#: inc/Field/MetaBox.php:256
+#: inc/Field/MetaBoxPro.php:269
+#: inc/Field/SettingsPro.php:127
+#: inc/Field/SettingsPro.php:249
+msgid "Protect my content"
+msgstr ""
+
+#: inc/Field/MetaBox.php:259
+#: inc/Field/MetaBoxPro.php:272
+#: inc/Field/SettingsPro.php:129
+#: inc/Field/SettingsPro.php:252
+msgid "Check to disable Mouse clicks to protect your content."
+msgstr ""
+
+#: inc/Field/MetaBox.php:264
+#: inc/Field/MetaBoxPro.php:276
+#: inc/Field/SettingsPro.php:133
+#: inc/Field/SettingsPro.php:256
+msgid "Disable Alert Message"
+msgstr ""
+
+#: inc/Field/MetaBox.php:267
+#: inc/Field/MetaBoxPro.php:279
+#: inc/Field/SettingsPro.php:135
+#: inc/Field/SettingsPro.php:259
+msgid "Check to disable alert message."
+msgstr ""
+
+#: inc/Field/MetaBox.php:280
+#: inc/Field/MetaBoxPro.php:292
+msgid "Enabled"
+msgstr ""
+
+#: inc/Field/MetaBox.php:282
+#: inc/Field/MetaBoxPro.php:294
+msgid "Enable or disable the social share functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:288
+#: inc/Field/MetaBoxPro.php:300
+msgid "Position"
+msgstr ""
+
+#: inc/Field/MetaBox.php:290
+#: inc/Field/MetaBoxPro.php:302
+msgid "Select the position of the social share button."
+msgstr ""
+
+#: inc/Field/MetaBox.php:293
+#: inc/Field/MetaBoxPro.php:305
+msgid "Top"
+msgstr ""
+
+#: inc/Field/MetaBox.php:294
+#: inc/Field/MetaBoxPro.php:306
+msgid "Bottom"
+msgstr ""
+
+#: inc/Field/MetaBox.php:301
+#: inc/Field/MetaBoxPro.php:313
+msgid "Facebook"
+msgstr ""
+
+#: inc/Field/MetaBox.php:303
+#: inc/Field/MetaBoxPro.php:315
+msgid "Enable or disable the facebook share functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:310
+#: inc/Field/MetaBoxPro.php:322
+msgid "Twitter"
+msgstr ""
+
+#: inc/Field/MetaBox.php:312
+#: inc/Field/MetaBoxPro.php:324
+msgid "Enable or disable the twitter share functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:319
+#: inc/Field/MetaBoxPro.php:331
+msgid "Linkedin"
+msgstr ""
+
+#: inc/Field/MetaBox.php:321
+#: inc/Field/MetaBoxPro.php:333
+msgid "Enable or disable the linkedin share functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:328
+#: inc/Field/MetaBoxPro.php:340
+msgid "Pinterest"
+msgstr ""
+
+#: inc/Field/MetaBox.php:330
+#: inc/Field/MetaBoxPro.php:342
+msgid "Enable or disable the pinterest share functionality."
+msgstr ""
+
+#: inc/Field/MetaBox.php:340
+#: inc/Field/MetaBoxPro.php:352
+msgid "Styles"
+msgstr ""
+
+#: inc/Field/MetaBox.php:346
+#: inc/Field/MetaBoxPro.php:356
 msgid "Button Background Color"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:226
+#: inc/Field/MetaBox.php:348
+#: inc/Field/MetaBoxPro.php:358
 msgid "Choose a background color for the button."
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:232
+#: inc/Field/MetaBox.php:354
+#: inc/Field/MetaBoxPro.php:363
 msgid "Button Text Color"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:234
+#: inc/Field/MetaBox.php:356
+#: inc/Field/MetaBoxPro.php:365
 msgid "Choose a text color for the button."
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:240
+#: inc/Field/MetaBox.php:362
+#: inc/Field/MetaBoxPro.php:370
 msgid "Button Font Size"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:242
+#: inc/Field/MetaBox.php:364
+#: inc/Field/MetaBoxPro.php:372
 msgid "Specify the font size for the button (in px)."
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:249
+#: inc/Field/MetaBox.php:371
+#: inc/Field/MetaBoxPro.php:378
 msgid "Button Padding"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:251
+#: inc/Field/MetaBox.php:373
+#: inc/Field/MetaBoxPro.php:380
 msgid "Specify the padding for the button (e.g., 10px 20px)."
 msgstr ""
 
-#: inc/Field/Settings.php:18
-#: inc/Field/SettingsPro.php:17
+#: inc/Field/MetaBox.php:388
+#: inc/Field/MetaBoxPro.php:395
+msgid "Ads"
+msgstr ""
+
+#: inc/Field/MetaBox.php:393
+#: inc/Field/MetaBox.php:406
+#: inc/Field/MetaBoxPro.php:400
+#: inc/Field/MetaBoxPro.php:413
+msgid "This feature is coming soon. Stay tuned for updates!"
+msgstr ""
+
+#: inc/Field/MetaBox.php:401
+#: inc/Field/MetaBoxPro.php:408
+msgid "Analytics"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:24
+msgid "PDF Poster Configuration"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:64
+msgid "Viewer"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:65
+msgid "Select the viewer"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:68
+msgid "Default"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:69
+msgid "Adobe"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:89
+#: inc/Field/Settings.php:52
+#: inc/Field/SettingsPro.php:55
+#: inc/Field/SettingsPro.php:174
+msgid "Height"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:100
+#: inc/Field/Settings.php:62
+#: inc/Field/SettingsPro.php:65
+#: inc/Field/SettingsPro.php:184
+msgid "Width"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:111
+msgid "Enable Google Doc Viewer"
+msgstr ""
+
+#: inc/Field/MetaBoxPro.php:115
+msgid "<span style=\"color:red\">Sometimes Microsoft Edge block pdf due to security reason. <b>Enable Download button, download the PDF and upload again.</b> or Check if you want to use Google doc Viewer to solve the problem. <b>Note: protection will not work if you check this option</b>"
+msgstr ""
+
+#: inc/Field/Settings.php:23
+#: inc/Field/SettingsPro.php:19
 msgid "PDF Poster Settings"
 msgstr ""
 
-#: inc/Field/Settings.php:19
-#: inc/Field/SettingsPro.php:18
+#: inc/Field/Settings.php:24
+#: inc/Field/SettingsPro.php:20
 msgid "Settings"
 msgstr ""
 
-#: inc/Field/Settings.php:40
-#: inc/Field/SettingsPro.php:275
+#: inc/Field/Settings.php:43
+#: inc/Field/SettingsPro.php:46
+msgid "Quick Embedder Default Settings - <a target=\"_blank\" href=\"https://bplugins.com/docs/pdf-poster/settings/quick-embedder-2/\">Full Documentation</a>"
+msgstr ""
+
+#: inc/Field/Settings.php:98
+#: inc/Field/SettingsPro.php:281
 msgid "Enable Gutenberg shortcode generator"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:44
-msgid "Quick Embedder"
-msgstr ""
-
-#: inc/Field/SettingsPro.php:80
+#: inc/Field/SettingsPro.php:82
 msgid "Enable default browser"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:83
+#: inc/Field/SettingsPro.php:85
 msgid "Sometimes Microsoft Edge block pdf due to security reason. Check if you want to use Microsoft Edge default PDF Viewer to solve the problem. Note: protection will not work if you check this option"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:114
+#: inc/Field/SettingsPro.php:116
 msgid "View Full Screen"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:119
+#: inc/Field/SettingsPro.php:121
 msgid "Full Screen Open in new window"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:139
-#: inc/Field/SettingsPro.php:261
+#: inc/Field/SettingsPro.php:141
+#: inc/Field/SettingsPro.php:267
 msgid "Check to enable Thumbnails Toogle Menu in the viewer"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:149
+#: inc/Field/SettingsPro.php:151
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:270
-#: inc/PostType/PDFPoster.php:119
+#: inc/Field/SettingsPro.php:169
+msgid "Preset only works for Classic Shortcode Generator"
+msgstr ""
+
+#: inc/Field/SettingsPro.php:276
+#: inc/PostType/PDFPoster.php:243
 msgid "Shortcode"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:285
+#: inc/Field/SettingsPro.php:291
 msgid "Cloud API"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:295
+#: inc/Field/SettingsPro.php:301
 msgid "Dropbox App Key"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:296
+#: inc/Field/SettingsPro.php:302
 msgid "<a href=\"https://www.dropbox.com/developers/apps?_tk=pilot_lp&_ad=topbar4&_camp=myapps\" target=\"_blank\">Create Here</a> to create api key"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:306
+#: inc/Field/SettingsPro.php:317
 msgid "Google API key"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:312
+#: inc/Field/SettingsPro.php:326
 msgid "Google Client ID"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:317
+#: inc/Field/SettingsPro.php:331
 msgid "Google Project Number"
 msgstr ""
 
-#: inc/Field/SettingsPro.php:327
+#: inc/Field/SettingsPro.php:341
 msgid "Adobe Client Key"
 msgstr ""
 
-#: inc/Model/Metabox.php:38
-#: inc/PostType/PDFPoster.php:241
-msgid "New Feature ! Quick Embed"
-msgstr ""
-
-#: inc/PostType/PDFPoster.php:56
-msgid "Pdf Poster"
-msgstr ""
-
-#: inc/PostType/PDFPoster.php:57
-#: inc/PostType/PDFPoster.php:58
-msgid "Add New Pdf"
-msgstr ""
-
-#: inc/PostType/PDFPoster.php:59
-msgid "Edit"
-msgstr ""
-
-#: inc/PostType/PDFPoster.php:60
-msgid "New Pdf"
-msgstr ""
-
 #: inc/PostType/PDFPoster.php:61
-msgid "View Pdf"
-msgstr ""
-
 #: inc/PostType/PDFPoster.php:62
-msgid "Search Pdf"
+msgid "Add New PDF"
 msgstr ""
 
 #: inc/PostType/PDFPoster.php:63
-msgid "Sorry, we couldn't find the Pdf file you are looking for."
+msgid "Edit"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:116
-msgid "Supports"
+#: inc/PostType/PDFPoster.php:64
+msgid "New PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:120
-msgid "Copy and paste this shortcode into your posts, pages and widget:"
+#: inc/PostType/PDFPoster.php:65
+msgid "View PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:124
-msgid "Template Include"
+#: inc/PostType/PDFPoster.php:66
+msgid "Search PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:125
-msgid "Copy and paste the PHP code into your template file:"
+#: inc/PostType/PDFPoster.php:67
+msgid "Sorry, we couldn't find the PDF file you are looking for."
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:139
+#: inc/PostType/PDFPoster.php:126
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:157
+#: inc/PostType/PDFPoster.php:144
 msgid "Player updated "
+msgstr ""
+
+#: inc/PostType/PDFPoster.php:228
+msgid "New Feature ! Quick Embed"
+msgstr ""
+
+#: inc/PostType/PDFPoster.php:260
+msgid "Copy and paste this shortcode into your posts, pages and widget"
+msgstr ""
+
+#: inc/PostType/PDFPoster.php:262
+msgid "Copy Shortcode"
 msgstr ""
 
 #: build/blocks/selector/index.js:1
@@ -456,6 +570,11 @@ msgstr ""
 #: build/blocks/pdf-poster/block.json
 msgctxt "block title"
 msgid "PDF Poster"
+msgstr ""
+
+#: build/blocks/pdf-poster/block.json
+msgctxt "block description"
+msgid "Embed PDF in your posts and pages"
 msgstr ""
 
 #: build/blocks/pdf-poster/block.json

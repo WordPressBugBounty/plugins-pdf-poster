@@ -4,6 +4,8 @@ namespace PDFPro\Base;
 
 use PDFPro\Helper\Functions as Utils;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class EnqueueAssets
 {
 

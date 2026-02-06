@@ -1,6 +1,9 @@
 <?php
 namespace PDFPro\Model;
 
+if (!defined('ABSPATH')) exit;
+
+
 class Block{
 
     public static function get($id){

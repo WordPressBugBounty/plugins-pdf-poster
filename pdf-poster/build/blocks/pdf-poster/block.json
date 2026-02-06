@@ -1,9 +1,10 @@
 {
-  "apiVersion": 2,
-  "version": "2.2.3",
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "version": "2.4.0",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
-  "description": "",
+  "description": "Embed PDF in your posts and pages",
   "category": "design",
   "icon": "pdf",
   "keywords": [
@@ -204,6 +205,17 @@
     "CSS": {
       "type": "string",
       "default": ""
+    },
+    "socialShare": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "facebook": true,
+        "twitter": true,
+        "linkedin": true,
+        "pinterest": true,
+        "position": "top"
+      }
     }
   },
   "supports": {

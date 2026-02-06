@@ -1,6 +1,8 @@
 <?php
 namespace PDFPro\Helper;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Plugin{
 
     public static $version = PDFPRO_VER;

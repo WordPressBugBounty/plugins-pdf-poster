@@ -4,6 +4,8 @@ namespace PDFPro\Rest;
 
 use PDFPro\Helper\Functions as Utils;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class GetMeta
 {
     public $route = '';

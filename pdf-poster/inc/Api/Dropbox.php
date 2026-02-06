@@ -3,6 +3,8 @@ namespace PDFPro\Api;
 
 use PDFPro\Api\DropboxApi;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Dropbox{
 
     private $fieldId = null;

@@ -2,6 +2,8 @@
 
 namespace PDFPro\Model;
 
+if (!defined('ABSPATH')) exit;
+
 class AjaxCall
 {
 

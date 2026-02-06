@@ -1,6 +1,8 @@
 <?php
 namespace PDFPro\Helper;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class DefaultArgs{
 
     public static function parseArgs($data){

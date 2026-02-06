@@ -1,6 +1,8 @@
 <?php 
 namespace PDFPro\Helper;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Functions{
 
     protected static $meta = null;
@@ -103,6 +105,7 @@ class Functions{
     public static function generate_pdf_poster_block($id){
 
         $post_meta = get_post_meta($id,"_fpdf", true);
+        $meta = pdfp__get_post_meta($id, '_fpdf', true);
     
         $height = self::isset($post_meta, 'height', ['height' => 1122, 'unit' => 'px']);
         $width = self::isset($post_meta, 'width', ['width' => 100, 'unit' => '%']);
@@ -149,6 +152,15 @@ class Functions{
                     "padding" =>  $popupBtnPadding
                 ]
             ],
+            'socialShare' => [
+                'enabled' => $meta('social_share', false, true),
+                'facebook' => $meta('social_share_facebook', false, true),
+                'twitter' => $meta('social_share_twitter', false, true),
+                'linkedin' => $meta('social_share_linkedin', false, true),
+                'pinterest' => $meta('social_share_pinterest', false, true),
+                'position' => $meta('social_share_position', 'top', false),
+            ],
+            'adobeEmbedder' => $meta('viewer', 'default', false) === 'adobe',
           ]
         ];
     }

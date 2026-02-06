@@ -1,5 +1,6 @@
 {
-  "apiVersion": "1",
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "meta-box/document-embedder",
   "title": "PDF Poster Selector",
   "description": "",

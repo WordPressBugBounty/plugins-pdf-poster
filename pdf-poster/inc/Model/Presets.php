@@ -1,6 +1,8 @@
 <?php
 namespace PDFPro\Model;
 
+if (!defined('ABSPATH')) exit;
+
 class Presets {
     protected $table_name = '';
 

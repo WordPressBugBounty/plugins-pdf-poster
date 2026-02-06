@@ -1,6 +1,8 @@
 <?php
 namespace PDFPro\Helper;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Pipe{
     public static function isPipe(){
         global $pdfp_bs;

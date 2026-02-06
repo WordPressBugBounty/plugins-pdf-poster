@@ -4,6 +4,8 @@ namespace PDFPro\Base;
 
 use PDFPro\Helper\Functions as Utils;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Shortcodes
 {
 
@@ -36,6 +38,7 @@ class Shortcodes
       return render_block($blocks[0]);
     } else {
       $block = Utils::generate_pdf_poster_block($id);
+
       return render_block($block);
     }
   }
@@ -112,7 +115,6 @@ class Shortcodes
         'fullscreenButtonText' => esc_html($fullscreen_btn_text),
         'fullscreenButton' => true
       ]
-
     ];
   }
 }
