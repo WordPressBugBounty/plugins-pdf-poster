@@ -4,7 +4,7 @@
  * Plugin Name: PDF Poster
  * Plugin URI:  https://bplugins.com/products/pdf-poster/
  * Description: You can easily embed/ show pdf file in your wordress website using this plugin.
- * Version:     2.4.0
+ * Version:     2.4.1
  * Author:      bPlugins
  * Author URI:  https://profiles.wordpress.org/abuhayat
  * License:     GPLv2
@@ -49,7 +49,7 @@ if ( function_exists( 'pdfp_fs' ) ) {
                     'has_addons'     => false,
                     'has_paid_plans' => true,
                     'menu'           => array(
-                        'slug'    => 'pdf-poster',
+                        'slug'    => 'edit.php?post_type=pdfposter',
                         'support' => false,
                         'contact' => false,
                     ),

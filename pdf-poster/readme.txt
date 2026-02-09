@@ -1,10 +1,10 @@
 === PDF Poster – Display PDF Files with Custom Viewer ===
-Contributors: bplugins, abuhayat, freemius, shamim10, farazi1
+Contributors: bplugins, abuhayat, shehabulislam, freemius, farazi1
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -242,7 +242,13 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.4.0 - 17 Jan, 2026 =
+= 2.4.1 - 09 Feb, 2026 =
+* Fixed: Warning: Attempt to read property "post_type" on null in WC Orders Add/Edit page
+* Fixed: Broken Access Control
+* Removed: Upgrade Section from Gutemberg Block (Premium)
+* Removed: Upgrade Section from Classic Shortcode Generator (Premium)
+
+= 2.4.0 - 20 Jan, 2026 =
 * Added: Social Share feature
 * Added: Icons before each PanelBody title in the Gutenberg block
 * Added: Help text for control fields

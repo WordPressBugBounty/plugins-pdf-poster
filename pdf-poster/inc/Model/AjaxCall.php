@@ -62,7 +62,7 @@ class AjaxCall
         $this->model = $this->namespace . $this->requestModel;
         $model = new $this->model();
 
-        if (wp_verify_nonce($nonce, 'wp_ajax') && method_exists($model, $this->requestMethod)) {
+        if (wp_verify_nonce($nonce, 'wp_ajax') && method_exists($model, $this->requestMethod) && current_user_can('edit_others_pages')) {
             unset($this->params['method']);
             unset($this->params['action']);
             unset($this->params['nonce']);
