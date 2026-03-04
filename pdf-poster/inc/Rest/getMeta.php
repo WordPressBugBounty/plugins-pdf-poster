@@ -42,7 +42,7 @@ class GetMeta
         $post_type = get_post_type($id);
         $post = get_post($id);
 
-        if ($post_type !== 'pdfposter') {
+        if ($post_type !== 'pdfposter' || $post->post_status !== 'publish') {
             return new \WP_REST_Response([]);
         }
 

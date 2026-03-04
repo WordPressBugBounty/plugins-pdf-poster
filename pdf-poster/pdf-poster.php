@@ -4,7 +4,7 @@
  * Plugin Name: PDF Poster
  * Plugin URI:  https://bplugins.com/products/pdf-poster/
  * Description: You can easily embed/ show pdf file in your wordress website using this plugin.
- * Version:     2.4.1
+ * Version:     2.5.0
  * Author:      bPlugins
  * Author URI:  https://profiles.wordpress.org/abuhayat
  * License:     GPLv2
@@ -19,16 +19,10 @@ if ( function_exists( 'pdfp_fs' ) ) {
     /*Some Set-up*/
     define( 'PDFPRO_PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
     define( 'PDFPRO_PATH', plugin_dir_path( __FILE__ ) );
-    define( 'PDFPRO_VER', ( defined( 'WP_DEBUG' ) ? time() : '2.4.0' ) );
+    define( 'PDFPRO_VER', ( defined( 'WP_DEBUG' ) ? time() : '2.5.0' ) );
     define( 'PDFPRO_IMPORT_VER', '1.0.0' );
     if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
         require_once dirname( __FILE__ ) . '/vendor/autoload.php';
-    }
-    if ( file_exists( dirname( __FILE__ ) . '/inc/functions.php' ) ) {
-        require_once dirname( __FILE__ ) . '/inc/functions.php';
-    }
-    if ( file_exists( dirname( __FILE__ ) . '/inc/admin.php' ) ) {
-        require_once dirname( __FILE__ ) . '/inc/admin.php';
     }
     // DO NOT REMOVE THIS IF, IT IS ESSENTIAL FOR THE `function_exists` CALL ABOVE TO PROPERLY WORK.
     if ( !function_exists( 'pdfp_fs' ) ) {
@@ -39,21 +33,22 @@ if ( function_exists( 'pdfp_fs' ) ) {
                 // Include Freemius SDK.
                 // SDK is auto-loaded through composer
                 $pdfp_fs = fs_dynamic_init( array(
-                    'id'             => '14261',
-                    'slug'           => 'pdf-poster',
-                    'premium_slug'   => 'pdf-poster-pro',
-                    'type'           => 'plugin',
-                    'public_key'     => 'pk_6e833032174d131283193892a44a2',
-                    'is_premium'     => false,
-                    'premium_suffix' => 'Pro',
-                    'has_addons'     => false,
-                    'has_paid_plans' => true,
-                    'menu'           => array(
+                    'id'               => '14261',
+                    'slug'             => 'pdf-poster',
+                    'premium_slug'     => 'pdf-poster-pro',
+                    'type'             => 'plugin',
+                    'public_key'       => 'pk_6e833032174d131283193892a44a2',
+                    'is_premium'       => false,
+                    'premium_suffix'   => 'Pro',
+                    'has_addons'       => false,
+                    'has_paid_plans'   => true,
+                    'menu'             => array(
                         'slug'    => 'edit.php?post_type=pdfposter',
                         'support' => false,
                         'contact' => false,
                     ),
-                    'is_live'        => true,
+                    'is_live'          => true,
+                    'is_org_compliant' => true,
                 ) );
             }
             return $pdfp_fs;
@@ -64,10 +59,12 @@ if ( function_exists( 'pdfp_fs' ) ) {
         // Signal that SDK was initiated.
         do_action( 'pdfp_fs_loaded' );
     }
+    if ( file_exists( __DIR__ . '/upgrade.php' ) ) {
+        require_once __DIR__ . '/upgrade.php';
+    }
     if ( class_exists( 'PDFPro\\Init' ) ) {
         PDFPro\Init::register_services();
     }
-    require_once __DIR__ . '/upgrade.php';
     function get_p_option(  $array, $key = array(), $default = null  ) {
         if ( is_array( $array ) && array_key_exists( $key, $array ) ) {
             return $array[$key];

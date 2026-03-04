@@ -4,7 +4,7 @@ Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.4.1
+Stable tag: 2.5.0
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -241,6 +241,15 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.5.0 - 01 Mar, 2026 =
+* New: Popup Trigger Type Image
+* New : Popup Trigger Alignment
+* New : Popup Trigger Image Size
+* New : Popup Trigger Image PDF Icon
+* Update: Help & Demo Page
+* New: Added an option to move the action buttons (Print, Fullscreen, Download) to the top or bottom.
+* Update: Hide sidebar on mobile devices
 
 = 2.4.1 - 09 Feb, 2026 =
 * Fixed: Warning: Attempt to read property "post_type" on null in WC Orders Add/Edit page

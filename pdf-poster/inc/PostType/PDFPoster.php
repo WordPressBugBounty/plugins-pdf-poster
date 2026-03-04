@@ -28,8 +28,10 @@ class PDFPoster
 
             add_filter('filter_block_editor_meta_boxes', [$this, 'remove_metabox']);
             add_action('use_block_editor_for_post', [$this, 'forceGutenberg'], 10, 2);
+
+
+            add_action('edit_form_after_title', [$this, 'shortcode_area']);
             
-            add_action('add_meta_boxes', [$this, 'shortcode_area_metabox']);
             // add_action('add_meta_boxes', [$this, 'myplugin_add_meta_box']);
         }
     }
@@ -235,36 +237,27 @@ class PDFPoster
         );
     }
 
-    // shortcode area
-    public function shortcode_area_metabox()
-    {
-        global $post;
-        if(!$post){
-            return;
-        }
-        if ($post->post_type == $this->post_type) {
-           add_meta_box(
-            'shortcode_area',
-            __('Shortcode', 'pdfp'),
-            [$this, 'shortcode_area'],
-            'pdfposter',
-            'side',
-            'default'
-        );
-        }
-    }
+
 
     function shortcode_area(){
+
+       if ($this->post_type != get_post_type()) {
+            return;
+        }
         global $post;
         $id = $post->ID;
 
         $shortcode = "[pdf id='" . esc_attr($id) . "']";
         ?>
-        <div class="pdfp-down-arrow"></div>
-        <div class="pdfp_front_shortcode_area">
+        <div class="pdfp_shortcode_area_after_title">
             <label><?php esc_html_e('Copy and paste this shortcode into your posts, pages and widget', 'pdfp'); ?></label>
-            <br />
-            <button class="button button-primary button-large pdfp_shortcode_copy_btn" data-clipboard-text="<?php echo esc_attr($shortcode) ?>"><?php esc_html_e('Copy Shortcode', 'pdfp'); ?></button>
+            <div class="shortcode_area">
+                <button class="button button-bplugins button-large pdfp_shortcode_copy_btn" data-clipboard-text="<?php echo esc_attr($shortcode) ?>"><?php echo esc_html($shortcode); ?></button>
+                <svg class='pdfp_shortcode_copy_btn' data-type="icon" data-clipboard-text='<?php echo esc_attr($shortcode) ?>' width='22px' height='22px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path d='M8 4V16C8 17.1046 8.89543 18 10 18L18 18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.0829 2.56999C15.7092 2.2046 15.2074 2 14.6847 2H10C8.89543 2 8 2.89543 8 4Z' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+                    <path d='M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+                </svg>
+            </div>
         </div>
         <?php
     }

@@ -48,7 +48,7 @@ if (!class_exists('PDFPAdmin')) {
 			add_submenu_page(
 				'edit.php?post_type=pdfposter',
 				__('Demo and Help', 'pdfp'),
-				__('Demo and Help', 'pdfp'),
+				'<span style="color: #f18500;">' . __('Demo and Help', 'pdfp') . '</span>',
 				'edit_others_posts',
 				'pdf-poster',
 				[$this, 'dashboardPage'],
@@ -61,7 +61,8 @@ if (!class_exists('PDFPAdmin')) {
 			<div id='pdfpAdminDashboard' data-info='<?php echo esc_attr(wp_json_encode([
 														'version' => PDFPRO_VER,
 														'isPremium' => pdfp_fs()->can_use_premium_code(),
-														'hasPro' => true
+														'hasPro' => file_exists(PDFPRO_PATH . 'inc/Base/LicenseActivation.php'),
+														'licenseActiveNonce' => wp_create_nonce('bPlLicenseActivation')
 													])); ?>'></div>
 		<?php }
 

@@ -103,6 +103,10 @@
       "type": "string",
       "default": "View Fullscreen"
     },
+    "actionsPosition": {
+      "type": "string",
+      "default": "top"
+    },
     "newWindow": {
       "type": "boolean",
       "default": false
@@ -171,6 +175,11 @@
       "type": "object",
       "default": {
         "enabled": false,
+        "triggerType": "button",
+        "image": "",
+        "imagePdfIcon": true,
+        "imageHeight": "200px",
+        "imageWidth": "300px",
         "text": "Open PDF",
         "btnStyle": {
           "background": "#2271b1",

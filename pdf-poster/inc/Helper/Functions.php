@@ -104,54 +104,70 @@ class Functions{
 
     public static function generate_pdf_poster_block($id){
 
-        $post_meta = get_post_meta($id,"_fpdf", true);
+        if(!function_exists('pdfp__get_post_meta')) {
+            return [
+                'blockName' => 'pdfp/pdfposter',
+            ];
+        }
+
         $meta = pdfp__get_post_meta($id, '_fpdf', true);
     
-        $height = self::isset($post_meta, 'height', ['height' => 1122, 'unit' => 'px']);
-        $width = self::isset($post_meta, 'width', ['width' => 100, 'unit' => '%']);
-        $popupBtnPadding = self::isset($post_meta, 'popup_btn_padding', [ "top"=> 10, "right"=> 20, "bottom"=> 10, "left"=> 10 ]);
+        $height = $meta('height', ['height' => 1122, 'unit' => 'px']);
+        $width = $meta('width', ['width' => 100, 'unit' => '%']);
+        $popup_image_height = $meta('popup_image_height', ['height' => 200, 'unit' => 'px']);
+        $popup_image_width = $meta('popup_image_width', ['width' => 300, 'unit' => 'px']);
+        $popupBtnPadding = $meta('popup_btn_padding', [ "top"=> 10, "right"=> 20, "bottom"=> 10, "left"=> 10 ]);
+        $popup_image = $meta('popup_image', []);
+        $popup_image = $popup_image['url'] ?? '';
     
         return [
           "blockName" => "pdfp/pdfposter",
           "attrs" => [
             'uniqueId' => wp_unique_id( 'pdfp' ),
-            'file' => self::isset($post_meta, 'source', ''),
+            'file' => $meta('source', ''),
             'title' => get_the_title( $id ),
              'height' => $height['height'].$height['unit'],
              'width' => $width['width'].$width['unit'],
-             'print' => self::isset($post_meta,  'print', false) === '1',
-             'fullscreenButton' => self::isset($post_meta,  'view_fullscreen_btn', '1') === '1',
-             'fullscreenButtonText' => self::isset($post_meta,  'fullscreen_btn_text', 'View Fullscreen'),
-             'newWindow' => self::isset($post_meta,  'view_fullscreen_btn_target_blank', false) === '1',
-             'showName' => self::isset($post_meta,  'show_filename', '1') === '1',
-             'downloadButton' => self::isset($post_meta,  'show_download_btn', false) === '1',
-             'downloadButtonText' => self::isset($post_meta,  'download_btn_text', 'Download File'),
-             'protect' => self::isset($post_meta,  'protect', false) === '1',
-             'onlyPDF' => self::isset($post_meta,  'only_pdf', false) === '1',
-             'defaultBrowser' => self::isset($post_meta,  'default_browser', false) === '1',
-             'thumbMenu' => self::isset($post_meta,  'thumbnail_toggle_menu', false) === '1',
-             'initialPage' => self::isset($post_meta,  'jump_to', 0),
-             'sidebarOpen' => self::isset($post_meta,  'sidebar_open', false) === '1',
-             'lastVersion' => self::isset($post_meta,  'ppv_load_last_version', false) === '1',
-             'hrScroll' => self::isset($post_meta,  'hr_scroll', 0) === '1',
-             'zoomLevel' => self::isset($post_meta,  'zoomLevel', null),
-             'alert' => self::isset($post_meta,  'disable_alert', true) !== '1',
+             'print' => $meta('print', false, true),
+             'fullscreenButton' => $meta('view_fullscreen_btn', '1', true),
+             'fullscreenButtonText' => $meta('fullscreen_btn_text', 'View Fullscreen', true),
+             'newWindow' => $meta('view_fullscreen_btn_target_blank', false, true),
+             'showName' => $meta('show_filename', '1', true),
+             'downloadButton' => $meta('show_download_btn', false, true),
+             'downloadButtonText' => $meta('download_btn_text', 'Download File', true),
+             'protect' => $meta('protect', false, true) ,
+             'onlyPDF' => $meta('only_pdf', false, true),
+             'defaultBrowser' => $meta('default_browser', false, true),
+             'thumbMenu' => $meta('thumbnail_toggle_menu', false, true),
+             'initialPage' => $meta('jump_to', 0, true),
+             'sidebarOpen' => $meta('sidebar_open', false, true),
+             'lastVersion' => $meta('ppv_load_last_version', false, true),
+             'hrScroll' => $meta('hr_scroll', 0, true),
+             'zoomLevel' => $meta('zoomLevel', null, true),
+             'alert' => $meta('disable_alert', true, true),
              'btnStyles' => [
-                "background" =>   self::isset($post_meta,  'popup_btn_bg', '#1e73be'),
-                "color" =>   self::isset($post_meta,  'popup_btn_color', '#fff'),
-                "fontSize" =>   self::isset($post_meta,  'popup_btn_font_size', null).'rem',
+                "background" =>   $meta('popup_btn_bg', '#1e73be'),
+                "color" =>   $meta('popup_btn_color', '#fff'),
+                "fontSize" =>   $meta('popup_btn_font_size', 1).'rem',
                 "padding" =>  $popupBtnPadding
              ],
              "popupOptions" => [
-                "enabled" =>  self::isset($post_meta,  'popup', 0) === '1',
-                "text" =>  self::isset($post_meta,  'popup_btn_text', 'Open PDF'),
+                "enabled" =>  $meta('popup', 0, true),
+                "text" =>  $meta('popup_btn_text', 'Open PDF'),
+                "triggerType" =>  $meta('popup_trigger_type', 'button'),
+                "image" =>  $popup_image,
+                "imageHeight" =>  $popup_image_height['height'].$popup_image_height['unit'],
+                "imageWidth" =>  $popup_image_width['width'].$popup_image_width['unit'],
+                "imagePdfIcon" =>  $meta('popup_image_pdf_icon', true, true),
+                "triggerAlignment" =>  $meta('popup_trigger_alignment', 'center'),
                 "btnStyle" =>  [
-                    "background" =>   self::isset($post_meta,  'popup_btn_bg', '#1e73be'),
-                    "color" =>   self::isset($post_meta,  'popup_btn_color', '#fff'),
-                    "fontSize" =>   self::isset($post_meta,  'popup_btn_font_size', null).'rem',
+                    "background" =>   $meta('popup_btn_bg', '#1e73be'),
+                    "color" =>   $meta('popup_btn_color', '#fff'),
+                    "fontSize" =>   $meta('popup_btn_font_size', 1).'rem',
                     "padding" =>  $popupBtnPadding
                 ]
             ],
+            "actionsPosition" => $meta('actions_position', 'top', false),
             'socialShare' => [
                 'enabled' => $meta('social_share', false, true),
                 'facebook' => $meta('social_share_facebook', false, true),

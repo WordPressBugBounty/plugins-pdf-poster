@@ -73,9 +73,6 @@ class Shortcodes
     }
   }
 
-
-
-
   public function pdf_embed($atts)
   {
     $attrs = shortcode_atts($this->pdf_embed_attrs(), $atts);
