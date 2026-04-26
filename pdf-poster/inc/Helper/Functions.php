@@ -130,21 +130,21 @@ class Functions{
              'width' => $width['width'].$width['unit'],
              'print' => $meta('print', false, true),
              'fullscreenButton' => $meta('view_fullscreen_btn', '1', true),
-             'fullscreenButtonText' => $meta('fullscreen_btn_text', 'View Fullscreen', true),
+             'fullscreenButtonText' => $meta('fullscreen_btn_text', 'View Fullscreen', false),
              'newWindow' => $meta('view_fullscreen_btn_target_blank', false, true),
              'showName' => $meta('show_filename', '1', true),
              'downloadButton' => $meta('show_download_btn', false, true),
-             'downloadButtonText' => $meta('download_btn_text', 'Download File', true),
+             'downloadButtonText' => $meta('download_btn_text', 'Download File', false),
              'protect' => $meta('protect', false, true) ,
              'onlyPDF' => $meta('only_pdf', false, true),
              'defaultBrowser' => $meta('default_browser', false, true),
              'thumbMenu' => $meta('thumbnail_toggle_menu', false, true),
-             'initialPage' => $meta('jump_to', 0, true),
+             'initialPage' => $meta('jump_to', 0, false),
              'sidebarOpen' => $meta('sidebar_open', false, true),
              'lastVersion' => $meta('ppv_load_last_version', false, true),
              'hrScroll' => $meta('hr_scroll', 0, true),
-             'zoomLevel' => $meta('zoomLevel', null, true),
-             'alert' => $meta('disable_alert', true, true),
+             'zoomLevel' => $meta('zoomLevel', null, false),
+             'alert' => ! $meta('disable_alert', true, true),
              'btnStyles' => [
                 "background" =>   $meta('popup_btn_bg', '#1e73be'),
                 "color" =>   $meta('popup_btn_color', '#fff'),
@@ -181,7 +181,7 @@ class Functions{
         ];
     }
 
-    static function isUnsupportedDevice() {
+    public function isUnsupportedDevice() {
         $userAgent = $_SERVER['HTTP_USER_AGENT'];
     
         // Detect iPad
@@ -207,5 +207,85 @@ class Functions{
             //throw $th;
         }
     }
-    
+
+    public static function pdfp_pro_title($title, $badge = 'PRO') {
+        if (pdfp_fs()->can_use_premium_code()) {
+            return esc_html($title);
+        }
+
+        return '
+            <div class="pdfp-field-title">
+                <h4>' . esc_html($title) . '</h4>
+                <span class="pdfp-pro-badge">' . esc_html($badge) . '</span>
+            </div>
+        ';
+    }
+
+    public static function pdfp_lock_field($field, $is_section = false) {
+
+        if (pdfp_fs()->can_use_premium_code()) {
+            return $field;
+        }
+
+        // Lock the UI
+        $field['class'] = 'pdfp-lock-field ' . ($is_section ? 'section' : '');
+
+
+        // Force safe default (prevents DB pollution)
+        if (isset($field['default'])) {
+            $field['value'] = $field['default'];
+        }
+
+        return $field;
+    }
+
+    public static function upgrade_section() {
+        return array(
+            'type' => 'content',
+            'content' => '<div class="pdfp-metabox-upgrade-section">The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users. <a class="button button-bplugins" href="' . admin_url('admin.php?page=pdf-poster-pricing') . '">Upgrade to PRO </a></div>'
+        );
+    }
+
+    public static function quick_embed_shortcode() {
+        return [
+            'type' => 'content',
+            'content' => '
+                <div class="pdfp-quick-embed-shortcode-wrapper">
+                    <div class="shortcode-container">
+                        <code id="pdfp-shortcode-text">[pdf_embed url="your_file_url"]</code>
+                        <button type="button" class="pdfp-copy-shortcode" data-shortcode=\'[pdf_embed url="your_file_url"]\'>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span class="copy-text">' . __('Copy', 'pdfp') . '</span>
+                        </button>
+                    </div>
+                    <p class="description">' . __('Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link.', 'pdfp') . '</p>
+                </div>
+            '
+        ];
+    }
+
+    public static function upcoming_section() {
+        return array(
+            'type' => 'content',
+            'content' => '<div class="pdfp-metabox-upcoming-section">This feature is coming soon. Stay tuned for updates!</div>'
+        );
+    }
+
+    public static function pdfp_preset($key, $default = false) {
+        $settings = get_option('fpdf_option');
+        return $settings[$key] ?? $default;
+    }
+
+    public static function pipeError($prefix) {
+        \CSF::createSection($prefix, array(
+            'title' => '',
+            'fields' => array(
+                array(
+                    'type' => 'heading',
+                    'content' => '<p style="color:#7B2F31;background:#F8D7DA;padding:15px">PDF Poster PRO is not activated yet. Please active the license key by navigating to Plugins> PDF Poster PRO > Active License. 
+                    Once you active the plugin you will get all the options availble here. </p>'
+                ),
+            ),
+        ));
+    }
 }

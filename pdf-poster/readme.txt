@@ -1,10 +1,10 @@
 === PDF Poster – Display PDF Files with Custom Viewer ===
-Contributors: bplugins, abuhayat, shehabulislam, freemius, farazi1
+Contributors: bplugins, abuhayat, shehabulislam, taninrahman, farazi1,  freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -241,6 +241,25 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.5.1 – 26 April 2026 =
+* Fixed: PDFs hosted on external domains or CDNs were not loading at all
+* Fixed: Google Docs Viewer was sending the same request twice and canceling both
+* Fixed: When Google Docs Viewer failed there was nothing to fall back on
+* Fixed: PDF.js errors were invisible — users just saw a white empty box
+* Fixed: No message was shown when a PDF file was missing or completely empty
+* Fixed: PDF viewer was not opening on iPhone and iPad running iOS 16 and 17
+* Fixed: Tapping the fullscreen button on iPhone did absolutely nothing
+* Fixed: PDFs were not loading on Android Chrome and Samsung Internet browser
+* Fixed: Chinese, Japanese and Korean characters were showing as random broken symbols
+* Fixed: PDFs made with LaTeX or older Adobe tools were showing wrong or unreadable text
+* Fixed: Changes made to an existing PDF entry were lost after hitting update
+* Fixed: Shortcode was pasting fine but showing nothing at all on the live page
+* Fixed: PDFs with spaces or special characters in the filename were crashing the viewer
+* Fixed: An unexpected heading was appearing above the viewer on some themes
+* Fixed: Embedding a PDF by URL was showing raw code instead of the actual document
+* Fixed: PDF viewer was not displaying properly inside Elementor's preview panel
+* Update: Removed unexpected or unnecessary conten & code from the whole plugin.
 
 = 2.5.0 - 01 Mar, 2026 =
 * New: Popup Trigger Type Image

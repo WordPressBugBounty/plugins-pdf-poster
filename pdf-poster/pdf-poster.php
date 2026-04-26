@@ -4,7 +4,7 @@
  * Plugin Name: PDF Poster
  * Plugin URI:  https://bplugins.com/products/pdf-poster/
  * Description: You can easily embed/ show pdf file in your wordress website using this plugin.
- * Version:     2.5.0
+ * Version:     2.5.1
  * Author:      bPlugins
  * Author URI:  https://profiles.wordpress.org/abuhayat
  * License:     GPLv2
@@ -19,7 +19,7 @@ if ( function_exists( 'pdfp_fs' ) ) {
     /*Some Set-up*/
     define( 'PDFPRO_PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
     define( 'PDFPRO_PATH', plugin_dir_path( __FILE__ ) );
-    define( 'PDFPRO_VER', ( defined( 'WP_DEBUG' ) ? time() : '2.5.0' ) );
+    define( 'PDFPRO_VER', ( defined( 'WP_DEBUG' ) ? time() : '2.5.1' ) );
     define( 'PDFPRO_IMPORT_VER', '1.0.0' );
     if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
         require_once dirname( __FILE__ ) . '/vendor/autoload.php';
@@ -43,9 +43,10 @@ if ( function_exists( 'pdfp_fs' ) ) {
                     'has_addons'       => false,
                     'has_paid_plans'   => true,
                     'menu'             => array(
-                        'slug'    => 'edit.php?post_type=pdfposter',
-                        'support' => false,
-                        'contact' => false,
+                        'slug'       => 'edit.php?post_type=pdfposter',
+                        'first-path' => 'edit.php?post_type=pdfposter&page=pdf-poster#/welcome',
+                        'support'    => false,
+                        'contact'    => false,
                     ),
                     'is_live'          => true,
                     'is_org_compliant' => true,
@@ -91,93 +92,88 @@ if ( function_exists( 'pdfp_fs' ) ) {
     add_action( 'wp_head', function () {
         $option = get_option( 'fpdf_option' );
         ?>
-        <style>
-            <?php 
+<style>
+  <?php 
         echo esc_html( $option['custom_css'] ?? '' );
         ?>
-        </style>
+</style>
 <?php 
     } );
 }
 add_action( 'admin_footer', function () {
     ?>
-    <script>
-      let tokenClient;
-      let accessToken = null;
-      let pickerInited = false;
-      let gisInited = false;
+<script>
+  let tokenClient;
+  let accessToken = null;
+  let pickerInited = false;
+  let gisInited = false;
 
-      // Use the API Loader script to load google.picker.
-      function onApiLoad() {
-        gapi.load('picker', onPickerApiLoad);
-        console.log('onApiLoad')
-      }
+  // Use the API Loader script to load google.picker.
+  function onApiLoad() {
+    gapi.load('picker', onPickerApiLoad);
+  }
 
-      function onPickerApiLoad() {
-        pickerInited = true;
-        console.log('onPickerApiLoad')
-        createPicker();
-      }
+  function onPickerApiLoad() {
+    pickerInited = true;
+    createPicker();
+  }
 
-      function gisLoaded() {
-        // Replace with your client ID and required scopes.
-        tokenClient = google.accounts.oauth2.initTokenClient({
-          client_id: '637181304358-pj80esagrsfce2carm5638s7g6lkni3k.apps.googleusercontent.com',
-          scope: 'https://www.googleapis.com/auth/drive.readonly',
-        //   callback: createPicker, // defined later
-        });
-        gisInited = true;
-        console.log('gisLoaded')
+  function gisLoaded() {
+    // Replace with your client ID and required scopes.
+    tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: '637181304358-pj80esagrsfce2carm5638s7g6lkni3k.apps.googleusercontent.com',
+      scope: 'https://www.googleapis.com/auth/drive.readonly',
+      //   callback: createPicker, // defined later
+    });
+    gisInited = true;
+  }
+
+  // Create and render a Google Picker object for selecting from Drive.
+  function createPicker() {
+    const showPicker = () => {
+      // Replace with your API key and App ID.
+      const picker = new google.picker.PickerBuilder()
+        .addView(google.picker.ViewId.DOCS)
+        .setOAuthToken(accessToken)
+        .setDeveloperKey('AIzaSyBlV3lAGilIjq0x2eJGodDs5DlkCigykZw')
+        .setCallback(pickerCallback)
+        .setAppId('637181304358')
+        .build();
+      picker.setVisible(true);
     }
 
-   // Create and render a Google Picker object for selecting from Drive.
-    function createPicker() {
-        console.log('creating picker')
-      const showPicker = () => {
-        // Replace with your API key and App ID.
-        const picker = new google.picker.PickerBuilder()
-            .addView(google.picker.ViewId.DOCS)
-            .setOAuthToken(accessToken)
-            .setDeveloperKey('AIzaSyBlV3lAGilIjq0x2eJGodDs5DlkCigykZw')
-            .setCallback(pickerCallback)
-            .setAppId('637181304358')
-            .build();
-        picker.setVisible(true);
+    // Request an access token.
+    tokenClient.callback = async (response) => {
+      if (response.error !== undefined) {
+        throw (response);
       }
+      accessToken = response.access_token;
+      showPicker();
+    };
 
-      // Request an access token.
-      tokenClient.callback = async (response) => {
-        console.log('createPicker', response)
-        if (response.error !== undefined) {
-          throw (response);
-        }
-        accessToken = response.access_token;
-        showPicker();
-      };
-
-      if (accessToken === null) {
-        // Prompt the user to select a Google Account and ask for consent to share their data
-        // when establishing a new session.
-        tokenClient.requestAccessToken({prompt: 'consent'});
-      } else {
-        // Skip display of account chooser and consent dialog for an existing session.
-        tokenClient.requestAccessToken({prompt: ''});
-      }
+    if (accessToken === null) {
+      // Prompt the user to select a Google Account and ask for consent to share their data
+      // when establishing a new session.
+      tokenClient.requestAccessToken({ prompt: 'consent' });
+    } else {
+      // Skip display of account chooser and consent dialog for an existing session.
+      tokenClient.requestAccessToken({ prompt: '' });
     }
+  }
 
-        // A callback implementation.
-    function pickerCallback(data) {
-      let url = 'nothing';
-      if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
-        const doc = data[google.picker.Response.DOCUMENTS][0];
-        url = doc[google.picker.Document.URL];
-      }
-      const message = `You picked: ${url}`;
-      document.getElementById('result').textContent = message;
+  // A callback implementation.
+  function pickerCallback(data) {
+    let url = 'nothing';
+    if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+      const doc = data[google.picker.Response.DOCUMENTS][0];
+      url = doc[google.picker.Document.URL];
     }
+    const message = `You picked: ${url}`;
+    document.getElementById('result').textContent = message;
+  }
 
-    </script>
- <!-- <script async defer src="https://apis.google.com/js/api.js" onload="onApiLoad()"></script> -->
-    <!-- <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>     -->
+</script>
+<!-- <script async defer src="https://apis.google.com/js/api.js" onload="onApiLoad()"></script> -->
+<!-- <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>     -->
 <?php 
 } );

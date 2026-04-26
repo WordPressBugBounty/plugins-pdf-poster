@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Set CMap and standard font paths for CJK text support
+  if (window.PDFViewerApplicationOptions) {
+    window.PDFViewerApplicationOptions.setAll({
+      cMapUrl: "cmaps/",
+      cMapPacked: true,
+      standardFontDataUrl: "standard_fonts/",
+    });
+  }
+
   function parseURLParams(url) {
     var queryStart = url.indexOf("?") + 1,
       queryEnd = url.indexOf("#") + 1 || url.length + 1,
@@ -95,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (parseURL?.isHideRightToolbar === "true" && editorModeButtons) {
 
     editorModeButtons.parentNode.removeChild(editorModeButtons);
-    console.log("right sidebar toolbar removed");
   }
 
 
@@ -172,6 +180,26 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
+
+  // Listen for PDF.js errors
+  const errorInterval = setInterval(() => {
+    if (window.PDFViewerApplication && window.PDFViewerApplication.eventBus) {
+      clearInterval(errorInterval);
+
+      // Listen for document load errors
+      window.PDFViewerApplication.eventBus._on("documenterror", (e) => {
+        window.parent.postMessage({
+          type: "PDFP_ERROR",
+          message: e.message || "An error occurred while loading the PDF."
+        }, "*");
+      });
+
+      // Listen for other silent failures if possible
+      window.PDFViewerApplication.eventBus._on("pagerendererror", (e) => {
+        console.error("PDF.js render error:", e);
+      });
+    }
+  }, 500);
 
   // window.localStorage.setItem('pdfjs.history', JSON.stringify(pdfjsHistory));
 });

@@ -3,16 +3,14 @@
 if (!defined('ABSPATH')) exit;
 
 if (!class_exists('PDFPAdmin')) {
-	class PDFPAdmin
-	{
-		function __construct()
-		{
+	class PDFPAdmin {
+		function __construct() {
 			add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
 			add_action('admin_menu', [$this, 'adminMenu'], 15);
+			
 		}
 
-		function adminEnqueueScripts($hook)
-		{
+		function adminEnqueueScripts($hook) {
 			if (str_contains($hook, 'pdf-poster')) {
 				wp_enqueue_style('pdfp-dashboard-style', PDFPRO_PLUGIN_DIR . 'build/dashboard.css', [], PDFPRO_VER);
 
@@ -23,8 +21,7 @@ if (!class_exists('PDFPAdmin')) {
 			}
 		}
 
-		function adminMenu()
-		{
+		function adminMenu() {
 			// add_menu_page(
 			// 	__('PDF Poster', 'pdfp'),
 			// 	__('PDF Poster', 'pdfp'),
@@ -56,24 +53,26 @@ if (!class_exists('PDFPAdmin')) {
 			);
 		}
 
-		function dashboardPage()
-		{ ?>
+		function dashboardPage() {
+			?>
 			<div id='pdfpAdminDashboard' data-info='<?php echo esc_attr(wp_json_encode([
 														'version' => PDFPRO_VER,
 														'isPremium' => pdfp_fs()->can_use_premium_code(),
 														'hasPro' => file_exists(PDFPRO_PATH . 'inc/Base/LicenseActivation.php'),
 														'licenseActiveNonce' => wp_create_nonce('bPlLicenseActivation')
 													])); ?>'></div>
-		<?php }
+			<?php
+		}	
 
-		function upgradePage()
-		{ ?>
+		function upgradePage() {
+			?>
 			<div id='pdfpAdminUpgrade' data-info='<?php echo esc_attr(wp_json_encode([
 														'version' => PDFPRO_VER,
 														'isPremium' => pdfp_fs()->can_use_premium_code(),
 														'hasPro' => true
 													])); ?>'>Coming soon...</div>
-			<?php }
+			<?php
+		}
 
 	}
 	new PDFPAdmin;

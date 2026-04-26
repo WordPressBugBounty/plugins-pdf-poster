@@ -13,7 +13,8 @@ class EnqueueAssets
     {
         add_action("wp_enqueue_scripts", [$this, 'publicAssets']);
         add_action('admin_enqueue_scripts', [$this, 'adminAssets']);
-        // add_action('enqueue_block_assets', [$this, 'publicAssets']);
+        add_action('elementor/frontend/after_enqueue_scripts', [$this, 'publicAssets']);
+        add_action('elementor/preview/enqueue_scripts', [$this, 'publicAssets']);
         // Media button
         add_action('wp_enqueue_media', [$this, 'pdfp_media_button_js_file']);
         add_action('script_loader_tag', [$this, 'script_loader_tag'], 10, 3);
@@ -23,20 +24,18 @@ class EnqueueAssets
     /** 
      * inti action
      */
-    public function init()
-    {
+    public function init() {
         // wp_register_style('pdfp-editor', PDFPRO_PLUGIN_DIR.'build/editor.css', [], PDFPRO_VER);
     }
 
     /**
      * Enqueue public assets
      */
-    public function publicAssets()
-    {
-        // wp_enqueue_script('jquery');
+    public function publicAssets() {
         wp_enqueue_style('pdfp-public',  PDFPRO_PLUGIN_DIR . 'build/public.css', array(), PDFPRO_VER);
         wp_register_script('adobe-viewer', 'https://acrobatservices.adobe.com/view-sdk/viewer.js', array(), PDFPRO_VER, true);
-        wp_register_script('pdfp-public', PDFPRO_PLUGIN_DIR . 'build/public.js', array(), PDFPRO_VER, true);
+        wp_register_script('pdfp-public', PDFPRO_PLUGIN_DIR . 'build/public.js', array('jquery'), PDFPRO_VER, true);
+        wp_register_script('pdfp-pdfposter-view-script', PDFPRO_PLUGIN_DIR . 'build/blocks/pdf-poster/view.js', array('react', 'react-dom', 'jquery'), PDFPRO_VER, true);
         wp_register_script('dropbox-picker', 'https://www.dropbox.com/static/api/2/dropins.js', [], '1.0', true);
 
         $option = get_option('fpdf_option', []);
@@ -51,10 +50,18 @@ class EnqueueAssets
         wp_localize_script('pdfp-public', 'pdfp', $localize_data);
 
         wp_localize_script('pdfp-pdfposter-view-script', 'pdfp', $localize_data);
+        
+        $is_elementor_preview = isset($_GET['elementor-preview']) || (isset($_REQUEST['action']) && $_REQUEST['action'] === 'elementor_ajax') || did_action('elementor/frontend/after_enqueue_scripts') || did_action('elementor/preview/enqueue_scripts');
+
+        if ($is_elementor_preview) {
+            wp_enqueue_script('adobe-viewer');
+            wp_enqueue_script('pdfp-public');
+            wp_enqueue_script('pdfp-pdfposter-view-script');
+            wp_enqueue_style('pdfp-public');
+        }
     }
 
-    public function script_loader_tag($tag, $handle, $src)
-    {
+    public function script_loader_tag($tag, $handle, $src) {
         if ($handle === 'adobe-viewer') {
             return "<script src='https://acrobatservices.adobe.com/view-sdk/viewer.js'></script>";
         }
@@ -64,8 +71,7 @@ class EnqueueAssets
     /**
      * enqueue admin assets
      **/
-    function adminAssets($hook)
-    {
+    function adminAssets($hook) {
         $option = get_option('fpdf_option');
         $postType = get_post_type();
         if (in_array($hook, ['admin_page_pdf-poster-pricing-manual', 'pdfposter_page_fpdf-support', 'pdfposter_page_fpdf-settings', 'post.php', 'post-new.php']) || $postType === 'pdfposter') {
@@ -94,8 +100,7 @@ class EnqueueAssets
         ));
     }
 
-    public function pdfp_media_button_js_file()
-    {
+    public function pdfp_media_button_js_file() {
         wp_enqueue_script('pdfp-direct', PDFPRO_PLUGIN_DIR . 'admin/js/pdf_button.js', array('jquery'), PDFPRO_VER, true);
     }
 }

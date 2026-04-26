@@ -125,8 +125,7 @@ class PDFPoster
         return $defaults;
     }
 
-    function pdfp_columns_content_only_podcast($column_name, $post_ID)
-    {
+    function pdfp_columns_content_only_podcast($column_name, $post_ID) {
         if ($column_name == 'shortcode') {
             echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="Copy Shortcode" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">Copy To Clipboard</span></div>';
         }
@@ -239,7 +238,7 @@ class PDFPoster
 
 
 
-    function shortcode_area(){
+    function shortcode_area() {
 
        if ($this->post_type != get_post_type()) {
             return;

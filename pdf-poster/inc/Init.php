@@ -6,17 +6,16 @@ if (!defined('ABSPATH')) exit;
 
 use stdClass;
 
-class Init
-{
+class Init {
 
-    public static function get_services()
-    {
+    public static function get_services() {
         return [
             Database\Init::class,
             Model\AjaxCall::class,
             Base\EnqueueAssets::class,
             Base\GlobalChanges::class,
             Base\AdminNotice::class,
+            Base\ProModal::class,
             Base\Shortcodes::class,
             // Base\License::class,
             PostType\PDFPoster::class,
@@ -29,13 +28,11 @@ class Init
         ];
     }
 
-    public static function register_post_type()
-    {
+    public static function register_post_type() {
         self::instantiate(PostType\PDFPoster::class);
     }
 
-    public static function register_services()
-    {
+    public static function register_services() {
         foreach (self::get_services() as $class) {
             $services = self::instantiate($class);
             if (method_exists($services, 'register')) {
@@ -44,8 +41,7 @@ class Init
         }
     }
 
-    private static function instantiate($class)
-    {
+    private static function instantiate($class) {
         if (class_exists($class . "Pro") && pdfp_fs()->can_use_premium_code()) {
             $class = $class . "Pro";
         }

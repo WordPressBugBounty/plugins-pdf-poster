@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PDFPro\\' => array($baseDir . '/inc'),
+    'OomphInc\\ComposerInstallersExtender\\' => array($vendorDir . '/oomphinc/composer-installers-extender/src'),
+    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );

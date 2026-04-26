@@ -29,10 +29,13 @@ if($isDropbox){
     id='<?php echo esc_attr($id); ?>'
     data-attributes='<?php echo esc_attr(wp_json_encode($attributes)); ?>'
     style="text-align: <?php echo esc_attr($alignment) ?>">
-    <?php if (!$protect && !$isPopupEnabled) { ?>
-
-        <iframe title="<?php echo esc_attr($attributes['title']); ?>" style="border:0;" width="100%" height="800px" class="pdfp_unsupported_frame" src="//docs.google.com/gview?embedded=true&url=<?php echo esc_url($file) ?>"></iframe>
-
+    <?php if (!$protect && !$isPopupEnabled) { 
+        $pHeight = is_string($height) ? $height : ($height['desktop'] ?? '800px');
+        $pWidth = is_string($width) ? $width : ($width['desktop'] ?? '100%');
+        ?>
+        <div class="pdfp_loading_placeholder" style="height: <?php echo esc_attr($pHeight); ?>; width: <?php echo esc_attr($pWidth); ?>; display: flex; align-items: center; justify-content: center; background: #f5f5f5; border: 1px solid #ddd;">
+             <p><?php _e('Loading Viewer...', 'pdfp'); ?></p>
+        </div>
     <?php } ?>
 </div>
 <?php 

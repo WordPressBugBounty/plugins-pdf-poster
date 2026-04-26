@@ -4,23 +4,39 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7f4895f114bdb4f9d02d6197e78960a6
+class ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3
 {
     public static $files = array (
-        '8d50dc88e56bace65e1e72f6017983ed' => __DIR__ . '/..' . '/freemius/wordpress-sdk/start.php',
+        '8d50dc88e56bace65e1e72f6017983ed' => __DIR__ . '/..' . '/freemius/start.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'P' =>
         array (
             'PDFPro\\' => 7,
+        ),
+        'O' =>
+        array (
+            'OomphInc\\ComposerInstallersExtender\\' => 36,
+        ),
+        'C' =>
+        array (
+            'Composer\\Installers\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PDFPro\\' => 
+        'PDFPro\\' =>
         array (
             0 => __DIR__ . '/../..' . '/inc',
+        ),
+        'OomphInc\\ComposerInstallersExtender\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
+        ),
+        'Composer\\Installers\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
@@ -31,9 +47,9 @@ class ComposerStaticInit7f4895f114bdb4f9d02d6197e78960a6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7f4895f114bdb4f9d02d6197e78960a6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7f4895f114bdb4f9d02d6197e78960a6::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7f4895f114bdb4f9d02d6197e78960a6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3::$classMap;
 
         }, null, ClassLoader::class);
     }
