@@ -20,6 +20,10 @@
       "default": {
         "tringle_text": ""
       }
+    },
+    "shadowAttributes": {
+      "type": "object",
+      "default": {}
     }
   },
   "supports": {

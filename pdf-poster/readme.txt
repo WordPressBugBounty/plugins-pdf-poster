@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, shehabulislam, taninrahman, farazi1,  freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
-Requires at least: 5.0
+Requires at least: 6.3
 Tested up to: 6.9
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,7 +23,7 @@ The plugin supports the Gutenberg block editor. It includes content protection, 
 
 
 ### Key Features – Free Version
-- **Custom Width & Height**: Adjust PDF dimensions to perfectly fit your layout.
+- **Responsive Width & Height**: Fully customizable dimensions for Desktop, Tablet, and Mobile devices.
 
 - **Print Support**: Let users print PDFs directly from the viewer.
 
@@ -42,6 +42,8 @@ The plugin supports the Gutenberg block editor. It includes content protection, 
 [**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/pricing) adds features for advanced layout, control, and document protection.
 
 **Pro Features Include:**
+
+- **FlipBook Viewer**: Provide an interactive, book-like reading experience for your PDFs.
 
 - **Raw PDF Viewer**: Embed clean PDFs without black frames or toolbars.
 
@@ -242,7 +244,24 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.1 – 26 April 2026 =
+= 2.5.2 - 19 May 2026 =
+* New: Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.
+* New: Introduced fully responsive Height & Width controls for Desktop, Tablet, and Mobile devices.
+* New: Added a Device Preview Switcher in the plugin metabox for easier responsive configuration.
+* Improved: Enhanced PDF viewer dimension handling across different screen sizes for better responsiveness.
+* Improved: Refactored the entire plugin codebase for better maintainability and cleaner architecture.
+* Improved: Removed unused and redundant code to reduce plugin bloat and improve performance.
+* Improved: Optimized core functionality for faster loading and smoother user experience.
+* Fixed: Resolved existing bugs and minor compatibility issues.
+* Security: Strengthened overall plugin security and improved code quality following best practices.
+* Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.
+* Security: Enhanced request validation for API and AJAX endpoints.
+* Security: Improved database query sanitization and hardening.
+* Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.
+* Improved: Conducted a comprehensive i18n sweep for proper translation support.
+* Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.
+
+= 2.5.1 – 25 April 2026 =
 * Fixed: PDFs hosted on external domains or CDNs were not loading at all
 * Fixed: Google Docs Viewer was sending the same request twice and canceling both
 * Fixed: When Google Docs Viewer failed there was nothing to fall back on
@@ -330,10 +349,6 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 = 2.1.23 - 27 June, 2024 =
 * Fixed: directive error
 
-= 2.1.22 - 24 June, 2024 =
-* Fixed: Vulnerability
-
-
 = 2.1.21 - 25 March, 2024 =
 * Fixed: Avada Builder style broken
 
@@ -412,3 +427,55 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 = 2.1.21 - 25 March, 2024 =
 * Fixed: Avada Builder style broken
+
+== Source Code ==
+
+You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
+[**PDF Poster on GitHub**](https://github.com/bPlugins/pdf-poster-wp)
+
+== This plugin bundles the following third-party JavaScript/PHP libraries. ==
+
+= PDF.js v3.38.1 (Legacy build) =
+* **File:** `assets/pdfjs-new/generic-legacy/pdf.js`
+* **Source:** https://mozilla.github.io/pdf.js/
+* **GitHub:** https://github.com/mozilla/pdf.js
+* **License:** Apache-2.0 – https://github.com/mozilla/pdf.js/blob/master/LICENSE
+* **Purpose:** High-performance, standard-compliant PDF rendering in the browser.
+
+= Freemius SDK v2.13.1 =
+* **Source:** https://freemius.com/
+* **GitHub:** https://github.com/Freemius/wordpress-sdk
+* **License:** GPLv3 – https://github.com/Freemius/wordpress-sdk/blob/master/LICENSE.txt
+* **Purpose:** Provides licensing, updates, and opt-in usage tracking/analytics.
+
+= Codestar Framework v2.3.0 =
+* **File:** `vendor/codestar-framework/`
+* **Source:** https://codestarframework.com/
+* **GitHub:** https://github.com/Codestar/codestar-framework
+* **License:** GPLv2 – https://github.com/Codestar/codestar-framework/blob/master/LICENSE
+* **Purpose:** Lightweight and modern options framework for settings and metaboxes.
+
+= bpl-tools =
+* **Source / GitHub:** https://github.com/bPlugins/bpl-tools
+* **License:** GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* **Purpose:** Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* **External Services:** The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+
+= Montserrat Font (Google Fonts) =
+* **Source:** https://fonts.google.com/specimen/Montserrat
+* **License:** SIL Open Font License (OFL) – https://scripts.sil.org/OFL
+* **Purpose:** Primary typeface for the plugin interface.
+
+== This plugin optionally connects to the following external services for enhanced functionality. ==
+
+= Google Docs Viewer =
+* **Source:** https://docs.google.com/gview
+* **Purpose:** Used as a fallback rendering engine when native PDF.js fails or in specific viewer modes.
+* **Terms of Service:** https://policies.google.com/terms
+* **Privacy Policy:** https://policies.google.com/privacy
+
+= Adobe PDF Embed API =
+* **Source:** https://documentservices.adobe.com/view-sdk/main.js
+* **Purpose:** Provides an alternative high-quality viewing experience (requires user configuration).
+* **Terms of Use:** https://www.adobe.com/legal/terms.html
+* **Privacy Policy:** https://www.adobe.com/privacy/policy.html

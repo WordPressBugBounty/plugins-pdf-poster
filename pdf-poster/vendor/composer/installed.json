@@ -203,7 +203,7 @@
                 "issues": "https://github.com/Freemius/wordpress-sdk/issues",
                 "source": "https://github.com/Freemius/wordpress-sdk/tree/2.13.1"
             },
-            "install-path": "../freemius"
+            "install-path": "../freemius/wordpress-sdk"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -263,6 +263,7 @@
                 "issues": "https://github.com/oomphinc/composer-installers-extender/issues",
                 "source": "https://github.com/oomphinc/composer-installers-extender/tree/2.0.1"
             },
+            "abandoned": true,
             "install-path": "../oomphinc/composer-installers-extender"
         }
     ],

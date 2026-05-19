@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'PDFPro\\Base\\PDFP_RegisterBlock' => $baseDir . '/class-pdfp-blocks.php',
 );
