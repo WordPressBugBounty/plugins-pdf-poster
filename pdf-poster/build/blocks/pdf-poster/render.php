@@ -1,7 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    exit; // Exit if accessed directly
-use PDFPro\Helper\Functions as Utils;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
 
 // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 $pdfp_attributes = $attributes;
@@ -41,7 +41,7 @@ if ($pdfp_is_dropbox) {
             ?>
             <div class="pdfp_loading_placeholder"
                 style="height: <?php echo esc_attr($pdfp_p_height); ?>; width: <?php echo esc_attr($pdfp_p_width); ?>; display: flex; align-items: center; justify-content: center; background: #f5f5f5; border: 1px solid #ddd;">
-                <p><?php esc_html_e('Loading Viewer...', 'pdfp'); ?></p>
+                <p><?php esc_html_e('Loading Viewer...', 'pdf-poster'); ?></p>
             </div>
         <?php } ?>
     </div>

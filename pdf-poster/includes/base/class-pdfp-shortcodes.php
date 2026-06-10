@@ -132,9 +132,9 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
       'print' => 'false',
       'title' => null,
       'download_btn' => (Utils::isset($options, 'show_download_btn', '0') === '1') ? 'true' : 'false',
-      'download_btn_text' => Utils::isset($options, 'download_btn_text', __('Download File', 'pdfp')),
+      'download_btn_text' => Utils::isset($options, 'download_btn_text', __('Download File', 'pdf-poster')),
       'show_name' => (Utils::isset($options, 'show_filename', '0') === '1') ? 'true' : 'false',
-      'fullscreen_btn_text' => __('View Fullscreen', 'pdfp')
+      'fullscreen_btn_text' => __('View Fullscreen', 'pdf-poster')
     ];
   }
 
@@ -142,7 +142,7 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
     extract($attrs);
 
     if (empty($title) && !empty($url)) {
-      $title = basename(parse_url($url, PHP_URL_PATH));
+      $title = basename(wp_parse_url($url, PHP_URL_PATH));
       $title = str_replace(['-', '_'], ' ', $title);
       $title = ucwords(pathinfo($title, PATHINFO_FILENAME));
     }
@@ -150,7 +150,7 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
     return [
       "blockName" => "pdfp/pdfposter",
       "attrs" => [
-        'uniqueId' => wp_unique_id('pdfp'),
+        'uniqueId' => wp_unique_id('pdf-poster'),
         'file' => esc_url($url),
         'title' => esc_html($title),
         'titleFontSize' => '16px',

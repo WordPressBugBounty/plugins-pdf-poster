@@ -39,25 +39,28 @@ if ( ! class_exists( 'PDFPro\Model\PDFP_AjaxCall' ) ) {
 
     public function prepareAjax() {
         check_ajax_referer('wp_ajax', 'nonce');
-        
-        if (isset($_GET['nonce'])) {
-            $this->params = $_GET;
-            $this->requestType = 'POST';
-        } else {
-            $this->params = $_POST;
+
+        if ( isset( $_GET['nonce'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            // GET request — sanitize each field individually
+            $this->params      = array_map( 'sanitize_text_field', wp_unslash( $_GET ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $this->requestType = 'GET';
+        } else {
+            // POST request — sanitize each field individually
+            $this->params      = array_map( 'sanitize_text_field', wp_unslash( $_POST ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            $this->requestType = 'POST';
         }
-        echo wp_json_encode($this->proceedRequest());
-        die();
+
+        echo wp_json_encode( $this->proceedRequest() );
+        wp_die();
     }
 
     public function proceedRequest()
     {
-        $data = $this->params;
-        $nonce = $this->isset($data, 'nonce');
+        $data   = $this->params;
+        $nonce  = $this->isset( $data, 'nonce' );
 
-        $this->requestModel = $this->isset($data, 'model', 'Model');
-        $this->requestMethod = $this->isset($data, 'method', 'invalid');
+        $this->requestModel  = sanitize_text_field( $this->isset( $data, 'model', 'Model' ) );
+        $this->requestMethod = sanitize_text_field( $this->isset( $data, 'method', 'invalid' ) );
         if (!class_exists($this->namespace . $this->requestModel)) {
             return $this->invalid();
         }

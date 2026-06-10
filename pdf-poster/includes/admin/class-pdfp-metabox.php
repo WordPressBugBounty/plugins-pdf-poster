@@ -21,7 +21,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function register_metabox() {
 			if (class_exists('\CSF')) {
 				\CSF::createMetabox($this->metabox_prefix, array(
-					'title' => __('PDF Poster Configuration', 'pdfp'),
+					'title' => __('PDF Poster Configuration', 'pdf-poster'),
 					'post_type' => 'pdfposter',
 					'theme' => 'light'
 				));
@@ -50,27 +50,27 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					array(
 						'id' => 'source',
 						'type' => 'upload',
-						'title' => __('PDF Source', 'pdfp'),
-						'desc' => __('Select or upload your PDF file.', 'pdfp'),
+						'title' => __('PDF Source', 'pdf-poster'),
+						'desc' => __('Select or upload your PDF file.', 'pdf-poster'),
 						'attributes' => array('id' => 'picker_field')
 					),
 					array(
 						'id' => 'device_preview',
 						'type' => 'button_set',
-						'title' => __('Preview Device', 'pdfp') . Utils::pdfp_new_badge(),
+						'title' => __('Preview Device', 'pdf-poster') . Utils::pdfp_new_badge(),
 						'options' => array(
-							'desktop' => __('Desktop', 'pdfp'),
-							'tablet' => __('Tablet', 'pdfp'),
-							'mobile' => __('Mobile', 'pdfp'),
+							'desktop' => __('Desktop', 'pdf-poster'),
+							'tablet' => __('Tablet', 'pdf-poster'),
+							'mobile' => __('Mobile', 'pdf-poster'),
 						),
 						'default' => 'desktop',
 					),
 					array(
 						'id' => 'height',
-						'title' => __('Height (Desktop)', 'pdfp'),
+						'title' => __('Height (Desktop)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'width' => false,
-						'desc' => __('Set the height of the viewer for desktop.', 'pdfp'),
+						'desc' => __('Set the height of the viewer for desktop.', 'pdf-poster'),
 						'default' => Utils::pdfp_preset('preset_height', [
 							'height' => 842,
 							'unit' => 'px'
@@ -79,10 +79,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'height_tablet',
-						'title' => __('Height (Tablet)', 'pdfp'),
+						'title' => __('Height (Tablet)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'width' => false,
-						'desc' => __('Set the height of the viewer for tablet.', 'pdfp'),
+						'desc' => __('Set the height of the viewer for tablet.', 'pdf-poster'),
 						'default' => [
 							'height' => 700,
 							'unit' => 'px'
@@ -91,10 +91,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'height_mobile',
-						'title' => __('Height (Mobile)', 'pdfp'),
+						'title' => __('Height (Mobile)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'width' => false,
-						'desc' => __('Set the height of the viewer for mobile.', 'pdfp'),
+						'desc' => __('Set the height of the viewer for mobile.', 'pdf-poster'),
 						'default' => [
 							'height' => 400,
 							'unit' => 'px'
@@ -103,10 +103,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'width',
-						'title' => __('Width (Desktop)', 'pdfp'),
+						'title' => __('Width (Desktop)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'height' => false,
-						'desc' => __('Set the width of the viewer for desktop.', 'pdfp'),
+						'desc' => __('Set the width of the viewer for desktop.', 'pdf-poster'),
 						'default' => Utils::pdfp_preset('preset_width', [
 							'width' => '100',
 							'unit' => '%'
@@ -115,10 +115,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'width_tablet',
-						'title' => __('Width (Tablet)', 'pdfp'),
+						'title' => __('Width (Tablet)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'height' => false,
-						'desc' => __('Set the width of the viewer for tablet.', 'pdfp'),
+						'desc' => __('Set the width of the viewer for tablet.', 'pdf-poster'),
 						'default' => [
 							'width' => '100',
 							'unit' => '%'
@@ -127,10 +127,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'width_mobile',
-						'title' => __('Width (Mobile)', 'pdfp'),
+						'title' => __('Width (Mobile)', 'pdf-poster'),
 						'type' => 'dimensions',
 						'height' => false,
-						'desc' => __('Set the width of the viewer for mobile.', 'pdfp'),
+						'desc' => __('Set the width of the viewer for mobile.', 'pdf-poster'),
 						'default' => [
 							'width' => '100',
 							'unit' => '%'
@@ -138,10 +138,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'dependency' => array('device_preview', '==', 'mobile')
 					),
 					Utils::pro_feature_list(array(
-						__('Interactive FlipBook Viewer', 'pdfp'),
-						__('Industry-Leading Adobe Viewer', 'pdfp'),
-						__('Effortless Cloud Sync (Dropbox & Google Drive)', 'pdfp'),
-						__('Google Doc Viewer Fallback', 'pdfp'),
+						__('Interactive FlipBook Viewer', 'pdf-poster'),
+						__('Industry-Leading Adobe Viewer', 'pdf-poster'),
+						__('Effortless Cloud Sync (Dropbox & Google Drive)', 'pdf-poster'),
+						__('Google Doc Viewer Fallback', 'pdf-poster'),
 					)),
 				)
 			));
@@ -150,22 +150,22 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function controls()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => __('Controls', 'pdfp'),
+				'title' => __('Controls', 'pdf-poster'),
 				'fields' => array(
 					array(
 						'id' => 'show_filename',
-						'title' => __('Display Filename', 'pdfp'),
+						'title' => __('Display Filename', 'pdf-poster'),
 						'type' => 'switcher',
 						'default' => Utils::pdfp_preset('preset_show_filename', true),
-						'desc' => __('Show the filename at the top of the viewer.', 'pdfp')
+						'desc' => __('Show the filename at the top of the viewer.', 'pdf-poster')
 					),
 					Utils::pro_feature_list(array(
-						__("Distraction-Free 'Reader Mode'", 'pdfp'),
-						__('Toggle Thumbnails Navigation', 'pdfp'),
-						__('Auto-Open Sidebar by Default', 'pdfp'),
-						__('Load Latest Document Version', 'pdfp'),
-						__('Horizontal Scrollbar Support', 'pdfp'),
-						__('Custom Initial Page & Zoom Level', 'pdfp'),
+						__("Distraction-Free 'Reader Mode'", 'pdf-poster'),
+						__('Toggle Thumbnails Navigation', 'pdf-poster'),
+						__('Auto-Open Sidebar by Default', 'pdf-poster'),
+						__('Load Latest Document Version', 'pdf-poster'),
+						__('Horizontal Scrollbar Support', 'pdf-poster'),
+						__('Custom Initial Page & Zoom Level', 'pdf-poster'),
 					)),
 				)
 			));
@@ -174,34 +174,34 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function actions()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => __('Actions', 'pdfp'),
+				'title' => __('Actions', 'pdf-poster'),
 				'fields' => array(
 					array(
 						'id' => 'print',
-						'title' => __('Allow Printing', 'pdfp'),
+						'title' => __('Allow Printing', 'pdf-poster'),
 						'type' => 'switcher',
 						'default' => Utils::pdfp_preset('preset_print'),
-						'desc' => __('Allow visitors to print the PDF document.', 'pdfp')
+						'desc' => __('Allow visitors to print the PDF document.', 'pdf-poster')
 					),
 					array(
 						'id' => 'show_download_btn',
-						'title' => __('Download Button', 'pdfp'),
+						'title' => __('Download Button', 'pdf-poster'),
 						'type' => 'switcher',
 						'default' => Utils::pdfp_preset('preset_show_download_btn', true),
-						'desc' => __('Display a download button at the top of the viewer.', 'pdfp')
+						'desc' => __('Display a download button at the top of the viewer.', 'pdf-poster')
 					),
 					array(
 						'id' => 'fullscreen_btn_text',
-						'title' => __('Fullscreen Label', 'pdfp'),
+						'title' => __('Fullscreen Label', 'pdf-poster'),
 						'type' => 'text',
-						'desc' => __('Customize the text for the fullscreen button.', 'pdfp'),
+						'desc' => __('Customize the text for the fullscreen button.', 'pdf-poster'),
 						'default' => Utils::pdfp_preset('preset_fullscreen_btn_text', 'View Fullscreen')
 					),
 					Utils::pro_feature_list(array(
-						__('Customize Download Button Label', 'pdfp'),
-						__('Premium Fullscreen Button Control', 'pdfp'),
-						__('Open Fullscreen in New Tab', 'pdfp'),
-						__('Custom Actions Position (Top/Bottom)', 'pdfp'),
+						__('Customize Download Button Label', 'pdf-poster'),
+						__('Premium Fullscreen Button Control', 'pdf-poster'),
+						__('Open Fullscreen in New Tab', 'pdf-poster'),
+						__('Custom Actions Position (Top/Bottom)', 'pdf-poster'),
 					)),
 				)
 			));
@@ -211,13 +211,13 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function popup()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Popup', 'pdfp')),
+				'title' => Utils::pdfp_pro_title(__('Popup', 'pdf-poster')),
 				'fields' => array(
 					Utils::pro_feature_list(array(
-						__('Enable Modal Popups', 'pdfp'),
-						__('Multiple Trigger Types (Button/Image)', 'pdfp'),
-						__('Custom Trigger Alignment', 'pdfp'),
-						__('PDF Icon Overlay on Images', 'pdfp'),
+						__('Enable Modal Popups', 'pdf-poster'),
+						__('Multiple Trigger Types (Button/Image)', 'pdf-poster'),
+						__('Custom Trigger Alignment', 'pdf-poster'),
+						__('PDF Icon Overlay on Images', 'pdf-poster'),
 					)),
 				),
 			));
@@ -226,12 +226,12 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function protect_content()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Protect Content', 'pdfp')),
+				'title' => Utils::pdfp_pro_title(__('Protect Content', 'pdf-poster')),
 				'fields' => array(
 					Utils::pro_feature_list(array(
-						__('Disable Right-Click Interactions', 'pdfp'),
-						__('Disable Text Selection', 'pdfp'),
-						__('Suppress Blocked Warning Alerts', 'pdfp'),
+						__('Disable Right-Click Interactions', 'pdf-poster'),
+						__('Disable Text Selection', 'pdf-poster'),
+						__('Suppress Blocked Warning Alerts', 'pdf-poster'),
 					)),
 				)
 			));
@@ -240,56 +240,56 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function social_share()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => __('Social Share', 'pdfp'),
+				'title' => __('Social Share', 'pdf-poster'),
 				'fields' => array(
 					array(
 						'id' => 'social_share',
-						'title' => __('Enable Sharing', 'pdfp'),
+						'title' => __('Enable Sharing', 'pdf-poster'),
 						'type' => 'switcher',
-						'desc' => esc_html__('Enable social sharing buttons for the PDF.', 'pdfp'),
+						'desc' => esc_html__('Enable social sharing buttons for the PDF.', 'pdf-poster'),
 						'default' => false,
 					),
 					array(
 						'id' => 'social_share_position',
-						'title' => __('Share Position', 'pdfp'),
+						'title' => __('Share Position', 'pdf-poster'),
 						'type' => 'select',
-						'desc' => esc_html__('Select where the sharing buttons should appear.', 'pdfp'),
+						'desc' => esc_html__('Select where the sharing buttons should appear.', 'pdf-poster'),
 						'default' => 'top',
 						'options' => array(
-							'top' => esc_html__('Top', 'pdfp'),
-							'bottom' => esc_html__('Bottom', 'pdfp'),
+							'top' => esc_html__('Top', 'pdf-poster'),
+							'bottom' => esc_html__('Bottom', 'pdf-poster'),
 						),
 						'dependency' => array('social_share', '==', '1')
 					),
 					array(
 						'id' => 'social_share_facebook',
-						'title' => __('Enable Facebook', 'pdfp'),
+						'title' => __('Enable Facebook', 'pdf-poster'),
 						'type' => 'switcher',
-						'desc' => esc_html__('Allow sharing on Facebook.', 'pdfp'),
+						'desc' => esc_html__('Allow sharing on Facebook.', 'pdf-poster'),
 						'default' => true,
 						'dependency' => array('social_share', '==', '1')
 					),
 					array(
 						'id' => 'social_share_twitter',
-						'title' => __('Enable Twitter', 'pdfp'),
+						'title' => __('Enable Twitter', 'pdf-poster'),
 						'type' => 'switcher',
-						'desc' => esc_html__('Allow sharing on Twitter.', 'pdfp'),
+						'desc' => esc_html__('Allow sharing on Twitter.', 'pdf-poster'),
 						'default' => true,
 						'dependency' => array('social_share', '==', '1')
 					),
 					array(
 						'id' => 'social_share_linkedin',
-						'title' => __('Enable LinkedIn', 'pdfp'),
+						'title' => __('Enable LinkedIn', 'pdf-poster'),
 						'type' => 'switcher',
-						'desc' => esc_html__('Allow sharing on LinkedIn.', 'pdfp'),
+						'desc' => esc_html__('Allow sharing on LinkedIn.', 'pdf-poster'),
 						'default' => true,
 						'dependency' => array('social_share', '==', '1')
 					),
 					array(
 						'id' => 'social_share_pinterest',
-						'title' => __('Enable Pinterest', 'pdfp'),
+						'title' => __('Enable Pinterest', 'pdf-poster'),
 						'type' => 'switcher',
-						'desc' => esc_html__('Allow sharing on Pinterest.', 'pdfp'),
+						'desc' => esc_html__('Allow sharing on Pinterest.', 'pdf-poster'),
 						'default' => true,
 						'dependency' => array('social_share', '==', '1')
 					),
@@ -300,35 +300,35 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function styles()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => __('Styles', 'pdfp'),
+				'title' => __('Styles', 'pdf-poster'),
 				'fields' => array(
 					array(
 						'id' => 'popup_btn_bg',
-						'title' => __('Button Background', 'pdfp'),
+						'title' => __('Button Background', 'pdf-poster'),
 						'type' => 'color',
-						'desc' => __('Choose a background color for the buttons.', 'pdfp'),
+						'desc' => __('Choose a background color for the buttons.', 'pdf-poster'),
 						'default' => '#1e73be',
 					),
 					array(
 						'id' => 'popup_btn_color',
-						'title' => __('Button Color', 'pdfp'),
+						'title' => __('Button Color', 'pdf-poster'),
 						'type' => 'color',
-						'desc' => __('Choose a text color for the buttons.', 'pdfp'),
+						'desc' => __('Choose a text color for the buttons.', 'pdf-poster'),
 						'default' => '#fff'
 					),
 					array(
 						'id' => 'popup_btn_font_size',
-						'title' => __('Font Size', 'pdfp'),
+						'title' => __('Font Size', 'pdf-poster'),
 						'type' => 'number',
-						'desc' => esc_html__('Set the font size for the buttons.', 'pdfp'),
+						'desc' => esc_html__('Set the font size for the buttons.', 'pdf-poster'),
 						'default' => 1,
 						'unit' => 'rem'
 					),
 					array(
 						'id' => 'popup_btn_padding',
-						'title' => __('Padding', 'pdfp'),
+						'title' => __('Padding', 'pdf-poster'),
 						'type' => 'spacing',
-						'desc' => __('Set the internal spacing for the buttons.', 'pdfp'),
+						'desc' => __('Set the internal spacing for the buttons.', 'pdf-poster'),
 						'default' => [
 							'top' => '10',
 							'bottom' => '10',
@@ -344,7 +344,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function ads()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Ads', 'pdfp'), "Upcoming"),
+				'title' => Utils::pdfp_pro_title(__('Ads', 'pdf-poster'), "Upcoming"),
 				'fields' => array(
 					Utils::upcoming_section()
 				)
@@ -354,7 +354,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function analytics()
 		{
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Analytics', 'pdfp'), "Upcoming"),
+				'title' => Utils::pdfp_pro_title(__('Analytics', 'pdf-poster'), "Upcoming"),
 				'fields' => array(
 					Utils::upcoming_section()
 				)

@@ -60,16 +60,16 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
                 'pdfposter',
                 array(
                     'labels' => array(
-                        'name' => __('PDF Poster', 'pdfp'),
-                        'singular_name' => __('PDF Poster', 'pdfp'),
-                        'add_new' => __('Add New PDF', 'pdfp'),
-                        'add_new_item' => __(' &#8627; Add New', 'pdfp'),
-                        'edit_item' => __('Edit', 'pdfp'),
-                        'new_item' => __('New PDF', 'pdfp'),
-                        'view_item' => __('View PDF', 'pdfp'),
-                        'search_items' => __('Search PDF', 'pdfp'),
-                        'all_items' => __('All PDF Posters', 'pdfp'),
-                        'not_found' => __('Sorry, we couldn\'t find the PDF file you are looking for.', 'pdfp')
+                        'name' => __('PDF Poster', 'pdf-poster'),
+                        'singular_name' => __('PDF Poster', 'pdf-poster'),
+                        'add_new' => __('Add New PDF', 'pdf-poster'),
+                        'add_new_item' => __(' &#8627; Add New', 'pdf-poster'),
+                        'edit_item' => __('Edit', 'pdf-poster'),
+                        'new_item' => __('New PDF', 'pdf-poster'),
+                        'view_item' => __('View PDF', 'pdf-poster'),
+                        'search_items' => __('Search PDF', 'pdf-poster'),
+                        'all_items' => __('All PDF Posters', 'pdf-poster'),
+                        'not_found' => __('Sorry, we couldn\'t find the PDF file you are looking for.', 'pdf-poster')
                     ),
                     'public' => false,
                     'show_ui' => true,
@@ -111,26 +111,26 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         function pdfp_columns_head_only_podcast($defaults)
         {
             unset($defaults['date']);
-            $defaults['shortcode'] = __('ShortCode', 'pdfp');
-            $defaults['raw_shortCode'] = esc_html__('ShortCode For Raw PDF View', 'pdfp');
-            $defaults['date'] = __('Date', 'pdfp');
+            $defaults['shortcode'] = __('ShortCode', 'pdf-poster');
+            $defaults['raw_shortCode'] = esc_html__('ShortCode For Raw PDF View', 'pdf-poster');
+            $defaults['date'] = __('Date', 'pdf-poster');
             return $defaults;
         }
 
         function pdfp_columns_content_only_podcast($column_name, $post_ID)
         {
             if ($column_name == 'shortcode') {
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdfp') . '" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdfp') . '</span></div>';
+                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
             }
             if ($column_name == 'raw_shortCode') {
                 // show content of 'directors_name' column
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdfp') . '" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdfp') . '</span></div>';
+                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
             }
         }
 
         function pdfp_updated_messages($messages)
         {
-            $messages[$this->post_type][1] = __('Player updated ', 'pdfp');
+            $messages[$this->post_type][1] = __('Player updated ', 'pdf-poster');
             return $messages;
         }
 
@@ -220,7 +220,7 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         {
             add_meta_box(
                 'Shortcode',
-                __('New Feature ! Quick Embed', 'pdfp'),
+                __('New Feature ! Quick Embed', 'pdf-poster'),
                 [$this, 'pdfp_pro_shortcode_wid'],
                 'pdfposter',
                 'side',
@@ -240,7 +240,7 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
             $shortcode = "[pdf id='" . esc_attr($id) . "']";
             ?>
             <div class="pdfp_shortcode_area_after_title">
-                <label><?php esc_html_e('Copy and paste this shortcode into your posts, pages and widget', 'pdfp'); ?></label>
+                <label><?php esc_html_e('Copy and paste this shortcode into your posts, pages and widget', 'pdf-poster'); ?></label>
                 <div class="shortcode_area">
                     <button class="button button-bplugins button-large pdfp_shortcode_copy_btn"
                         data-clipboard-text="<?php echo esc_attr($shortcode) ?>"><?php echo esc_html($shortcode); ?></button>
@@ -260,9 +260,9 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         function pdfp_pro_shortcode_wid()
         {
             $shortcode = "[pdf_embed url='your_file_url']";
-            echo esc_html__('Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time.', 'pdfp');
+            echo esc_html__('Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time.', 'pdf-poster');
             echo '<br/><br/><input type="text" style="font-size: 12px; border: none; box-shadow: none; padding: 4px 8px; width:100%; background:#1e8cbe; color:white;"  onfocus="this.select();" readonly="readonly"  value="' . esc_attr($shortcode) . '" /><br/><br/>';
-            echo '<p><a class="button button-primary button-large" href="admin.php?page=fpdf-settings" target="_blank">' . esc_html__('ShortCode Global Settings', 'pdfp') . '</a></p>';
+            echo '<p><a class="button button-primary button-large" href="admin.php?page=fpdf-settings" target="_blank">' . esc_html__('ShortCode Global Settings', 'pdf-poster') . '</a></p>';
         }
     }
 }

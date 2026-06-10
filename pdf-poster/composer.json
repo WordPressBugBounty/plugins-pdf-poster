@@ -27,7 +27,7 @@
   },
   "autoload": {
     "classmap": [
-      "class-pdfp-blocks.php"
+      "includes/base/class-pdfp-blocks.php"
     ]
   }
 }

@@ -104,7 +104,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             ];
 
             $attrs = [
-                'uniqueId' => wp_unique_id('pdfp'),
+                'uniqueId' => wp_unique_id('pdf-poster'),
                 'file' => $meta('source', ''),
                 'title' => get_the_title($id),
                 'height' => $responsive_height,
@@ -162,12 +162,6 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             } else {
                 return false;
             }
-
-            try {
-                //code...
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
         }
 
         public static function pdfp_pro_title($title, $badge = 'PRO') {
@@ -210,7 +204,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         public static function upgrade_section() {
             return array(
                 'type' => 'content',
-                'content' => '<div class="pdfp-metabox-upgrade-section">' . esc_html__('The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users.', 'pdfp') . ' <a class="button button-bplugins" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">' . esc_html__('Upgrade to PRO', 'pdfp') . '</a></div>'
+                'content' => '<div class="pdfp-metabox-upgrade-section">' . esc_html__('The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users.', 'pdf-poster') . ' <a class="button button-bplugins" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">' . esc_html__('Upgrade to PRO', 'pdf-poster') . '</a></div>'
             );
         }
 
@@ -328,8 +322,8 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         </style>
         <div class="pdfp-pro-showcase">
             <div class="pdfp-pro-header">
-                <h4>' . __('Unlock Premium Experience', 'pdfp') . '</h4>
-                <span class="pdfp-pro-badge">' . __('PRO ONLY', 'pdfp') . '</span>
+                <h4>' . __('Unlock Premium Experience', 'pdf-poster') . '</h4>
+                <span class="pdfp-pro-badge">' . __('PRO ONLY', 'pdf-poster') . '</span>
             </div>
             <ul class="pdfp-pro-list">';
             foreach ($features as $feature) {
@@ -342,11 +336,11 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             }
             $html .= '</ul>
             <div class="pdfp-pro-footer">
-                <a href="' . admin_url('admin.php?page=pdf-poster-pricing') . '" class="pdfp-upgrade-btn">
-                    <span>' . __('Get Premium Now', 'pdfp') . '</span>
+                <a href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '" class="pdfp-upgrade-btn">
+                    <span>' . __('Get Premium Now', 'pdf-poster') . '</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <span class="pdfp-pro-hint">' . __('Trusted by over 20,000+ WordPress sites.', 'pdfp') . '</span>
+                <span class="pdfp-pro-hint">' . __('Trusted by over 20,000+ WordPress sites.', 'pdf-poster') . '</span>
             </div>
         </div>';
 
@@ -365,10 +359,10 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
                         <code id="pdfp-shortcode-text">[pdf_embed url="your_file_url"]</code>
                         <button type="button" class="pdfp-copy-shortcode" data-shortcode=\'[pdf_embed url="your_file_url"]\'>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                            <span class="copy-text">' . __('Copy', 'pdfp') . '</span>
+                            <span class="copy-text">' . __('Copy', 'pdf-poster') . '</span>
                         </button>
                     </div>
-                    <p class="description">' . __('Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link.', 'pdfp') . '</p>
+                    <p class="description">' . __('Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link.', 'pdf-poster') . '</p>
                 </div>
             '
             ];
@@ -377,7 +371,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         public static function upcoming_section() {
             return array(
                 'type' => 'content',
-                'content' => '<div class="pdfp-metabox-upcoming-section">' . esc_html__('This feature is coming soon. Stay tuned for updates!', 'pdfp') . '</div>'
+                'content' => '<div class="pdfp-metabox-upcoming-section">' . esc_html__('This feature is coming soon. Stay tuned for updates!', 'pdf-poster') . '</div>'
             );
         }
 

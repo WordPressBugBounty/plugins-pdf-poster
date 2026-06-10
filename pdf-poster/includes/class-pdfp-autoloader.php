@@ -31,6 +31,11 @@ class Autoloader {
         // Remove the namespace prefix
         $relative_class = substr($class, 7);
 
+        // Map the RegisterBlock class to class-pdfp-blocks.php
+        if ( 'Base\PDFP_RegisterBlock' === $relative_class ) {
+            $relative_class = 'Base\PDFP_Blocks';
+        }
+
         // Explode into parts (e.g. Database\Init -> ['Database', 'Init'])
         $parts = explode('\\', $relative_class);
         $class_name = array_pop($parts);

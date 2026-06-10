@@ -23,15 +23,18 @@ if ( ! class_exists( 'PDFPro\Rest\PDFP_GetMeta' ) ) {
             'pdfposter/v1',
             $this->route,
             [
-                'methods' => 'GET',
-                'callback' => [$this, 'single_doc_callback'],
-                'permission_callback' => '__return_true',
+                'methods'             => 'GET',
+                'callback'            => [$this, 'single_doc_callback'],
+                // This endpoint only reads publicly published PDF poster data.
+                // We restrict to logged-in users to satisfy WordPress security guidelines.
+                'permission_callback' => function() {
+                    return is_user_logged_in();
+                },
             ]
         );
     }
 
-    function single_doc_callback(\WP_REST_Request $request)
-    {
+    public function single_doc_callback(\WP_REST_Request $request) {
         $response = [];
         $params = $request->get_params();
         $id = $params['id'] ?? null;

@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, shehabulislam, taninrahman, farazi1,  freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
-Requires at least: 6.3
-Tested up to: 6.9
-Stable tag: 2.5.2
+Requires at least: 5.0.3
+Tested up to: 7.0
+Stable tag: 2.5.3
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -243,6 +243,15 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.5.3 - 10 June 2026 =
+* Update: Admin Dashboard aligned with the latest standard and bpl-tools layout.
+* Update: Update block.json version. 
+* Security: Enhanced request validation and sanitized AJAX inputs.
+* Security: Secured public REST API endpoints with authentication checks.
+* Compliance: Added full uninstall cleanup routine for custom options and database tables.
+* Compliance: Standardized translation text domains to match the plugin slug.
+* Fixed: Corrected general typos, updated GPL license headers, and added distribution ignore rules.
 
 = 2.5.2 - 19 May 2026 =
 * New: Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.
