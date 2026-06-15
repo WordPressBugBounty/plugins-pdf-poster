@@ -140,6 +140,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					Utils::pro_feature_list(array(
 						__('Interactive FlipBook Viewer', 'pdf-poster'),
 						__('Industry-Leading Adobe Viewer', 'pdf-poster'),
+						__('Slider and Scroll Viewer Options', 'pdf-poster'),
 						__('Effortless Cloud Sync (Dropbox & Google Drive)', 'pdf-poster'),
 						__('Google Doc Viewer Fallback', 'pdf-poster'),
 					)),
@@ -166,6 +167,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						__('Load Latest Document Version', 'pdf-poster'),
 						__('Horizontal Scrollbar Support', 'pdf-poster'),
 						__('Custom Initial Page & Zoom Level', 'pdf-poster'),
+						__('Annotation Mode Configuration', 'pdf-poster'),
+						__('Open PDF Links in New Tab', 'pdf-poster'),
 					)),
 				)
 			));

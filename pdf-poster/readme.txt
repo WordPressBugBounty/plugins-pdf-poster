@@ -4,7 +4,7 @@ Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0.3
 Tested up to: 7.0
-Stable tag: 2.5.3
+Stable tag: 2.5.4
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,12 @@ The plugin supports the Gutenberg block editor. It includes content protection, 
 - **Enable Popup Viewer**: Display PDFs in a modal popup window.
 
 - **Show Only PDF**: Hide the background and PDF menu for a distraction-free layout.
+
+- **Slider and Scroll Viewer**: Add Slider and Scroll Viewer options.
+
+- **Annotation Mode**: Add Annotation Mode configuration for default viewer.
+
+- **Open Links in New Tab**: Add Open PDF links in new tab configuration for default viewer.
 
 [**Try the PDF Poster PRO**](https://bplugins.com/products/pdf-poster/pricing) – Unlock all premium features now!
 
@@ -243,6 +249,12 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.5.4 - 15 June 2026 =
+* New: Added interactive PDF Chatbot assistant.
+* New: Added Slider and Scroll Viewer options.
+* New: Added Annotation Mode configuration for default viewer.
+* New: Added Open PDF links in new tab configuration for default viewer.
 
 = 2.5.3 - 10 June 2026 =
 * Update: Admin Dashboard aligned with the latest standard and bpl-tools layout.
