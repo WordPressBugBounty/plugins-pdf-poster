@@ -9,8 +9,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
-	class PDFP_MetaBox
-	{
+	class PDFP_MetaBox {
 		private $metabox_prefix = '_fpdf';
 		private $option = null;
 
@@ -33,13 +32,35 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 				$this->protect_content();
 				$this->social_share();
 				$this->styles();
+				$this->performance();
 				$this->ads();
 				$this->analytics();
 			}
 		}
 
-		public function configure()
-		{
+		/**
+		 * Options for the Viewer button set.
+		 *
+		 * FlipBook and Slider are free, but they render through dFlip -- so they are only
+		 * offered when that engine is actually on disk. Adobe needs the premium PDF Embed
+		 * bridge and Scroll is premium-only; both are still listed so they keep selling.
+		 * Wrapping their labels in .pdfp-lock-field .pdfp-pro-option makes the
+		 * PDFP_ProModal click handler open the upgrade modal instead of selecting them,
+		 * leaving the current choice untouched.
+		 */
+		private function viewer_options() {
+			$options = array(
+				'default' => __('Default', 'pdf-poster'),
+			); 
+
+			if (Utils::pdfp_has_flipbook_engine()) {
+				$options['flipbook'] = __('FlipBook', 'pdf-poster') . Utils::pdfp_new_badge();
+				$options['slider'] = __('Slider', 'pdf-poster') . Utils::pdfp_new_badge();
+			} 
+			return $options;
+		}
+
+		public function configure() {
 			if (!$this->option) {
 				$this->option = get_option('fpdf_option');
 			}
@@ -48,11 +69,41 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 				'title' => 'General',
 				'fields' => array(
 					array(
+						'id' => 'viewer',
+						'type' => 'button_set',
+						'title' => __('Viewer', 'pdf-poster'),
+						'desc' => __('Select the PDF viewer engine.', 'pdf-poster'),
+						'default' => 'default',
+						'options' => $this->viewer_options()
+					),
+					array(
 						'id' => 'source',
 						'type' => 'upload',
 						'title' => __('PDF Source', 'pdf-poster'),
 						'desc' => __('Select or upload your PDF file.', 'pdf-poster'),
 						'attributes' => array('id' => 'picker_field')
+					),
+					array(
+						'id' => 'flipbook_source_type',
+						'title' => __('Viewer Source', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'button_set',
+						'default' => 'pdf',
+						'options' => array(
+							'pdf' => __('PDF File', 'pdf-poster'),
+							'images' => __('Image Gallery', 'pdf-poster'),
+						),
+						'desc' => __('Build the flipbook, slider or scroll view from a PDF file or from an ordered set of images.', 'pdf-poster'),
+						'dependency' => array('viewer', 'any', 'flipbook,slider,scroll', true)
+					),
+					array(
+						'id' => 'flipbook_images',
+						'title' => __('Pages (Images)', 'pdf-poster'),
+						'type' => 'gallery',
+						'desc' => __('Select images in the order they should appear as pages.', 'pdf-poster'),
+						'dependency' => array(
+							array('flipbook_source_type', '==', 'images'),
+							array('viewer', 'any', 'flipbook,slider,scroll', true),
+						)
 					),
 					array(
 						'id' => 'device_preview',
@@ -138,11 +189,9 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'dependency' => array('device_preview', '==', 'mobile')
 					),
 					Utils::pro_feature_list(array(
-						__('Interactive FlipBook Viewer', 'pdf-poster'),
 						__('Industry-Leading Adobe Viewer', 'pdf-poster'),
-						__('Slider and Scroll Viewer Options', 'pdf-poster'),
+						__('Continuous Scroll Viewer for Long Reports', 'pdf-poster'),
 						__('Effortless Cloud Sync (Dropbox & Google Drive)', 'pdf-poster'),
-						__('Google Doc Viewer Fallback', 'pdf-poster'),
 					)),
 				)
 			));
@@ -160,15 +209,72 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'default' => Utils::pdfp_preset('preset_show_filename', true),
 						'desc' => __('Show the filename at the top of the viewer.', 'pdf-poster')
 					),
+					array(
+						'id' => 'keyboard_nav',
+						'title' => __('Keyboard Navigation', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_keyboard_nav', false),
+						'desc' => __('Let visitors use the Left/Right arrow keys to change pages.', 'pdf-poster')
+					),
+					array(
+						'id' => 'rtl_mode',
+						'title' => __('RTL Layout', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'button_set',
+						'default' => 'off',
+						'options' => array(
+							'off' => __('Off', 'pdf-poster'),
+							'on' => __('On', 'pdf-poster'),
+							'auto' => __('Auto', 'pdf-poster'),
+						),
+						'desc' => __('Flip the viewer layout for right-to-left languages (Arabic, Hebrew, etc.). "Auto" follows the site language.', 'pdf-poster')
+					),
+					array(
+						'id' => 'theme_mode',
+						'title' => __('Viewer Theme', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'button_set',
+						'default' => 'light',
+						'options' => array(
+							'light' => __('Light', 'pdf-poster'),
+							'dark' => __('Dark', 'pdf-poster'),
+							'auto' => __('Auto', 'pdf-poster'),
+						),
+						'desc' => __('Controls the viewer toolbar/background theme. "Auto" follows the visitor\'s system. This never changes the PDF page content itself.', 'pdf-poster')
+					),
+					array(
+						'id' => 'flipbook_sound',
+						'title' => __('Page Flip Sound', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_flipbook_sound', true),
+						'desc' => __('Play a page-turn sound effect in Flipbook and Slider modes.', 'pdf-poster'),
+						'dependency' => array('viewer', 'any', 'flipbook,slider', true)
+					),
+					array(
+						'id' => 'annotation_mode',
+						'title' => __('Annotation Mode', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_annotation_mode', true),
+						'desc' => __('Show notes, highlights, comments, and clickable links that are saved inside the PDF.', 'pdf-poster'),
+						'dependency' => array('viewer', '==', 'default', true)
+					),
+					array(
+						'id' => 'open_links_in_new_tab',
+						'title' => __('Open PDF links in new tab', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_open_links_in_new_tab', false),
+						'desc' => __('Open links clicked inside the PDF in a new browser tab, keeping your current page open.', 'pdf-poster'),
+						'dependency' => array(
+							array('viewer', '==', 'default', true),
+							array('annotation_mode', '==', '1', true)
+						)
+					),
 					Utils::pro_feature_list(array(
 						__("Distraction-Free 'Reader Mode'", 'pdf-poster'),
 						__('Toggle Thumbnails Navigation', 'pdf-poster'),
 						__('Auto-Open Sidebar by Default', 'pdf-poster'),
-						__('Load Latest Document Version', 'pdf-poster'),
 						__('Horizontal Scrollbar Support', 'pdf-poster'),
 						__('Custom Initial Page & Zoom Level', 'pdf-poster'),
-						__('Annotation Mode Configuration', 'pdf-poster'),
-						__('Open PDF Links in New Tab', 'pdf-poster'),
+						__('Hide the Right-Side Toolbar', 'pdf-poster'),
+						__('Adobe Embed Modes & View Modes', 'pdf-poster'),
 					)),
 				)
 			));
@@ -191,7 +297,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'title' => __('Download Button', 'pdf-poster'),
 						'type' => 'switcher',
 						'default' => Utils::pdfp_preset('preset_show_download_btn', true),
-						'desc' => __('Display a download button at the top of the viewer.', 'pdf-poster')
+						'desc' => __('Display a download button at the top of the viewer.', 'pdf-poster'),
+						'dependency' => array('flipbook_source_type', '!=', 'images')
 					),
 					array(
 						'id' => 'fullscreen_btn_text',
@@ -202,7 +309,6 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					Utils::pro_feature_list(array(
 						__('Customize Download Button Label', 'pdf-poster'),
-						__('Premium Fullscreen Button Control', 'pdf-poster'),
 						__('Open Fullscreen in New Tab', 'pdf-poster'),
 						__('Custom Actions Position (Top/Bottom)', 'pdf-poster'),
 					)),
@@ -262,7 +368,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 							'top' => esc_html__('Top', 'pdf-poster'),
 							'bottom' => esc_html__('Bottom', 'pdf-poster'),
 						),
-						'dependency' => array('social_share', '==', '1')
+						'dependency' => array('social_share', '==', '1', true)
 					),
 					array(
 						'id' => 'social_share_facebook',
@@ -270,7 +376,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'type' => 'switcher',
 						'desc' => esc_html__('Allow sharing on Facebook.', 'pdf-poster'),
 						'default' => true,
-						'dependency' => array('social_share', '==', '1')
+						'dependency' => array('social_share', '==', '1', true)
 					),
 					array(
 						'id' => 'social_share_twitter',
@@ -278,7 +384,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'type' => 'switcher',
 						'desc' => esc_html__('Allow sharing on Twitter.', 'pdf-poster'),
 						'default' => true,
-						'dependency' => array('social_share', '==', '1')
+						'dependency' => array('social_share', '==', '1', true)
 					),
 					array(
 						'id' => 'social_share_linkedin',
@@ -286,13 +392,21 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'type' => 'switcher',
 						'desc' => esc_html__('Allow sharing on LinkedIn.', 'pdf-poster'),
 						'default' => true,
-						'dependency' => array('social_share', '==', '1')
+						'dependency' => array('social_share', '==', '1', true)
 					),
 					array(
 						'id' => 'social_share_pinterest',
 						'title' => __('Enable Pinterest', 'pdf-poster'),
 						'type' => 'switcher',
 						'desc' => esc_html__('Allow sharing on Pinterest.', 'pdf-poster'),
+						'default' => true,
+						'dependency' => array('social_share', '==', '1')
+					),
+					array(
+						'id' => 'social_share_mailto',
+						'title' => __('Enable Email', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'desc' => esc_html__('Allow sharing via Email.', 'pdf-poster'),
 						'default' => true,
 						'dependency' => array('social_share', '==', '1')
 					),
@@ -341,6 +455,32 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'units' => array('px')
 					),
 				),
+			));
+		}
+
+		public function performance()
+		{
+			\CSF::createSection($this->metabox_prefix, array(
+				'title' => __('Performance & Reliability', 'pdf-poster'),
+				'fields' => array(
+					array(
+						'id' => 'progressive_loading',
+						'title' => __('Fast Loading (Progressive Rendering)', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_progressive_loading', true),
+						'desc' => __('Stream large PDFs so the first page appears sooner. Turn off only if your host mishandles range requests.', 'pdf-poster'),
+					),
+					array(
+						'id' => 'default_browser',
+						'title' => __('Google Doc Viewer', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'type' => 'switcher',
+						'default' => Utils::pdfp_preset('preset_default_browser'),
+						'desc' => __('Enable Google Doc Viewer as a fallback (Recommended for Edge).', 'pdf-poster'),
+					),
+					Utils::pro_feature_list(array(
+						__('Load Latest Document Version', 'pdf-poster'),
+					)),
+				)
 			));
 		}
 

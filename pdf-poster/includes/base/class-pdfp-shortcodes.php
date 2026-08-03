@@ -37,23 +37,27 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
     wp_enqueue_style('pdfp-public');
     wp_enqueue_script('pdfp-pdfposter-view-script');
 
-    $isGutenberg = get_post_meta($id, 'isGutenberg', true);
-    $hasBlock = has_block('pdfp/pdfposter', $post);
+    return render_block($this->resolve_block($id, $post));
+  }
 
-    if ($hasBlock || $isGutenberg) {
-      $content = $post->post_content ?? ' ';
-      $blocks = parse_blocks($content);
-      
-      foreach ($blocks as $block) {
-        if ($block['blockName'] === 'pdfp/pdfposter') {
-          return render_block($block);
-        }
+  /**
+   * Resolve the block to render for a saved poster.
+   *
+   * Only the post content proves a pdfp/pdfposter block was ever saved. The
+   * isGutenberg meta is written to every auto-draft and never cleared, so a
+   * metabox-configured poster can carry it with empty content -- branching on
+   * it made the shortcode render nothing at all.
+   */
+  private function resolve_block($id, $post) {
+    $blocks = parse_blocks($post->post_content ?? '');
+
+    foreach ($blocks as $block) {
+      if (isset($block['blockName']) && $block['blockName'] === 'pdfp/pdfposter') {
+        return $block;
       }
-      return render_block($blocks[0]);
-    } else {
-      $block = Utils::generate_pdf_poster_block($id);
-      return render_block($block);
     }
+
+    return Utils::generate_pdf_poster_block($id);
   }
 
   // Raw PDF ShortCode
@@ -79,31 +83,19 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
     wp_enqueue_style('pdfp-public');
     wp_enqueue_script('pdfp-pdfposter-view-script');
 
-    $isGutenberg = get_post_meta($id, 'isGutenberg', true);
-    $hasBlock = has_block('pdfp/pdfposter', $post);
+    $block = $this->resolve_block($id, $post);
+    $block['attrs']['onlyPDF'] = true;
 
-    if ($hasBlock || $isGutenberg) {
-      $content = $post->post_content ?? false;
-      if ($content) {
-        $blocks = parse_blocks($content);
-        foreach ($blocks as $block) {
-          if ($block['blockName'] === 'pdfp/pdfposter') {
-            $block['attrs']['onlyPDF'] = true;
-            return render_block($block);
-          }
-        }
-        $blocks[0]['attrs']['onlyPDF'] = true;
-        return render_block($blocks[0]);
-      }
-    } else {
-      $block = Utils::generate_pdf_poster_block($id);
-      $block['attrs']['onlyPDF'] = true;
-      return render_block($block);
-    }
+    return render_block($block);
   }
 
   public function pdf_embed($atts) {
     $attrs = shortcode_atts($this->pdf_embed_attrs(), $atts);
+
+    // Without a URL the viewer mounts an empty container, so bail loudly instead.
+    if (empty($attrs['url'])) {
+      return current_user_can('manage_options') ? '<p style="color:red">PDF Poster: Please provide a file URL in the shortcode.</p>' : '';
+    }
 
     $block = $this->pdf_embed_to_block($attrs);
 

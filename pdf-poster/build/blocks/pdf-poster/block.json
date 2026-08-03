@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "version": "2.5.4",
+  "version": "2.5.5",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
   "description": "Embed PDF in your posts and pages",
@@ -88,6 +88,30 @@
       "type": "boolean",
       "default": false
     },
+    "keyboardNav": {
+      "type": "boolean",
+      "default": false
+    },
+    "rtlMode": {
+      "type": "string",
+      "default": "off"
+    },
+    "themeMode": {
+      "type": "string",
+      "default": "light"
+    },
+    "annotationMode": {
+      "type": "boolean",
+      "default": true
+    },
+    "openLinksInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "progressiveLoading": {
+      "type": "boolean",
+      "default": true
+    },
     "downloadButton": {
       "type": "boolean",
       "default": false
@@ -162,6 +186,18 @@
       "type": "string",
       "default": "default"
     },
+    "flipbookSourceType": {
+      "type": "string",
+      "default": "pdf"
+    },
+    "flipbookImages": {
+      "type": "array",
+      "default": []
+    },
+    "flipbookSound": {
+      "type": "boolean",
+      "default": true
+    },
     "adobeOptions": {
       "type": "object",
       "default": {
@@ -224,6 +260,7 @@
         "twitter": true,
         "linkedin": true,
         "pinterest": true,
+        "mailto": true,
         "position": "top"
       }
     }

@@ -18,13 +18,20 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_EnqueueAssets' ) ) {
         add_action('wp_enqueue_media', [$this, 'pdfp_media_button_js_file']);
         add_action('script_loader_tag', [$this, 'script_loader_tag'], 10, 3);
         add_action('init', [$this, 'init']);
+        add_action('enqueue_block_assets', [$this, 'blockAssets']);
     }
 
-    /** 
+    /**
      * inti action
      */
     public function init() {
-        // dflip asset registration removed (premium only)
+        // dFlip powers the FlipBook and Slider viewers. Registered only when the engine
+        // is actually on disk so a stripped package degrades instead of 404ing.
+        if (file_exists(PDFPRO_PATH . 'assets/dflip/js/dflip.min.js')) {
+            wp_register_script('dflip-script', PDFPRO_PLUGIN_DIR . 'assets/dflip/js/dflip.min.js', array('jquery'), PDFPRO_VER, true);
+            wp_add_inline_script('dflip-script', 'window.dFlipLocation = "' . PDFPRO_PLUGIN_DIR . 'assets/dflip/";', 'before');
+            wp_register_style('dflip-style', PDFPRO_PLUGIN_DIR . 'assets/dflip/css/dflip.min.css', array(), PDFPRO_VER);
+        }
     }
 
     /**
@@ -43,7 +50,15 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_EnqueueAssets' ) ) {
             'dir' => PDFPRO_PLUGIN_DIR,
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'isPipe' => false,
+            'is_rtl' => is_rtl(),
+            // Capability, not entitlement: tells the JS whether the flipbook engine
+            // exists in this build so it can fall back instead of rendering an empty box.
+            'hasFlipbookEngine' => Utils::pdfp_has_flipbook_engine(),
         ];
+
+        if (Utils::pdfp_has_flipbook_engine()) {
+            $localize_data['dflipAssetsUrl'] = PDFPRO_PLUGIN_DIR . 'assets/dflip/';
+        }
 
         // Premium data localization removed
 
@@ -76,6 +91,13 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_EnqueueAssets' ) ) {
         $postType = get_post_type();
         if (in_array($hook, ['admin_page_pdf-poster-pricing-manual', 'pdfposter_page_fpdf-support', 'pdfposter_page_fpdf-settings', 'post.php', 'post-new.php']) || $postType === 'pdfposter') {
             // Premium admin assets removed
+
+            // The flipbook engine is gated on the asset being present so the editor
+            // preview matches what the front end can actually render.
+            if (Utils::pdfp_has_flipbook_engine()) {
+                wp_enqueue_script('dflip-script');
+                wp_enqueue_style('dflip-style');
+            }
         }
         wp_enqueue_script('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.js', array('jquery'), PDFPRO_VER, true);
         wp_enqueue_style('pdfp-admin', PDFPRO_PLUGIN_DIR . 'build/admin.css', array(), PDFPRO_VER);
@@ -91,12 +113,19 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_EnqueueAssets' ) ) {
 
         $fpdfAdmin = array(
             'ajaxUrl' => admin_url('admin-ajax.php'),
-            'isPipe' => false
+            'isPipe' => false,
+            'hasFlipbookEngine' => Utils::pdfp_has_flipbook_engine()
         );
 
         // Premium admin data localization removed
 
         wp_localize_script('pdfp-admin', 'fpdfAdmin', $fpdfAdmin);
+    }
+
+    public function blockAssets() {
+        if (is_admin() && Utils::pdfp_has_flipbook_engine()) {
+            wp_enqueue_style('dflip-style');
+        }
     }
 
     public function pdfp_media_button_js_file() {

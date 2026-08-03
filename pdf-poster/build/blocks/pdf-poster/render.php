@@ -7,10 +7,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 $pdfp_attributes = $attributes;
 $pdfp_attributes['isPremium'] = false;
 
+// Adobe and Scroll are premium; FlipBook and Slider need dFlip on disk. Clamp anything
+// we can't draw so a value from a Pro export never renders an empty container.
+if (array_key_exists('adobeEmbedder', $pdfp_attributes)) {
+    $pdfp_attributes['adobeEmbedder'] = \PDFPro\Helper\PDFP_Functions::pdfp_resolve_viewer($pdfp_attributes['adobeEmbedder']);
+}
+
+if (in_array(($pdfp_attributes['adobeEmbedder'] ?? ''), array('flipbook', 'slider'), true)) {
+    wp_enqueue_script('dflip-script');
+    wp_enqueue_style('dflip-style');
+}
+
 $pdfp_id = wp_unique_id('block-');
 $pdfp_align = $pdfp_attributes['align'] ?? '';
 $pdfp_class_name = $pdfp_attributes['className'] ?? '';
-$pdfp_block_class_name = 'wp-block-pdfp-pdf-poster ' . $pdfp_class_name . ' align' . $pdfp_align;
+
+// Resolve RTL: 'on' forces it, 'auto' follows the site language (is_rtl()), 'off' (default) leaves the page direction untouched.
+$pdfp_rtl_mode = $pdfp_attributes['rtlMode'] ?? 'off';
+$pdfp_is_rtl = ('on' === $pdfp_rtl_mode) || ('auto' === $pdfp_rtl_mode && is_rtl());
+
+// Theme: 'light'/'dark' are resolved server-side; 'auto' is resolved client-side (prefers-color-scheme), so leave it unset here.
+$pdfp_theme_mode = $pdfp_attributes['themeMode'] ?? 'light';
+$pdfp_theme_attr = in_array($pdfp_theme_mode, array('light', 'dark'), true) ? $pdfp_theme_mode : '';
+
+$pdfp_block_class_name = 'wp-block-pdfp-pdf-poster ' . $pdfp_class_name . ' align' . $pdfp_align . ($pdfp_is_rtl ? ' pdfp_rtl' : '');
 $pdfp_popup_options = $pdfp_attributes['popupOptions'] ?? [];
 $pdfp_is_popup_enabled = isset($pdfp_popup_options['enabled']) ? $pdfp_popup_options['enabled'] : false;
 
@@ -34,6 +54,8 @@ if ($pdfp_is_dropbox) {
 
     <div class='<?php echo esc_attr($pdfp_block_class_name); ?>' id='<?php echo esc_attr($pdfp_id); ?>'
         data-attributes='<?php echo esc_attr(wp_json_encode($pdfp_attributes)); ?>'
+        <?php echo $pdfp_is_rtl ? "dir='rtl'" : ''; ?>
+        <?php echo $pdfp_theme_attr ? "data-pdfp-theme='" . esc_attr($pdfp_theme_attr) . "'" : ''; ?>
         style="text-align: <?php echo esc_attr($pdfp_alignment) ?>">
         <?php if (!$pdfp_protect && !$pdfp_is_popup_enabled) {
             $pdfp_p_height = is_string($pdfp_height) ? $pdfp_height : ($pdfp_height['desktop'] ?? '800px');

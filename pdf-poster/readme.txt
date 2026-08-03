@@ -1,10 +1,10 @@
-=== PDF Poster – Display PDF Files with Custom Viewer ===
+=== PDF Poster – let visitors read PDFs without leaving the page ===
 Contributors: bplugins, abuhayat, shehabulislam, taninrahman, farazi1,  freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0.3
 Tested up to: 7.0
-Stable tag: 2.5.4
+Stable tag: 2.5.5
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -249,6 +249,15 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.5.5 - 03 Aug 2026 =
+* New: Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.
+* New: Added Viewer Theme option (Light/Dark/Auto) that themes the viewer toolbar and background without altering the PDF page content.
+* New: Added RTL Layout option (Off/On/Auto) for right-to-left languages, applied across all viewers and the PDF toolbar.
+* New: Added Keyboard Navigation option (Left/Right arrow keys to change pages) for all viewers.
+* New: Added a Page Flip Sound toggle for Flipbook and Slider viewers (on by default; can now be turned off).
+* New: Added Fast Loading (Progressive Rendering) option for all viewers (Default, Adobe, Flipbook, Scroll, Slider) to stream large PDFs so the first page appears sooner.
+* Fixed: Full screen option smooth behaviour.
 
 = 2.5.4 - 15 June 2026 =
 * New: Added interactive PDF Chatbot assistant.

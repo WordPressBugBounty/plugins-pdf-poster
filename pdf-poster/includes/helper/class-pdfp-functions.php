@@ -118,7 +118,35 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
                 'newWindow' => $meta('new_window', false, true),
                 'actionsPosition' => $meta('actions_position', 'top'),
                 'protect' => $meta('protect', false, true),
+                'keyboardNav' => $meta('keyboard_nav', false, true),
+                'rtlMode' => $meta('rtl_mode', 'off'),
+                'themeMode' => $meta('theme_mode', 'light'),
+                'annotationMode' => $meta('annotation_mode', true, true),
+                'openLinksInNewTab' => $meta('open_links_in_new_tab', false, true),
+                'progressiveLoading' => $meta('progressive_loading', true, true),
+                'defaultBrowser' => $meta('default_browser', false, true),
+                'adobeEmbedder' => self::pdfp_resolve_viewer($meta('viewer', 'default', false)),
+                'flipbookSourceType' => $meta('flipbook_source_type', 'pdf', false),
+                'flipbookSound' => $meta('flipbook_sound', true, true),
             ];
+
+            // CSF gallery stores comma-separated attachment IDs; convert to URLs for the flipbook image pages.
+            $fb_images_raw = $meta('flipbook_images', '', false);
+            $fb_image_urls = [];
+            if (!empty($fb_images_raw)) {
+                $fb_ids = is_array($fb_images_raw) ? $fb_images_raw : explode(',', $fb_images_raw);
+                foreach ($fb_ids as $fb_img_id) {
+                    $fb_img_id = (int) trim($fb_img_id);
+                    if (!$fb_img_id) {
+                        continue;
+                    }
+                    $fb_img_url = wp_get_attachment_image_url($fb_img_id, 'full');
+                    if ($fb_img_url) {
+                        $fb_image_urls[] = $fb_img_url;
+                    }
+                }
+            }
+            $attrs['flipbookImages'] = $fb_image_urls;
 
             $popupBtnPadding = $meta('popup_btn_padding', ["top" => 10, "right" => 20, "bottom" => 10, "left" => 20]);
             $attrs['btnStyles'] = [
@@ -134,6 +162,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
                 'twitter' => $meta('social_share_twitter', true, true),
                 'linkedin' => $meta('social_share_linkedin', true, true),
                 'pinterest' => $meta('social_share_pinterest', true, true),
+                'mailto' => $meta('social_share_mailto', true, true),
                 'position' => $meta('social_share_position', 'top', false),
             ];
 
@@ -185,6 +214,52 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
 
         public static function pdfp_new_badge($label = 'NEW') {
             return '<span class="pdfp-new-badge">' . esc_html($label) . '</span>';
+        }
+
+        /**
+         * Standalone PRO badge for a single locked option inside an otherwise usable field.
+         */
+        public static function pdfp_pro_badge($label = 'PRO') {
+            return '<span class="pdfp-pro-badge">' . esc_html($label) . '</span>';
+        }
+
+        /**
+         * Is the dFlip flipbook engine available in this build?
+         *
+         * The FlipBook / Slider / Scroll viewers all depend on assets/dflip. Kept as a
+         * capability check rather than a hard-coded true so a package built without the
+         * engine degrades to the bundled PDF.js viewer instead of rendering nothing.
+         */
+        public static function pdfp_has_flipbook_engine() {
+            static $has = null;
+
+            if ($has === null) {
+                $has = file_exists(PDFPRO_PATH . 'assets/dflip/js/dflip.min.js');
+            }
+
+            return $has;
+        }
+
+        /**
+         * Resolve the viewer engine, enforcing capability server-side.
+         *
+         * FlipBook and Slider are free, but they render through dFlip, so they are only
+         * honoured when that engine is on disk. Adobe needs the premium PDF Embed bridge
+         * and Scroll is premium-only; both fall back to the bundled PDF.js viewer so a
+         * value carried over from a Pro export can never render an empty container.
+         */
+        public static function pdfp_resolve_viewer($viewer) {
+            if ($viewer === true) {
+                $viewer = 'adobe';
+            } elseif ($viewer === false || $viewer === '' || $viewer === null) {
+                $viewer = 'default';
+            }
+
+            if (in_array($viewer, array('flipbook', 'slider'), true) && self::pdfp_has_flipbook_engine()) {
+                return $viewer;
+            }
+
+            return 'default';
         }
 
         public static function pdfp_lock_field($field, $is_section = false) {
