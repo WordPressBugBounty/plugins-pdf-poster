@@ -19,6 +19,8 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         {
             add_action('init', [$this, 'init']);
             if (is_admin()) {
+                add_action('admin_menu', [$this, 'arrowAddNewSubmenu'], 999);
+
                 add_filter('post_row_actions', [$this, 'pdfp_remove_row_actions'], 10, 2);
 
                 add_filter('manage_pdfposter_posts_columns', [$this, 'pdfp_columns_head_only_podcast'], 10);
@@ -63,7 +65,7 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
                         'name' => __('PDF Poster', 'pdf-poster'),
                         'singular_name' => __('PDF Poster', 'pdf-poster'),
                         'add_new' => __('Add New PDF', 'pdf-poster'),
-                        'add_new_item' => __(' &#8627; Add New', 'pdf-poster'),
+                        'add_new_item' => __('Add New', 'pdf-poster'),
                         'edit_item' => __('Edit', 'pdf-poster'),
                         'new_item' => __('New PDF', 'pdf-poster'),
                         'view_item' => __('View PDF', 'pdf-poster'),
@@ -263,6 +265,28 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
             echo esc_html__('Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time.', 'pdf-poster');
             echo '<br/><br/><input type="text" style="font-size: 12px; border: none; box-shadow: none; padding: 4px 8px; width:100%; background:#1e8cbe; color:white;"  onfocus="this.select();" readonly="readonly"  value="' . esc_attr($shortcode) . '" /><br/><br/>';
             echo '<p><a class="button button-primary button-large" href="admin.php?page=fpdf-settings" target="_blank">' . esc_html__('ShortCode Global Settings', 'pdf-poster') . '</a></p>';
+        }
+
+
+        /**
+         * Add the ↳ arrow to the sidebar "Add New" submenu item only, not the page-title button.
+         *
+         * @return void
+         */
+        public function arrowAddNewSubmenu()
+        {
+            global $submenu;
+            $menu_slug = 'edit.php?post_type=' . $this->post_type;
+            if (empty($submenu[$menu_slug])) {
+                return;
+            }
+            foreach ($submenu[$menu_slug] as &$item) {
+                if (isset($item[2]) && 0 === strpos($item[2], 'post-new.php?post_type=' . $this->post_type)) {
+                    $item[0] = '<span aria-hidden="true">&#8627;</span> ' . $item[0];
+                    break;
+                }
+            }
+            unset($item);
         }
     }
 }

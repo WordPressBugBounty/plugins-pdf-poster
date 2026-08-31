@@ -30,6 +30,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 				$this->actions();
 				$this->popup();
 				$this->protect_content();
+				$this->watermark();
 				$this->social_share();
 				$this->styles();
 				$this->performance();
@@ -342,6 +343,19 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						__('Disable Text Selection', 'pdf-poster'),
 						__('Suppress Blocked Warning Alerts', 'pdf-poster'),
 					)),
+				)
+			));
+		}
+
+		public function watermark()
+		{
+			\CSF::createSection($this->metabox_prefix, array(
+				'title' => Utils::pdfp_pro_title(__('Watermark & Branding', 'pdf-poster')),
+				'fields' => array(
+					// Shown rather than listed: the six shipped looks sell this section
+					// better than a row of labels, so the ledger gives way to the card
+					// the Pro build opens the section with.
+					Utils::pdfp_watermark_intro(),
 				)
 			));
 		}

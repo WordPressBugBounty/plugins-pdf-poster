@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "version": "2.5.5",
+  "version": "2.5.6",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
   "description": "Embed PDF in your posts and pages",
@@ -262,6 +262,32 @@
         "pinterest": true,
         "mailto": true,
         "position": "top"
+      }
+    },
+    "watermark": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "markType": "text",
+        "theme": "confidential",
+        "text": "CONFIDENTIAL",
+        "image": "",
+        "imageStyle": "grayscale",
+        "color": "#808080",
+        "coverage": "normal",
+        "position": "center",
+        "strength": "subtle",
+        "size": "medium",
+        "angle": "diagonal",
+        "apply": [
+          "screen"
+        ],
+        "pages": "all",
+        "audience": "everyone",
+        "antileak": false,
+        "stamp": false,
+        "lock": false,
+        "dynamic": false
       }
     }
   },

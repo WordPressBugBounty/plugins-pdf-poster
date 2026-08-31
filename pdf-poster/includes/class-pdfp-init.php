@@ -26,6 +26,7 @@ if (!class_exists('PDFPro\PDFP_Init')) {
                 Rest\PDFP_AjaxCall::class,
                 Rest\PDFP_GetMeta::class,
                 Admin\PDFP_Chatbot::class,
+                Admin\PDFP_SidebarCards::class,
             ];
         }
 

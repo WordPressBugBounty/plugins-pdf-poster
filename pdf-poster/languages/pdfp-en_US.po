@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: PDF Poster – Display PDF Files with Custom Viewer 2.5.5\n"
+"Project-Id-Version: PDF Poster – Display PDF Files with Custom Viewer 2.5.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pdf-poster\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-03T06:29:42+00:00\n"
+"POT-Creation-Date: 2026-08-31T08:32:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: pdf-poster\n"
@@ -48,458 +48,462 @@ msgstr ""
 msgid "PDF Poster Configuration"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:53
+#: includes/admin/class-pdfp-metabox.php:54
 msgid "Default"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:57
+#: includes/admin/class-pdfp-metabox.php:58
 msgid "FlipBook"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:58
+#: includes/admin/class-pdfp-metabox.php:59
 msgid "Slider"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:74
+#: includes/admin/class-pdfp-metabox.php:75
 msgid "Viewer"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:75
+#: includes/admin/class-pdfp-metabox.php:76
 msgid "Select the PDF viewer engine."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:82
+#: includes/admin/class-pdfp-metabox.php:83
 msgid "PDF Source"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:83
+#: includes/admin/class-pdfp-metabox.php:84
 msgid "Select or upload your PDF file."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:88
+#: includes/admin/class-pdfp-metabox.php:89
 msgid "Viewer Source"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:92
+#: includes/admin/class-pdfp-metabox.php:93
 msgid "PDF File"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:93
+#: includes/admin/class-pdfp-metabox.php:94
 msgid "Image Gallery"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:95
+#: includes/admin/class-pdfp-metabox.php:96
 msgid "Build the flipbook, slider or scroll view from a PDF file or from an ordered set of images."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:100
+#: includes/admin/class-pdfp-metabox.php:101
 msgid "Pages (Images)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:102
+#: includes/admin/class-pdfp-metabox.php:103
 msgid "Select images in the order they should appear as pages."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:111
+#: includes/admin/class-pdfp-metabox.php:112
 msgid "Preview Device"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:113
+#: includes/admin/class-pdfp-metabox.php:114
 msgid "Desktop"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:114
+#: includes/admin/class-pdfp-metabox.php:115
 msgid "Tablet"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:115
+#: includes/admin/class-pdfp-metabox.php:116
 msgid "Mobile"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:121
+#: includes/admin/class-pdfp-metabox.php:122
 msgid "Height (Desktop)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:124
+#: includes/admin/class-pdfp-metabox.php:125
 msgid "Set the height of the viewer for desktop."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:133
+#: includes/admin/class-pdfp-metabox.php:134
 msgid "Height (Tablet)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:136
+#: includes/admin/class-pdfp-metabox.php:137
 msgid "Set the height of the viewer for tablet."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:145
+#: includes/admin/class-pdfp-metabox.php:146
 msgid "Height (Mobile)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:148
+#: includes/admin/class-pdfp-metabox.php:149
 msgid "Set the height of the viewer for mobile."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:157
+#: includes/admin/class-pdfp-metabox.php:158
 msgid "Width (Desktop)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:160
+#: includes/admin/class-pdfp-metabox.php:161
 msgid "Set the width of the viewer for desktop."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:169
+#: includes/admin/class-pdfp-metabox.php:170
 msgid "Width (Tablet)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:172
+#: includes/admin/class-pdfp-metabox.php:173
 msgid "Set the width of the viewer for tablet."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:181
+#: includes/admin/class-pdfp-metabox.php:182
 msgid "Width (Mobile)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:184
+#: includes/admin/class-pdfp-metabox.php:185
 msgid "Set the width of the viewer for mobile."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:192
+#: includes/admin/class-pdfp-metabox.php:193
 msgid "Industry-Leading Adobe Viewer"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:193
+#: includes/admin/class-pdfp-metabox.php:194
 msgid "Continuous Scroll Viewer for Long Reports"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:194
+#: includes/admin/class-pdfp-metabox.php:195
 msgid "Effortless Cloud Sync (Dropbox & Google Drive)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:203
+#: includes/admin/class-pdfp-metabox.php:204
 msgid "Controls"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:207
+#: includes/admin/class-pdfp-metabox.php:208
 #: includes/admin/class-pdfp-settings.php:89
 msgid "Display Filename"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:210
+#: includes/admin/class-pdfp-metabox.php:211
 #: includes/admin/class-pdfp-settings.php:91
 msgid "Show the filename at the top of the viewer."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:214
+#: includes/admin/class-pdfp-metabox.php:215
 msgid "Keyboard Navigation"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:217
+#: includes/admin/class-pdfp-metabox.php:218
 msgid "Let visitors use the Left/Right arrow keys to change pages."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:221
+#: includes/admin/class-pdfp-metabox.php:222
 msgid "RTL Layout"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:225
+#: includes/admin/class-pdfp-metabox.php:226
 msgid "Off"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:226
+#: includes/admin/class-pdfp-metabox.php:227
 msgid "On"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:227
-#: includes/admin/class-pdfp-metabox.php:239
+#: includes/admin/class-pdfp-metabox.php:228
+#: includes/admin/class-pdfp-metabox.php:240
 msgid "Auto"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:229
+#: includes/admin/class-pdfp-metabox.php:230
 msgid "Flip the viewer layout for right-to-left languages (Arabic, Hebrew, etc.). \"Auto\" follows the site language."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:233
+#: includes/admin/class-pdfp-metabox.php:234
 msgid "Viewer Theme"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:237
+#: includes/admin/class-pdfp-metabox.php:238
 msgid "Light"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:238
+#: includes/admin/class-pdfp-metabox.php:239
 msgid "Dark"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:241
+#: includes/admin/class-pdfp-metabox.php:242
 msgid "Controls the viewer toolbar/background theme. \"Auto\" follows the visitor's system. This never changes the PDF page content itself."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:245
+#: includes/admin/class-pdfp-metabox.php:246
 msgid "Page Flip Sound"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:248
+#: includes/admin/class-pdfp-metabox.php:249
 msgid "Play a page-turn sound effect in Flipbook and Slider modes."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:253
+#: includes/admin/class-pdfp-metabox.php:254
 msgid "Annotation Mode"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:256
+#: includes/admin/class-pdfp-metabox.php:257
 msgid "Show notes, highlights, comments, and clickable links that are saved inside the PDF."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:261
+#: includes/admin/class-pdfp-metabox.php:262
 msgid "Open PDF links in new tab"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:264
+#: includes/admin/class-pdfp-metabox.php:265
 msgid "Open links clicked inside the PDF in a new browser tab, keeping your current page open."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:271
+#: includes/admin/class-pdfp-metabox.php:272
 msgid "Distraction-Free 'Reader Mode'"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:272
+#: includes/admin/class-pdfp-metabox.php:273
 msgid "Toggle Thumbnails Navigation"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:273
+#: includes/admin/class-pdfp-metabox.php:274
 msgid "Auto-Open Sidebar by Default"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:274
+#: includes/admin/class-pdfp-metabox.php:275
 msgid "Horizontal Scrollbar Support"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:275
+#: includes/admin/class-pdfp-metabox.php:276
 msgid "Custom Initial Page & Zoom Level"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:276
+#: includes/admin/class-pdfp-metabox.php:277
 msgid "Hide the Right-Side Toolbar"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:277
+#: includes/admin/class-pdfp-metabox.php:278
 msgid "Adobe Embed Modes & View Modes"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:286
+#: includes/admin/class-pdfp-metabox.php:287
 msgid "Actions"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:290
+#: includes/admin/class-pdfp-metabox.php:291
 msgid "Allow Printing"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:293
+#: includes/admin/class-pdfp-metabox.php:294
 msgid "Allow visitors to print the PDF document."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:297
+#: includes/admin/class-pdfp-metabox.php:298
 #: includes/admin/class-pdfp-settings.php:95
 msgid "Download Button"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:300
+#: includes/admin/class-pdfp-metabox.php:301
 #: includes/admin/class-pdfp-settings.php:97
 msgid "Display a download button at the top of the viewer."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:305
+#: includes/admin/class-pdfp-metabox.php:306
 msgid "Fullscreen Label"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:307
+#: includes/admin/class-pdfp-metabox.php:308
 msgid "Customize the text for the fullscreen button."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:311
+#: includes/admin/class-pdfp-metabox.php:312
 msgid "Customize Download Button Label"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:312
+#: includes/admin/class-pdfp-metabox.php:313
 #: includes/admin/class-pdfp-settings.php:111
 msgid "Open Fullscreen in New Tab"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:313
+#: includes/admin/class-pdfp-metabox.php:314
 msgid "Custom Actions Position (Top/Bottom)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:323
+#: includes/admin/class-pdfp-metabox.php:324
 msgid "Popup"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:326
+#: includes/admin/class-pdfp-metabox.php:327
 msgid "Enable Modal Popups"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:327
+#: includes/admin/class-pdfp-metabox.php:328
 msgid "Multiple Trigger Types (Button/Image)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:328
+#: includes/admin/class-pdfp-metabox.php:329
 msgid "Custom Trigger Alignment"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:329
+#: includes/admin/class-pdfp-metabox.php:330
 msgid "PDF Icon Overlay on Images"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:338
+#: includes/admin/class-pdfp-metabox.php:339
 msgid "Protect Content"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:341
+#: includes/admin/class-pdfp-metabox.php:342
 msgid "Disable Right-Click Interactions"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:342
+#: includes/admin/class-pdfp-metabox.php:343
 msgid "Disable Text Selection"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:343
+#: includes/admin/class-pdfp-metabox.php:344
 #: includes/admin/class-pdfp-settings.php:113
 msgid "Suppress Blocked Warning Alerts"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:352
+#: includes/admin/class-pdfp-metabox.php:353
+msgid "Watermark & Branding"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:366
 msgid "Social Share"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:356
+#: includes/admin/class-pdfp-metabox.php:370
 msgid "Enable Sharing"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:358
+#: includes/admin/class-pdfp-metabox.php:372
 msgid "Enable social sharing buttons for the PDF."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:363
+#: includes/admin/class-pdfp-metabox.php:377
 msgid "Share Position"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:365
+#: includes/admin/class-pdfp-metabox.php:379
 msgid "Select where the sharing buttons should appear."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:368
+#: includes/admin/class-pdfp-metabox.php:382
 msgid "Top"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:369
+#: includes/admin/class-pdfp-metabox.php:383
 msgid "Bottom"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:375
+#: includes/admin/class-pdfp-metabox.php:389
 msgid "Enable Facebook"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:377
+#: includes/admin/class-pdfp-metabox.php:391
 msgid "Allow sharing on Facebook."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:383
+#: includes/admin/class-pdfp-metabox.php:397
 msgid "Enable Twitter"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:385
+#: includes/admin/class-pdfp-metabox.php:399
 msgid "Allow sharing on Twitter."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:391
+#: includes/admin/class-pdfp-metabox.php:405
 msgid "Enable LinkedIn"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:393
+#: includes/admin/class-pdfp-metabox.php:407
 msgid "Allow sharing on LinkedIn."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:399
+#: includes/admin/class-pdfp-metabox.php:413
 msgid "Enable Pinterest"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:401
+#: includes/admin/class-pdfp-metabox.php:415
 msgid "Allow sharing on Pinterest."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:407
+#: includes/admin/class-pdfp-metabox.php:421
 msgid "Enable Email"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:409
+#: includes/admin/class-pdfp-metabox.php:423
 msgid "Allow sharing via Email."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:420
+#: includes/admin/class-pdfp-metabox.php:434
 msgid "Styles"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:424
+#: includes/admin/class-pdfp-metabox.php:438
 msgid "Button Background"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:426
+#: includes/admin/class-pdfp-metabox.php:440
 msgid "Choose a background color for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:431
+#: includes/admin/class-pdfp-metabox.php:445
 msgid "Button Color"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:433
+#: includes/admin/class-pdfp-metabox.php:447
 msgid "Choose a text color for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:438
+#: includes/admin/class-pdfp-metabox.php:452
 msgid "Font Size"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:440
+#: includes/admin/class-pdfp-metabox.php:454
 msgid "Set the font size for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:446
+#: includes/admin/class-pdfp-metabox.php:460
 msgid "Padding"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:448
+#: includes/admin/class-pdfp-metabox.php:462
 msgid "Set the internal spacing for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:464
+#: includes/admin/class-pdfp-metabox.php:478
 msgid "Performance & Reliability"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:468
+#: includes/admin/class-pdfp-metabox.php:482
 msgid "Fast Loading (Progressive Rendering)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:471
+#: includes/admin/class-pdfp-metabox.php:485
 msgid "Stream large PDFs so the first page appears sooner. Turn off only if your host mishandles range requests."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:475
+#: includes/admin/class-pdfp-metabox.php:489
 msgid "Google Doc Viewer"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:478
+#: includes/admin/class-pdfp-metabox.php:492
 msgid "Enable Google Doc Viewer as a fallback (Recommended for Edge)."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:481
+#: includes/admin/class-pdfp-metabox.php:495
 msgid "Load Latest Document Version"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:490
+#: includes/admin/class-pdfp-metabox.php:504
 msgid "Ads"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:500
+#: includes/admin/class-pdfp-metabox.php:514
 msgid "Analytics"
 msgstr ""
 
@@ -639,82 +643,209 @@ msgstr ""
 msgid "Seamless External Hosting"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:63
-#: includes/base/class-pdfp-pdfposter.php:64
-msgid "PDF Poster"
+#: includes/admin/class-pdfp-sidebarcards.php:45
+msgid "Page Builder Support"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:56
+msgid "PDF Poster Pro"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:104
+msgid "Gutenberg"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:104
+msgid "Block editor (Gutenberg)"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:105
+msgid "Elementor"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:106
+msgid "Divi"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:106
+msgid "Divi Builder"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:107
+msgid "Bricks"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:107
+msgid "Bricks Builder"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:108
+msgid "WPBakery"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:108
+msgid "WPBakery Page Builder"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:109
+msgid "Beaver"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:109
+msgid "Beaver Builder"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:110
+msgid "Oxygen"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:110
+msgid "Oxygen Builder"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:111
+msgid "Breakdance"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:121
+msgid "Scroll & Adobe viewers"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:122
+msgid "Watermark & branding"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:123
+msgid "Right-click & copy protection"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:124
+msgid "Popup (lightbox) viewer"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:125
+msgid "Zoom, thumbnails, reader mode"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:126
+msgid "Custom button labels"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:136
+msgid "Compatibility"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:141
+msgid "Every builder, one shortcode."
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:144
+msgid "Paste the shortcode above into any of these — nothing else to install."
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:163
+#: includes/helper/class-pdfp-functions.php:330
+msgid "Pro version"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:164
+#: includes/helper/class-pdfp-functions.php:331
+msgid "Locked"
+msgstr ""
+
+#. translators: %d: number of settings available only in the Pro version.
+#: includes/admin/class-pdfp-sidebarcards.php:172
+#, php-format
+msgid "%d settings the free build keeps shut."
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:191
+#: includes/helper/class-pdfp-functions.php:351
+msgid "See Pro pricing"
+msgstr ""
+
+#: includes/admin/class-pdfp-sidebarcards.php:194
+#: includes/helper/class-pdfp-functions.php:353
+#: includes/helper/class-pdfp-functions.php:432
+msgid "14-day refund policy"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:65
-msgid "Add New PDF"
-msgstr ""
-
 #: includes/base/class-pdfp-pdfposter.php:66
-msgid " &#8627; Add New"
+msgid "PDF Poster"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:67
-msgid "Edit"
+msgid "Add New PDF"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:68
-msgid "New PDF"
+msgid "Add New"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:69
-msgid "View PDF"
+msgid "Edit"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:70
-msgid "Search PDF"
+msgid "New PDF"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:71
-msgid "All PDF Posters"
+msgid "View PDF"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:72
+msgid "Search PDF"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:73
+msgid "All PDF Posters"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:74
 msgid "Sorry, we couldn't find the PDF file you are looking for."
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:114
+#: includes/base/class-pdfp-pdfposter.php:116
 msgid "ShortCode"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:115
+#: includes/base/class-pdfp-pdfposter.php:117
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:116
+#: includes/base/class-pdfp-pdfposter.php:118
 msgid "Date"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:123
-#: includes/base/class-pdfp-pdfposter.php:127
+#: includes/base/class-pdfp-pdfposter.php:125
+#: includes/base/class-pdfp-pdfposter.php:129
 msgid "Copy Shortcode"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:123
-#: includes/base/class-pdfp-pdfposter.php:127
+#: includes/base/class-pdfp-pdfposter.php:125
+#: includes/base/class-pdfp-pdfposter.php:129
 msgid "Copy To Clipboard"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:133
+#: includes/base/class-pdfp-pdfposter.php:135
 msgid "Player updated "
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:223
+#: includes/base/class-pdfp-pdfposter.php:225
 msgid "New Feature ! Quick Embed"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:243
+#: includes/base/class-pdfp-pdfposter.php:245
 msgid "Copy and paste this shortcode into your posts, pages and widget"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:263
+#: includes/base/class-pdfp-pdfposter.php:265
 msgid "Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time."
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:265
+#: includes/base/class-pdfp-pdfposter.php:267
 msgid "ShortCode Global Settings"
 msgstr ""
 
@@ -726,39 +857,87 @@ msgstr ""
 msgid "View Fullscreen"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:282
+#: includes/helper/class-pdfp-functions.php:295
 msgid "The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users."
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:282
+#: includes/helper/class-pdfp-functions.php:295
 msgid "Upgrade to PRO"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:400
-msgid "Unlock Premium Experience"
+#. translators: %d: number of settings in this section available only in the Pro version.
+#: includes/helper/class-pdfp-functions.php:337
+#, php-format
+msgid "%d setting the free build keeps shut."
+msgid_plural "%d settings the free build keeps shut."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/helper/class-pdfp-functions.php:381
+msgid "Confidential"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:401
-msgid "PRO ONLY"
+#: includes/helper/class-pdfp-functions.php:382
+msgid "Draft Stamp"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:415
-msgid "Get Premium Now"
+#: includes/helper/class-pdfp-functions.php:383
+msgid "Sample Wash"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:418
-msgid "Trusted by over 20,000+ WordPress sites."
+#: includes/helper/class-pdfp-functions.php:384
+msgid "Brand Corner"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:437
+#: includes/helper/class-pdfp-functions.php:385
+msgid "Logo Wash"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:386
+msgid "Logo + Caption"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:406
+msgid "Text, a logo, or both"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:407
+msgid "Tiled or one corner mark"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:408
+msgid "Pick the pages"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:409
+msgid "Pick who sees it"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:422
+msgid "looks, ready to go"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:423
+msgid "Stamp every page — the file is never touched."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:425
+msgid "The mark is drawn over the document as it is displayed, so the PDF on your server stays exactly as you uploaded it. Pick one of these and you are done, or take the Custom theme and set the colour, angle, size and tiling yourself."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:430
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:453
 msgid "Copy"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:440
+#: includes/helper/class-pdfp-functions.php:456
 msgid "Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link."
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:449
+#: includes/helper/class-pdfp-functions.php:465
 msgid "This feature is coming soon. Stay tuned for updates!"
 msgstr ""
 

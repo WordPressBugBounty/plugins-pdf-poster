@@ -3,8 +3,8 @@ Contributors: bplugins, abuhayat, shehabulislam, taninrahman, farazi1,  freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0.3
-Tested up to: 7.0
-Stable tag: 2.5.5
+Tested up to: 7.1
+Stable tag: 2.5.6
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,80 +14,161 @@ PDF Poster lets you embed PDF files in WordPress using a responsive viewer and b
 == Description ==
 **The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users**
 
-
 [**PDF Poster**](https://bplugins.com/products/pdf-poster/) | [**Documentation**](https://bplugins.com/docs/pdf-poster/) | [**Pricing**](https://bplugins.com/products/pdf-poster/pricing) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/pdf-poster/#demos)
 
 [**PDF Poster**](https://bplugins.com/products/pdf-poster/) is a flexible plugin that allows you to embed PDF documents directly into WordPress posts, pages, widgets, or templates. Whether you're sharing brochures, eBooks, business files, or portfolios, the plugin provides a responsive and accessible layout that works across all devices.
 
-The plugin supports the Gutenberg block editor. It includes content protection, customization options for layout dimensions, full-screen mode, download and print buttons, and file display settings.
+Embed with the Gutenberg block, the `[pdf_embed]` shortcode, or the classic editor — whichever fits how you already work. The free version ships three viewers (the bundled PDF.js viewer, an interactive FlipBook and a Slider), independent height and width for desktop, tablet and mobile, print, download and full-screen buttons, social sharing, light/dark theming, RTL support and progressive loading for large files. Content protection, watermarking, the Adobe and Continuous Scroll viewers, popups and cloud imports are [Pro](https://bplugins.com/products/pdf-poster/pricing).
 
 
 ### Key Features – Free Version
-- **Responsive Width & Height**: Fully customizable dimensions for Desktop, Tablet, and Mobile devices.
 
-- **Print Support**: Let users print PDFs directly from the viewer.
+Everything below is in the free plugin. No trial, no locked toggles.
 
-- **Filename Display**: Show the PDF file name clearly at the top.
+**Three viewers, no configuration**
 
-- **Full-Screen Button**: Enhance readability with a dynamic full-screen toggle.
+- **Default Viewer**: The bundled Mozilla PDF.js engine — page navigation, zoom, text search and text selection, on desktop and mobile.
 
-- **Download Button**: One-click download is placed conveniently at the top.
+- **FlipBook Viewer**: A realistic page-turn book with a page-flip sound you can switch off.
 
-- **Gutenberg Block Integration**: Easily add PDFs using the block editor.
+- **Slider Viewer**: One page at a time, swipe or click through — ideal for brochures and menus.
 
-- **User-Friendly Viewer**: Smooth scrolling and reading experience across all devices.
+- **FlipBook from Images**: Build a page-flip book from an ordered set of images instead of a PDF, for scanned or design-tool output.
+
+**Embed it anywhere**
+
+- **Two Gutenberg Blocks**: The *PDF Poster* block to embed a file directly, and the *PDF Poster Selector* block to drop in a document you already saved.
+
+- **Shortcode**: Use `[pdf_embed]` in any post, page, widget or template — every viewer option is available as an attribute.
+
+- **Classic Editor Metabox**: A full settings panel on every PDF Poster document, so you never have to touch a block to configure a viewer.
+
+**Responsive by device**
+
+- **Separate Height & Width for Desktop, Tablet and Mobile**: Set each breakpoint independently instead of forcing one size everywhere.
+
+- **Device Preview Switcher**: Flip between desktop, tablet and mobile while you configure, in both the block and the metabox.
+
+**Reading experience**
+
+- **Viewer Theme (Light / Dark / Auto)**: Themes the viewer toolbar and background. The PDF page content is never altered.
+
+- **RTL Layout (Off / On / Auto)**: Flips the viewer and toolbar for Arabic, Hebrew and other right-to-left languages, across every viewer.
+
+- **Keyboard Navigation**: Left and right arrow keys change pages in all viewers.
+
+- **Annotation Mode**: Shows the notes, highlights, comments and clickable links already saved inside the PDF.
+
+- **Open PDF Links in a New Tab**: Links clicked inside the document open in a new tab, keeping your page open.
+
+- **Filename Display**: Show the document name above the viewer.
+
+**Actions and sharing**
+
+- **Print**: Let visitors print straight from the viewer, or turn printing off.
+
+- **Download Button**: One-click download above the viewer.
+
+- **Full-Screen Button with Your Own Label**: Rename it for your language or your wording.
+
+- **Social Sharing**: Facebook, X (Twitter), LinkedIn, Pinterest and email buttons, placed above or below the viewer, each one individually switchable.
+
+**Styling**
+
+- **Button and Title Styling**: Background colour, text colour, font size and padding for the action buttons, plus the title font size — no CSS needed.
+
+**Performance and reliability**
+
+- **Fast Loading (Progressive Rendering)**: Streams large PDFs so the first page appears while the rest is still downloading.
+
+- **Google Doc Viewer Fallback**: An optional second rendering path for browsers that mishandle inline PDFs (recommended for Edge).
+
+**In the dashboard**
+
+- **PDF Poster Dashboard**: One place for your documents, demos, help and changelog.
+
+- **PDF Chatbot Assistant**: Ask setup questions without leaving WordPress.
+
+- **Quick Embedder Defaults**: Set the default height, width, filename display and download button once, and every new document starts there.
+
+- **Unlimited Documents**: No cap on how many PDFs you embed.
 
 
 ### PDF Poster Pro – Unlock Advanced Features
-[**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/pricing) adds features for advanced layout, control, and document protection.
 
-**Pro Features Include:**
+[**PDF Poster Pro**](https://bplugins.com/products/pdf-poster/pricing) adds the viewers, navigation, branding and document-protection controls that the free version deliberately leaves out.
 
-- **FlipBook Viewer**: Provide an interactive, book-like reading experience for your PDFs.
+**Watermark & Branding — new in Pro**
 
-- **Raw PDF Viewer**: Embed clean PDFs without black frames or toolbars.
+- **Text, Logo, or Both**: Stamp your wording, your logo, or a logo with a caption over every page.
 
-- **Content Protection**: Disable right-clicks and copying to safeguard your documents.
+- **Six Ready-Made Themes**: Confidential, Draft Stamp, Sample Wash, Brand Corner, Logo Wash and Logo + Caption — each one carries its own angle, tiling and weight. A Custom theme is there when you want to set the angle yourself.
 
-- **Preset Viewer Settings**: Save time by setting default viewer preferences globally.
+- **Coverage, Strength, Size and Angle**: From a single corner mark to a dense tile that cannot be cropped out, at five opacity steps and four sizes including fit-to-page.
 
-- **Shortcode Embedding**: Use **`[pdf_embed]`** to place PDFs anywhere — no clutter.
+- **Dynamic Placeholders**: Drop `{site_name}`, `{post_title}`, `{file_name}`, `{page}`, `{pages}`, `{date}`, `{year}`, `{user_name}`, `{user_email}` or `{user_ip}` into the text and it resolves per page and per visitor.
 
-- **Classic Editor Tools**: Includes a quick embed tool and shortcode generator.
+- **Choose Who Sees It**: Everyone, everyone except administrators (so you can proof the clean original), or logged-out visitors only.
 
-- **Additional Gutenberg Blocks**: Includes 2 extra blocks for more flexibility.
+- **Choose Which Pages**: All pages, the first page only, or everything except the cover.
 
-- **Sidebar Toggle Menu**: Allow viewers to navigate easily using a collapsible sidebar.
+- **Anti-Leak Options**: A per-visitor stamp that identifies whoever opened a leaked screenshot, plus tamper restore that puts the mark back if a visitor deletes it with browser dev tools.
 
-- **Full Control Over Buttons**: Show/hide download and full-screen buttons.
+- **Live Preview**: The block sidebar draws the mark with the same builder the front end uses, so what you see is what publishes.
 
-- **Translate Buttons**: Customize labels like “**Download**” and “**Full-Screen**” for localization.
+**More viewers**
 
-- **Jump to Page**: Set a specific page number to open by default.
+- **Adobe PDF Viewer**: Rendering by the Adobe PDF Embed API, with Adobe's own embed and view modes.
 
-- **Zoom Level**: Predefine a zoom percentage or leave it on auto.
+- **Continuous Scroll Viewer**: Built for long reports — every page in one uninterrupted scroll.
 
-- **Open in New Window**: Choose to open PDFs in a separate tab.
+- **Reader Mode**: The document and nothing else. No toolbar, no frame, no distractions.
 
-- **Google Doc Viewer**: Use this option to bypass PDF block issues in some browsers.
+**Navigation controls**
 
-- **Horizontal Scrollbar**: Enable horizontal scrolling as the default for wide PDFs.
+- **Thumbnail Sidebar**: Show the page thumbnails panel, and choose whether it opens by default.
 
-- **Thumbnails Toggle**: Show/hide thumbnail navigation panel.
+- **Initial Page and Default Zoom**: Open on page 12 at 125% if that is where the reader should start.
 
-- **Thumbnails Open by Default**: Improve navigation with thumbnails visible on load.
+- **Horizontal Scrollbar**: Make horizontal scrolling the default for wide documents.
 
-- **Always Load the Latest Version**: Ensure viewers always see the updated PDF file.
+**Document protection**
 
-- **Enable Popup Viewer**: Display PDFs in a modal popup window.
+- **Disable Right-Click and Copying**: Block the context menu and copy shortcuts on your documents.
 
-- **Show Only PDF**: Hide the background and PDF menu for a distraction-free layout.
+- **Disable Text Selection**: Stop text being dragged out of the viewer.
 
-- **Slider and Scroll Viewer**: Add Slider and Scroll Viewer options.
+- **Suppress Blocked-Action Alerts**: Enforce protection quietly, without warning pop-ups.
 
-- **Annotation Mode**: Add Annotation Mode configuration for default viewer.
+**Popup viewer**
 
-- **Open Links in New Tab**: Add Open PDF links in new tab configuration for default viewer.
+- **Open PDFs in a Modal**: Keep the page clean and load the document on click.
+
+- **Button or Image Trigger**: Trigger from a styled button or from any image, with your own alignment, image dimensions and an optional PDF icon overlay.
+
+**Full button control**
+
+- **Rename the Download Button**: Your label, your language.
+
+- **Show or Hide the Full-Screen Button**, and optionally open full-screen in a new tab.
+
+- **Move the Action Bar**: Put Print, Download and Full-Screen above or below the viewer.
+
+**Cloud and workflow**
+
+- **Google Drive Picker and Dropbox Import**: Pull a PDF straight from cloud storage instead of uploading it twice.
+
+- **Presets**: Save a viewer configuration once and apply it site-wide, including to classic shortcodes.
+
+- **Custom CSS and Custom Classes**: Global CSS plus a per-embed class, for full design control.
+
+- **Always Load the Latest Version**: Replace the file and every embed updates — no re-linking.
+
+- **Quick Embedder for the Classic Editor**: An embed tool and shortcode generator built into the classic editor.
+
+- **Priority One-on-One Support**: Straight to the developers.
+
+**Coming soon in Pro**: in-viewer Ads and per-document Analytics — both already sketched in the interface, shipping in a later release.
 
 [**Try the PDF Poster PRO**](https://bplugins.com/products/pdf-poster/pricing) – Unlock all premium features now!
 
@@ -242,166 +323,189 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Screenshots ==
 
-1. Sidebar menu
-2. Adding a pdf file in dashboard area.
-3. Output / Frontend preview
-4. Full Screen preview
+1. Five PDF viewers in one plugin - Default, Adobe, FlipBook, Scroll or Slider, switched from a single control.
+2. Realistic FlipBook reading, built from a PDF or from an ordered image gallery, with Slider and continuous Scroll modes alongside it.
+3. Watermark & Branding - stamp text, your logo or both over every page, with seven ready-made themes.
+4. A native Gutenberg block - insert it, pick a PDF, and every option lives in the block sidebar.
+5. Responsive height and width, set separately for desktop, tablet and mobile from one device switcher.
+6. Content protection - block right-click and text selection, and decide separately whether visitors may print or download.
+7. Lightbox popup viewer, triggered from a button, a link or a cover image, with no page reload.
+8. Download, print, full-screen and social share buttons - each one optional and renameable for your language.
+9. One library for every document, with a one-click shortcode to paste into any page, widget or template.
+10. Preset the viewer defaults once - height, width, buttons, thumbnails and protection.
+11. Guided dashboard with quick start, live demos, documentation and support links.
+
+
 
 
 == Changelog ==
 
+= 2.5.6 - 31 Aug 2026 =
+* **New:** Watermark & Branding — stamp a text or logo mark over any viewer, with six ready-made themes that set the angle, repeat, weight and blend for you.
+* **New:** Watermark mark types — Text, Image (your logo) or both stacked together.
+* **New:** Watermark Coverage — a single positioned mark, or tiled Sparse/Normal/Dense so it cannot be cropped out of a screenshot.
+* **New:** Watermark Image Style — Original, Grayscale, White (for dark pages) or Black.
+* **New:** Watermark Strength and Size as named steps rather than numbers, so the mark stays readable at every zoom level and on mobile.
+* **New:** Watermark page scope (all pages, first page only, or all except the cover) and audience rules (everyone, everyone except admins, or logged-out visitors only).
+* **New:** Watermark "Restore If Removed" option, which puts the mark back if a visitor deletes it with browser dev tools.
+* **New:** Added a Watermark & Branding section to the Gutenberg block sidebar and the classic editor metabox, so the free build shows what the Pro watermarking tools cover.
+* **Update:** Rewrote the Free and Pro feature lists so each one matches what that version actually ships — FlipBook, Slider, the [pdf_embed] shortcode, the classic editor metabox, the second Gutenberg block and Google Doc Viewer were all listed as Pro despite being free.
+* **Update:** Documented every setting added since 2.5.2 (Viewer Theme, RTL Layout, Keyboard Navigation, Annotation Mode, Page Flip Sound, Fast Loading, Image Gallery flipbooks, social sharing) in the free feature list.
+* **Fixed:** Blocks saved with PDF Poster Pro no longer lose their watermark configuration when the post is edited on a free install.
+* **Note:** Watermarking is a deterrent, not DRM — an on-screen mark can be removed with browser dev tools, and no browser can prevent a screenshot. Marks in printouts and downloaded copies arrive in a following release.
+
 = 2.5.5 - 03 Aug 2026 =
-* New: Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.
-* New: Added Viewer Theme option (Light/Dark/Auto) that themes the viewer toolbar and background without altering the PDF page content.
-* New: Added RTL Layout option (Off/On/Auto) for right-to-left languages, applied across all viewers and the PDF toolbar.
-* New: Added Keyboard Navigation option (Left/Right arrow keys to change pages) for all viewers.
-* New: Added a Page Flip Sound toggle for Flipbook and Slider viewers (on by default; can now be turned off).
-* New: Added Fast Loading (Progressive Rendering) option for all viewers (Default, Adobe, Flipbook, Scroll, Slider) to stream large PDFs so the first page appears sooner.
-* Fixed: Full screen option smooth behaviour.
+* **New:** Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.
+* **New:** Added Viewer Theme option (Light/Dark/Auto) that themes the viewer toolbar and background without altering the PDF page content.
+* **New:** Added RTL Layout option (Off/On/Auto) for right-to-left languages, applied across all viewers and the PDF toolbar.
+* **New:** Added Keyboard Navigation option (Left/Right arrow keys to change pages) for all viewers.
+* **New:** Added a Page Flip Sound toggle for Flipbook and Slider viewers (on by default; can now be turned off).
+* **New:** Added Fast Loading (Progressive Rendering) option for all viewers (Default, Adobe, Flipbook, Scroll, Slider) to stream large PDFs so the first page appears sooner.
+* **Fixed:** Full screen option smooth behaviour.
 
 = 2.5.4 - 15 June 2026 =
-* New: Added interactive PDF Chatbot assistant.
-* New: Added Slider and Scroll Viewer options.
-* New: Added Annotation Mode configuration for default viewer.
-* New: Added Open PDF links in new tab configuration for default viewer.
+* **New:** Added interactive PDF Chatbot assistant.
+* **New:** Added Slider and Scroll Viewer options.
+* **New:** Added Annotation Mode configuration for default viewer.
+* **New:** Added Open PDF links in new tab configuration for default viewer.
 
 = 2.5.3 - 10 June 2026 =
-* Update: Admin Dashboard aligned with the latest standard and bpl-tools layout.
-* Update: Update block.json version. 
-* Security: Enhanced request validation and sanitized AJAX inputs.
-* Security: Secured public REST API endpoints with authentication checks.
-* Compliance: Added full uninstall cleanup routine for custom options and database tables.
-* Compliance: Standardized translation text domains to match the plugin slug.
-* Fixed: Corrected general typos, updated GPL license headers, and added distribution ignore rules.
+* **Update:** Admin Dashboard aligned with the latest standard and bpl-tools layout.
+* **Update:** Update block.json version. 
+* **Security:** Enhanced request validation and sanitized AJAX inputs.
+* **Security:** Secured public REST API endpoints with authentication checks.
+* **Compliance:** Added full uninstall cleanup routine for custom options and database tables.
+* **Compliance:** Standardized translation text domains to match the plugin slug.
+* **Fixed:** Corrected general typos, updated GPL license headers, and added distribution ignore rules.
 
 = 2.5.2 - 19 May 2026 =
-* New: Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.
-* New: Introduced fully responsive Height & Width controls for Desktop, Tablet, and Mobile devices.
-* New: Added a Device Preview Switcher in the plugin metabox for easier responsive configuration.
-* Improved: Enhanced PDF viewer dimension handling across different screen sizes for better responsiveness.
-* Improved: Refactored the entire plugin codebase for better maintainability and cleaner architecture.
-* Improved: Removed unused and redundant code to reduce plugin bloat and improve performance.
-* Improved: Optimized core functionality for faster loading and smoother user experience.
-* Fixed: Resolved existing bugs and minor compatibility issues.
-* Security: Strengthened overall plugin security and improved code quality following best practices.
-* Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.
-* Security: Enhanced request validation for API and AJAX endpoints.
-* Security: Improved database query sanitization and hardening.
-* Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.
-* Improved: Conducted a comprehensive i18n sweep for proper translation support.
-* Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.
+* **New:** Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.
+* **New:** Introduced fully responsive Height & Width controls for Desktop, Tablet, and Mobile devices.
+* **New:** Added a Device Preview Switcher in the plugin metabox for easier responsive configuration.
+* **Improved:** Enhanced PDF viewer dimension handling across different screen sizes for better responsiveness.
+* **Improved:** Refactored the entire plugin codebase for better maintainability and cleaner architecture.
+* **Improved:** Removed unused and redundant code to reduce plugin bloat and improve performance.
+* **Improved:** Optimized core functionality for faster loading and smoother user experience.
+* **Fixed:** Resolved existing bugs and minor compatibility issues.
+* **Security:** Strengthened overall plugin security and improved code quality following best practices.
+* **Update:** Unlocked all previously gated Premium settings, making them fully functional in the Free version.
+* **Security:** Enhanced request validation for API and AJAX endpoints.
+* **Security:** Improved database query sanitization and hardening.
+* **Improved:** Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.
+* **Improved:** Conducted a comprehensive i18n sweep for proper translation support.
+* **Compliance:** Added explicit Terms of Service and Privacy Policy links to the readme.
 
 = 2.5.1 – 25 April 2026 =
-* Fixed: PDFs hosted on external domains or CDNs were not loading at all
-* Fixed: Google Docs Viewer was sending the same request twice and canceling both
-* Fixed: When Google Docs Viewer failed there was nothing to fall back on
-* Fixed: PDF.js errors were invisible — users just saw a white empty box
-* Fixed: No message was shown when a PDF file was missing or completely empty
-* Fixed: PDF viewer was not opening on iPhone and iPad running iOS 16 and 17
-* Fixed: Tapping the fullscreen button on iPhone did absolutely nothing
-* Fixed: PDFs were not loading on Android Chrome and Samsung Internet browser
-* Fixed: Chinese, Japanese and Korean characters were showing as random broken symbols
-* Fixed: PDFs made with LaTeX or older Adobe tools were showing wrong or unreadable text
-* Fixed: Changes made to an existing PDF entry were lost after hitting update
-* Fixed: Shortcode was pasting fine but showing nothing at all on the live page
-* Fixed: PDFs with spaces or special characters in the filename were crashing the viewer
-* Fixed: An unexpected heading was appearing above the viewer on some themes
-* Fixed: Embedding a PDF by URL was showing raw code instead of the actual document
-* Fixed: PDF viewer was not displaying properly inside Elementor's preview panel
-* Update: Removed unexpected or unnecessary conten & code from the whole plugin.
+* **Fixed:** PDFs hosted on external domains or CDNs were not loading at all
+* **Fixed:** Google Docs Viewer was sending the same request twice and canceling both
+* **Fixed:** When Google Docs Viewer failed there was nothing to fall back on
+* **Fixed:** PDF.js errors were invisible — users just saw a white empty box
+* **Fixed:** No message was shown when a PDF file was missing or completely empty
+* **Fixed:** PDF viewer was not opening on iPhone and iPad running iOS 16 and 17
+* **Fixed:** Tapping the fullscreen button on iPhone did absolutely nothing
+* **Fixed:** PDFs were not loading on Android Chrome and Samsung Internet browser
+* **Fixed:** Chinese, Japanese and Korean characters were showing as random broken symbols
+* **Fixed:** PDFs made with LaTeX or older Adobe tools were showing wrong or unreadable text
+* **Fixed:** Changes made to an existing PDF entry were lost after hitting update
+* **Fixed:** Shortcode was pasting fine but showing nothing at all on the live page
+* **Fixed:** PDFs with spaces or special characters in the filename were crashing the viewer
+* **Fixed:** An unexpected heading was appearing above the viewer on some themes
+* **Fixed:** Embedding a PDF by URL was showing raw code instead of the actual document
+* **Fixed:** PDF viewer was not displaying properly inside Elementor's preview panel
+* **Update:** Removed unexpected or unnecessary conten & code from the whole plugin.
 
 = 2.5.0 - 01 Mar, 2026 =
-* New: Popup Trigger Type Image
+* **New:** Popup Trigger Type Image
 * New : Popup Trigger Alignment
 * New : Popup Trigger Image Size
 * New : Popup Trigger Image PDF Icon
-* Update: Help & Demo Page
-* New: Added an option to move the action buttons (Print, Fullscreen, Download) to the top or bottom.
-* Update: Hide sidebar on mobile devices
+* **Update:** Help & Demo Page
+* **New:** Added an option to move the action buttons (Print, Fullscreen, Download) to the top or bottom.
+* **Update:** Hide sidebar on mobile devices
 
 = 2.4.1 - 09 Feb, 2026 =
-* Fixed: Warning: Attempt to read property "post_type" on null in WC Orders Add/Edit page
-* Fixed: Broken Access Control
-* Removed: Upgrade Section from Gutemberg Block (Premium)
-* Removed: Upgrade Section from Classic Shortcode Generator (Premium)
+* **Fixed:** Warning: Attempt to read property "post_type" on null in WC Orders Add/Edit page
+* **Fixed:** Broken Access Control
+* **Removed:** Upgrade Section from Gutemberg Block (Premium)
+* **Removed:** Upgrade Section from Classic Shortcode Generator (Premium)
 
 = 2.4.0 - 20 Jan, 2026 =
-* Added: Social Share feature
-* Added: Icons before each PanelBody title in the Gutenberg block
-* Added: Help text for control fields
-* Improved: Gutenberg Block Settings UI
-* Improved: Classic Shortcode Generator UI
-* Improved: Overall UI consistency and clarity
-* Fixed: Missing Google Drive icon
-* Fixed: Google Drive integration issues
-* Fixed: Dropbox integration issues
-* Fixed: PDF Poster selector block not working
+* **Added:** Social Share feature
+* **Added:** Icons before each PanelBody title in the Gutenberg block
+* **Added:** Help text for control fields
+* **Improved:** Gutenberg Block Settings UI
+* **Improved:** Classic Shortcode Generator UI
+* **Improved:** Overall UI consistency and clarity
+* **Fixed:** Missing Google Drive icon
+* **Fixed:** Google Drive integration issues
+* **Fixed:** Dropbox integration issues
+* **Fixed:** PDF Poster selector block not working
 * Updated: PDF Poster menu icon
 * Updated: Removed unexpected or unnecessary content
 
 = 2.3.1 - 22 Sep, 2025 =
-* Fixed: Fullscreen issue
-* Fixed: Divi Builder Image Upload issue
+* **Fixed:** Fullscreen issue
+* **Fixed:** Divi Builder Image Upload issue
 
 = 2.3.0 - 13 Aug, 2025 =
 * New Page: Dashboard
-* Fixed: Fixed Preset Preview issue
-* Fixed: Adobe Embedder issue
-* Improved: Code
+* **Fixed:** Fixed Preset Preview issue
+* **Fixed:** Adobe Embedder issue
+* **Improved:** Code
 
 = 2.2.4 - 14 July, 2025 =
-* Fixed: ACF Pro - wysiwig editor - "Add PDF" button does not work
-* Fixed: quick embed options does not work
+* **Fixed:** ACF Pro - wysiwig editor - "Add PDF" button does not work
+* **Fixed:** quick embed options does not work
 
 = 2.2.3 - 11 May, 2025 =
-* Fixed: file upload issue
+* **Fixed:** file upload issue
 
 = 2.2.2 - 12 Feb, 2025 =
-* Update: Visible scrollbar when selected 'show only PDF/Raw PDF'
-* Fixed: _load_textdomain_just_in_time() was called incorrectly.
+* **Update:** Visible scrollbar when selected 'show only PDF/Raw PDF'
+* **Fixed:** _load_textdomain_just_in_time() was called incorrectly.
 
 = 2.2.1 - 28 Jan, 2025 =
-* Fixed: your site doesn’t include support for the "pdfp/pdfposter" block. 
-* Update: WordPress SDK
+* **Fixed:** your site doesn’t include support for the "pdfp/pdfposter" block. 
+* **Update:** WordPress SDK
 
 = 2.2.0 - 06 Oct, 2024 =
-* Fixed: Overlapping content
+* **Fixed:** Overlapping content
 
 = 2.2.0 - 06 Oct, 2024 =
-* Fixed: Overlapping content
+* **Fixed:** Overlapping content
 
 = 2.1.25 - 24 July, 2024 =
-* Fixed: 404 Not Found - PDFPro\Helper\Pipe::checkPipe() 
+* **Fixed:** 404 Not Found - PDFPro\Helper\Pipe::checkPipe() 
 
 = 2.1.24 - 29 June, 2024 =
-* Fixed: iPad/iPhone issue
+* **Fixed:** iPad/iPhone issue
 
 = 2.1.23 - 27 June, 2024 =
-* Fixed: directive error
+* **Fixed:** directive error
 
 = 2.1.21 - 25 March, 2024 =
-* Fixed: Avada Builder style broken
+* **Fixed:** Avada Builder style broken
 
 = 2.1.20 - 19 Feb, 2024 =
-* Fixed: Deprecated issue
+* **Fixed:** Deprecated issue
 
 = 2.1.19 - 9 Jan, 2024 =
 * Feature: Show Download button
 
 = 2.1.18 - 24 Dec, 2023 =
-* Security: Improved
+* **Security:** Improved
 
 = 2.1.17 - 4 Dec, 2023 =
 * Removed Ads
 
 = 2.1.16 - 28 Nov, 2023 =
-* Fixed: Can't Edit Newsletter
+* **Fixed:** Can't Edit Newsletter
 
 = 2.1.15 - 24 Nov, 2023 =
-* Fixed: Removed admin ber add
+* **Fixed:** Removed admin ber add
 
 = 2.1.14 - 24 Nov, 2023 =
-* Fixed: Sidebar open all time
+* **Fixed:** Sidebar open all time
 
 = 2.1.12 - 17 Sep, 2023 =
 * Fixed SSL issue
@@ -456,7 +560,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 == Upgrade Notice ==
 
 = 2.1.21 - 25 March, 2024 =
-* Fixed: Avada Builder style broken
+* **Fixed:** Avada Builder style broken
 
 == Source Code ==
 
