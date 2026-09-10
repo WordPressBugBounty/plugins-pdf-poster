@@ -25,8 +25,10 @@ if (!class_exists('PDFPro\PDFP_Init')) {
                 Admin\PDFP_MetaBox::class,
                 Rest\PDFP_AjaxCall::class,
                 Rest\PDFP_GetMeta::class,
+                Rest\PDFP_Track::class,
                 Admin\PDFP_Chatbot::class,
                 Admin\PDFP_SidebarCards::class,
+                Integrations\PDFP_WPBakery::class,
             ];
         }
 

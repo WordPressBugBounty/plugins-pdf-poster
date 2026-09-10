@@ -37,6 +37,21 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
 
                 add_action('edit_form_after_title', [$this, 'shortcode_area']);
 
+                // Sits in the side column directly under Save. post_submitbox_misc_actions
+                // would have been the obvious hook, but pdfp_hide_publishing_actions()
+                // sets #misc-publishing-actions to display:none for this post type --
+                // anything rendered there is invisible.
+                add_action('add_meta_boxes', [$this, 'analytics_links_box']);
+
+                // A box named in the user's stored meta-box order is drawn from the
+                // 'sorted' bucket, which WordPress renders ahead of 'core' -- so one
+                // saved drag would pin this panel wherever it was dropped and the
+                // registered priority would stop meaning anything. Dropping just our id
+                // out of the stored string returns it to its priority while leaving every
+                // other box the user arranged untouched. Mirrors what PDFP_SidebarCards
+                // does for its own two cards.
+                add_filter('get_user_option_meta-box-order_' . $this->post_type, [$this, 'release_analytics_box']);
+
                 // add_action('add_meta_boxes', [$this, 'myplugin_add_meta_box']);
             }
         }
@@ -115,6 +130,14 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
             unset($defaults['date']);
             $defaults['shortcode'] = __('ShortCode', 'pdf-poster');
             $defaults['raw_shortCode'] = esc_html__('ShortCode For Raw PDF View', 'pdf-poster');
+            // Document Insights. Placed before Date so the two numbers sit together at
+            // the end of the row, which is where a reader's eye lands when comparing.
+            //
+            // The heading states the period rather than badging the column: the figures
+            // are real, but they reset at midnight, and a bare "Views" over a number that
+            // does that would be the one genuinely misleading thing here.
+            $defaults['pdfp_views'] = esc_html__('Views today', 'pdf-poster');
+            $defaults['pdfp_downloads'] = esc_html__('Downloads today', 'pdf-poster');
             $defaults['date'] = __('Date', 'pdf-poster');
             return $defaults;
         }
@@ -122,12 +145,224 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         function pdfp_columns_content_only_podcast($column_name, $post_ID)
         {
             if ($column_name == 'shortcode') {
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
+                $this->render_shortcode_chip("[pdf id='" . $post_ID . "']");
             }
             if ($column_name == 'raw_shortCode') {
-                // show content of 'directors_name' column
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
+                $this->render_shortcode_chip("[raw_pdf id='" . $post_ID . "']");
             }
+            if ($column_name === 'pdfp_views' || $column_name === 'pdfp_downloads') {
+                $this->render_count_cell($post_ID, $column_name);
+            }
+        }
+
+        /**
+         * One Document Insights cell: today's figure, from one batched query for the
+         * whole screen (pdfp_today_rows_by_post() caches per request).
+         *
+         * A document that has never been counted shows an em dash rather than a zero --
+         * "not measured yet" and "measured, nobody looked" are different facts, and a
+         * hard 0 on a poster published an hour ago reads as a bug report waiting to
+         * happen. The `_pdfp_views` / `_pdfp_downloads` meta mirror is what tells the two
+         * apart: it is written the first time a document is ever counted.
+         */
+        protected function render_count_cell($post_ID, $column_name)
+        {
+            if (!\PDFPro\Helper\PDFP_Functions::pdfp_tracking_enabled()) {
+                echo '<span aria-hidden="true" style="color:#a7aaad">&mdash;</span>'
+                    . '<span class="screen-reader-text">' . esc_html__('Counting is switched off', 'pdf-poster') . '</span>';
+                return;
+            }
+
+            $rows = \PDFPro\Helper\PDFP_Functions::pdfp_today_rows_by_post();
+            $field = $column_name === 'pdfp_views' ? 'views' : 'downloads';
+
+            if (isset($rows[(int) $post_ID])) {
+                echo '<strong>' . esc_html(number_format_i18n((int) $rows[(int) $post_ID][$field])) . '</strong>';
+                return;
+            }
+
+            // Nothing today. A document that HAS been counted before genuinely scored
+            // zero today and should say so; one that never has is not measured yet.
+            $meta_key = $column_name === 'pdfp_views' ? '_pdfp_views' : '_pdfp_downloads';
+            $raw = get_post_meta($post_ID, $meta_key, true);
+
+            if (!($raw === '' || $raw === null)) {
+                echo '<span style="color:#a7aaad">0</span>';
+                return;
+            }
+
+            echo '<span aria-hidden="true" style="color:#a7aaad">&mdash;</span>'
+                . '<span class="screen-reader-text">' . esc_html__('Not counted yet', 'pdf-poster') . '</span>';
+        }
+
+        /**
+         * "Analytics" box under Save, in the classic editor.
+         *
+         * Shows today's real views and downloads for this document. What Pro adds is
+         * reading the history back, and the panel itself says so.
+         */
+        public function analytics_links_box()
+        {
+            add_meta_box(
+                'pdfp_analytics_links',
+                // Metabox titles are printed unescaped, so the existing .pdfp-new-badge
+                // span works here as it does in a CSF section title (admin.css is
+                // enqueued on every admin screen, so the chip is styled, not bare text).
+                //
+                // Wrapped in one span on purpose: WordPress drops the title straight into
+                // <h2 class="hndle">, which is display:flex; justify-content:space-between.
+                // Left unwrapped, the text and the badge become two flex items and get
+                // shoved to opposite ends of the header. Styled inline rather than with a
+                // class, to add nothing new to admin.scss.
+                //
+                // NEW, never PRO: the box shows today's real figures, so badging it PRO
+                // would label live data as something the reader cannot have.
+                '<span style="display:inline-flex;align-items:center;gap:2px;">'
+                    . esc_html__('Analytics', 'pdf-poster')
+                    . \PDFPro\Helper\PDFP_Functions::pdfp_new_badge()
+                    . '</span>',
+                [$this, 'render_analytics_links'],
+                $this->post_type,
+                'side',
+                // 'core', not 'low'. do_meta_boxes() renders high, sorted, core, default,
+                // low -- WordPress registers submitdiv at 'core' before the
+                // add_meta_boxes hook fires, so a later 'core' box follows Save, and the
+                // compatibility card at 'default' follows this one. That is the intended
+                // default column: Save, Analytics, Page Builder Support.
+                'core'
+            );
+        }
+
+        /**
+         * Hand the Analytics panel back to its registered priority.
+         *
+         * @param array|mixed $order
+         * @return array|mixed
+         */
+        public function release_analytics_box($order)
+        {
+            if (!is_array($order) || empty($order['side'])) {
+                return $order;
+            }
+
+            $kept = array_diff(explode(',', $order['side']), ['pdfp_analytics_links']);
+            $order['side'] = implode(',', $kept);
+
+            return $order;
+        }
+
+        /**
+         * Today's readout, then the one action that follows from it.
+         *
+         * A link rather than a button: this build has no upgrade modal, so the only useful
+         * click is the pricing screen, and it says how many days are waiting behind it --
+         * a fact about this site, checkable against the panel above, rather than a
+         * sentence about a price list.
+         */
+        public function render_analytics_links($post)
+        {
+            \PDFPro\Helper\PDFP_Functions::pdfp_render_insights_panel($post->ID);
+
+            $doc = \PDFPro\Helper\PDFP_Functions::pdfp_doc_key('', $post->ID);
+            $days = (int) \PDFPro\Helper\PDFP_Functions::pdfp_recorded_history($doc)['days'];
+            $tracking = \PDFPro\Helper\PDFP_Functions::pdfp_tracking_enabled();
+            ?>
+            <div class="pdfp-analytics-links">
+                <a class="button button-primary button-large"
+                    href="<?php echo esc_url(\PDFPro\Helper\PDFP_Functions::pricing_url()); ?>">
+                    <?php
+                    echo esc_html(
+                        $days > 0
+                            ? sprintf(
+                                /* translators: %s: number of days of history already recorded */
+                                _n('Unlock my %s day', 'Unlock my %s days', $days, 'pdf-poster'),
+                                number_format_i18n($days)
+                            )
+                            : __('See the full report with Pro', 'pdf-poster')
+                    );
+                    ?>
+                </a>
+
+                <?php
+                // Only when there is something to act on. While counting is on the panel
+                // above already says since when, and "counted automatically" repeated
+                // under it was a sentence spending three lines of a 260px column to say
+                // nothing the reader could use.
+                if (!$tracking) {
+                    $pdfp_settings_link = '<a href="'
+                        . esc_url(admin_url('edit.php?post_type=pdfposter&page=fpdf-settings')) . '">'
+                        . esc_html__('Turn it on in Settings', 'pdf-poster') . '</a>';
+                    ?>
+                    <p class="pdfp-analytics-links-note">
+                        <?php
+                        echo wp_kses_post(sprintf(
+                            /* translators: %s: link to the plugin settings screen */
+                            __('Counting is switched off for this site. %s', 'pdf-poster'),
+                            $pdfp_settings_link
+                        ));
+                        ?>
+                    </p>
+                    <?php
+                }
+                ?>
+            </div>
+            <?php
+        }
+
+        /**
+         * A shortcode in the list table: the value itself, click to copy.
+         *
+         * It used to be a full-width filled button reading "Copy Shortcode", which spent
+         * the widest column in the table on a label while hiding the one thing the column
+         * exists to show -- and told you nothing about which id you were about to copy.
+         * A monospaced chip shows the value, sizes to its content, and still copies on
+         * click.
+         *
+         * Kept as an <input> rather than a <button>: the copy path selects the field and
+         * falls back to execCommand where the async clipboard API is unavailable, and a
+         * button has nothing to select.
+         *
+         * @param string $shortcode
+         * @return void
+         */
+        protected function render_shortcode_chip($shortcode)
+        {
+            // The icon carries pointer-events:none so a click on it still lands on the
+            // input -- which is what the copy handler is bound to, and what the
+            // execCommand fallback needs to be able to select.
+            $icon = '<svg class="pdfp_front_shortcode_icon" viewBox="0 0 24 24" fill="none"'
+                . ' stroke="currentColor" stroke-width="2" stroke-linecap="round"'
+                . ' stroke-linejoin="round" aria-hidden="true" focusable="false">'
+                . '<rect x="9" y="9" width="11" height="11" rx="1"></rect>'
+                . '<path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"></path>'
+                . '</svg>';
+
+            printf(
+                '<span class="pdfp_front_shortcode">'
+                    . '<input class="pdfp_front_shortcode_input" type="text" readonly value="%1$s"'
+                    . ' data-value="%1$s" size="%2$d" aria-label="%3$s" />'
+                    . '%5$s'
+                    . '<span class="htooltip">%4$s</span>'
+                    . '</span>',
+                esc_attr($shortcode),
+                (int) (strlen($shortcode) + 1),
+                esc_attr(sprintf(
+                    /* translators: %s: the shortcode, e.g. [pdf id='12'] */
+                    __('Copy shortcode %s', 'pdf-poster'),
+                    $shortcode
+                )),
+                esc_html__('Copy to clipboard', 'pdf-poster'),
+                wp_kses(
+                    $icon,
+                    array(
+                        'svg' => array('class' => true, 'viewbox' => true, 'fill' => true, 'stroke' => true,
+                            'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true,
+                            'aria-hidden' => true, 'focusable' => true),
+                        'rect' => array('x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true),
+                        'path' => array('d' => true),
+                    )
+                )
+            );
         }
 
         function pdfp_updated_messages($messages)
