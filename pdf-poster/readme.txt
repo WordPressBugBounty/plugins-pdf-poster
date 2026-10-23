@@ -2,7 +2,7 @@
 Contributors: bplugins, abuhayat, taninrahman, farazi1, freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
-Requires at least: 5.0.3
+Requires at least: 6.5
 Tested up to: 7.1
 Stable tag: 2.6.1
 Requires PHP: 7.1
@@ -18,7 +18,7 @@ Embed PDF files in WordPress with a responsive PDF viewer, flipbook, shortcode a
 
 [**PDF Poster**](https://bplugins.com/products/pdf-poster/) is a flexible plugin that allows you to embed PDF documents directly into WordPress posts, pages, widgets, or templates. Whether you're sharing brochures, eBooks, business files, or portfolios, the plugin provides a responsive and accessible layout that works across all devices.
 
-Embed with the Gutenberg block, the `[pdf_embed]` shortcode, or the classic editor — whichever fits how you already work. The free version ships three PDF viewers (the bundled PDF.js viewer, an interactive FlipBook and a Slider), independent height and width for desktop, tablet and mobile, print, download and full-screen buttons, social sharing, light/dark theming, RTL support, a popup (lightbox) viewer, text watermarking, custom CSS and progressive loading for large files. It also counts how many times each PDF is viewed and downloaded each day, in your own database, with no third-party service and no IP address stored. Analytics history and trends, content protection, logo watermarking, Reader Mode, the Adobe and Continuous Scroll viewers and cloud imports are [Pro](https://bplugins.com/products/pdf-poster/pricing).
+Embed with the Gutenberg block, the `[pdf_embed]` shortcode, or the classic editor — whichever fits how you already work. The free version ships three PDF viewers (the bundled PDF.js viewer, an interactive FlipBook and a Slider), independent height and width for desktop, tablet and mobile, print, download and full-screen buttons, social sharing, light/dark theming, RTL support, a popup (Lightbox) viewer, text watermarking, custom CSS and progressive loading for large files. It also counts how many times each PDF is viewed and downloaded each day, in your own database, with no third-party service and no IP address stored. Analytics history and trends, content protection, logo watermarking, Reader Mode, the Adobe and Continuous Scroll viewers and cloud imports are [Pro](https://bplugins.com/products/pdf-poster/pricing).
 
 
 ### PDF Poster Free Features — Everything Below Is Included, Free
