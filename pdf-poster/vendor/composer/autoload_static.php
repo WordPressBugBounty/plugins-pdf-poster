@@ -11,10 +11,6 @@ class ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' =>
-        array (
-            'PDFPro\\' => 7,
-        ),
         'O' =>
         array (
             'OomphInc\\ComposerInstallersExtender\\' => 36,
@@ -26,10 +22,6 @@ class ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3
     );
 
     public static $prefixDirsPsr4 = array (
-        'PDFPro\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/inc',
-        ),
         'OomphInc\\ComposerInstallersExtender\\' =>
         array (
             0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
@@ -42,6 +34,7 @@ class ComposerStaticInitd082d5d7b5435dbc46cdfc118dbb19e3
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PDFPro\\Base\\PDFP_RegisterBlock' => __DIR__ . '/../..' . '/includes/base/class-pdfp-blocks.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

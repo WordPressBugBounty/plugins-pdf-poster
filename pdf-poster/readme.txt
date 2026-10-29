@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, taninrahman, farazi1, freemius
 Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
-Requires at least: 6.5
+Requires at least: 5.0.3
 Tested up to: 7.1
-Stable tag: 2.6.1
+Stable tag: 2.6.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ Embed PDF files in WordPress with a responsive PDF viewer, flipbook, shortcode a
 
 [**PDF Poster**](https://bplugins.com/products/pdf-poster/) is a flexible plugin that allows you to embed PDF documents directly into WordPress posts, pages, widgets, or templates. Whether you're sharing brochures, eBooks, business files, or portfolios, the plugin provides a responsive and accessible layout that works across all devices.
 
-Embed with the Gutenberg block, the `[pdf_embed]` shortcode, or the classic editor — whichever fits how you already work. The free version ships three PDF viewers (the bundled PDF.js viewer, an interactive FlipBook and a Slider), independent height and width for desktop, tablet and mobile, print, download and full-screen buttons, social sharing, light/dark theming, RTL support, a popup (Lightbox) viewer, text watermarking, custom CSS and progressive loading for large files. It also counts how many times each PDF is viewed and downloaded each day, in your own database, with no third-party service and no IP address stored. Analytics history and trends, content protection, logo watermarking, Reader Mode, the Adobe and Continuous Scroll viewers and cloud imports are [Pro](https://bplugins.com/products/pdf-poster/pricing).
+Embed with the Gutenberg block, the `[pdf_embed]` shortcode, or the classic editor — whichever fits how you already work. The free version ships three PDF viewers (the bundled PDF.js viewer, an interactive FlipBook and a Slider), independent height and width for desktop, tablet and mobile, print, download and full-screen buttons, social sharing, light/dark theming, RTL support, a popup (lightbox) viewer, text watermarking, custom CSS and progressive loading for large files. It also counts how many times each PDF is viewed and downloaded each day, in your own database, with no third-party service and no IP address stored. Analytics history and trends, content protection, logo watermarking, Reader Mode, the Adobe and Continuous Scroll viewers and cloud imports are [Pro](https://bplugins.com/products/pdf-poster/pricing).
 
 
 ### PDF Poster Free Features — Everything Below Is Included, Free
@@ -330,6 +330,13 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 
 == Changelog ==
+
+= 2.6.2 - 29 Oct 2026 =
+* Security: Fixed a stored cross-site scripting (XSS) issue in the PDF Poster block. A user with Contributor access could set the document URL to a javascript: link that ran when the poster was viewed. Document URLs must now be http(s), Google Docs/Drive embeds are matched by exact host, and they load in a sandboxed frame. Thanks to mroccon and Patchstack for the responsible disclosure.
+* Fix: When several posters share a page, a broken file no longer shows its error on the others, and each viewer now loads only when it comes into view or its popup is opened.
+* New: Adding a Word, Excel, PowerPoint or other non-PDF document now shows a clear “PDF Poster supports PDF files only” message instead of a broken viewer.
+* Update: A loading spinner now shows while a document opens — on the page and inside popups — instead of an empty frame or a blank toolbar.
+* New: Settings > Performance > Lazy Loading — on by default; switch it off to load every viewer on the page as soon as it opens.
 
 = 2.6.1 - 19 Sep 2026 =
 * Fix: Posters could fail to load after a site was moved, imported or cloned — showing a 404, an image instead of the document, or “Unexpected server response.” — most often when the PDF filename was not written in English; the saved address is now repaired against the media library.
