@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "version": "2.6.3",
+  "version": "2.6.4",
   "name": "pdfp/pdfposter",
   "title": "PDF Poster",
   "description": "Embed PDF in your posts and pages",
@@ -252,6 +252,25 @@
     "popupBtnText": {
       "type": "string",
       "default": "Open Document"
+    },
+    "coverFirst": {
+      "type": [
+        "string",
+        "boolean"
+      ],
+      "default": "default"
+    },
+    "coverButtonText": {
+      "type": "string",
+      "default": ""
+    },
+    "coverPdfId": {
+      "type": "number",
+      "default": 0
+    },
+    "coverStyle": {
+      "type": "object",
+      "default": {}
     },
     "CSS": {
       "type": "string",
