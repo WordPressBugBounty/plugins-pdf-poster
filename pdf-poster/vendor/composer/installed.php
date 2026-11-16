@@ -3,7 +3,7 @@
         'name' => 'bplugins/pdf-poster',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cba25af6207fd7d55fa61dd9e3e46b514c7ac6d0',
+        'reference' => '68a77f37d84aa0e166ffa8efb23688816c59f73d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'bplugins/pdf-poster' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cba25af6207fd7d55fa61dd9e3e46b514c7ac6d0',
+            'reference' => '68a77f37d84aa0e166ffa8efb23688816c59f73d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

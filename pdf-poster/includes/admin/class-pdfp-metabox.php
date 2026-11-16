@@ -461,7 +461,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		 */
 		public function watermark() {
 			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Watermark & Branding', 'pdf-poster'), 'New'),
+				'title' => __('Watermark & Branding', 'pdf-poster'),
 				'fields' => array(
 					array(
 						'id' => 'watermark_enable',
@@ -470,9 +470,6 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'default' => false,
 						'desc' => __('Stamp a text mark over the document.', 'pdf-poster'),
 					),
-					// The whole section below is gated on the Enable switch, so the panel is
-					// one row until the author opts in. CSF stores an unchecked switcher as
-					// "" rather than "0", so the intro asks for "anything but on".
 					Utils::pdfp_watermark_intro(array('watermark_enable', '!=', '1')),
 					Utils::pdfp_watermark_subhead(
 						__('The mark', 'pdf-poster'),

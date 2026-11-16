@@ -7,23 +7,6 @@ use PDFPro\Base\PDFP_EnqueueAssets as Assets;
 
 if (!defined('ABSPATH')) exit;
 
-/**
- * Live Preview for the classic PDF Poster edit screen.
- *
- * A "Preview" button sits beside Save / Update. It opens a modal whose iframe shows the
- * poster as a visitor would see it, rendered from the values CURRENTLY in the metabox --
- * nothing is saved, autosaved or counted.
- *
- * How (same model as Document Embedder's preview): the unsaved `_fpdf[...]` fields are
- * copied into a separate body-level form that POSTs into the iframe at a nonce-protected
- * front-end URL. That request shims the single `_fpdf` postmeta read for this post, then
- * runs the ordinary metabox -> block mapping and render_block(). No rendering code is
- * duplicated, so the preview can never drift from the front end.
- *
- * No Pro twin: PDFP_Init::instantiate() only swaps when a *Pro class exists, and both
- * builds want the same preview. Pro-only attributes are already gated inside
- * Utils::pdfp_block_from_meta(), exactly as on the front end.
- */
 if (!class_exists('PDFPro\Admin\PDFP_LivePreview')) {
     class PDFP_LivePreview {
 

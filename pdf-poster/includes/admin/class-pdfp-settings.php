@@ -151,7 +151,7 @@ if ( ! class_exists( 'PDFPro\Admin\PDFP_Settings' ) ) {
 	 */
 	public function performance() {
 		\CSF::createSection($this->option_prefix, array(
-			'title' => Utils::pdfp_pro_title(__('Performance', 'pdf-poster'), 'New'),
+			'title' => __('Performance', 'pdf-poster'),
 			'fields' => array(
 				array(
 					'id' => 'pdfp_lazy_loading',
@@ -173,7 +173,7 @@ if ( ! class_exists( 'PDFPro\Admin\PDFP_Settings' ) ) {
 	 */
 	public function analytics() {
 		\CSF::createSection($this->option_prefix, array(
-			'title' => Utils::pdfp_pro_title(__('Analytics', 'pdf-poster'), "New"),
+			'title' => __('Analytics', 'pdf-poster'),
 			'fields' => array(
 				array(
 					'id' => 'pdfp_tracking_enable',

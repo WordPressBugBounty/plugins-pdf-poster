@@ -56,7 +56,7 @@ if (!class_exists('PDFPro\Admin\PDFP_AdminLoader')) {
 			add_submenu_page(
 				'edit.php?post_type=pdfposter',
 				__('Analytics', 'pdf-poster'),
-				Utils::pdfp_pro_title(__('Analytics', 'pdf-poster'), 'New'),
+				__('Analytics', 'pdf-poster'),
 				'edit_others_posts',
 				'pdf-poster-analytics',
 				[$this, 'analyticsPage'],

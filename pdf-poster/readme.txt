@@ -4,7 +4,7 @@ Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0.3
 Tested up to: 7.1
-Stable tag: 2.6.4
+Stable tag: 2.6.5
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -347,6 +347,10 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 12. Guided dashboard, demos and support — a quick-start screen, live demos and one-click help, right inside your admin.
 
 == Changelog ==
+
+= 2.6.5 - 16 Nov 2026 =
+*  Fix: Remove extra space for the Default Viewer. 
+*  Update: Remove #2a2a2a fixed background for the Default Viewer.
 
 = 2.6.4 - 15 Nov 2026 =
 * New: Auto Thumbnail — every PDF gets a cover image from its first page, automatically. Existing PDFs too, in one click. No server setup needed. No server setup needed.

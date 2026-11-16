@@ -8,11 +8,9 @@ if (!defined('ABSPATH'))
 use stdClass;
 
 if (!class_exists('PDFPro\PDFP_Init')) {
-    class PDFP_Init
-    {
+    class PDFP_Init {
 
-        public static function get_services()
-        {
+        public static function get_services() {
             return [
                 Database\PDFP_Init::class,
                 Model\PDFP_AjaxCall::class,
@@ -37,13 +35,11 @@ if (!class_exists('PDFPro\PDFP_Init')) {
             ];
         }
 
-        public static function register_post_type()
-        {
+        public static function register_post_type() {
             self::instantiate(Base\PDFP_PDFPoster::class);
         }
 
-        public static function register_services()
-        {
+        public static function register_services() {
             foreach (self::get_services() as $class) {
                 $services = self::instantiate($class);
                 if (method_exists($services, 'register')) {
